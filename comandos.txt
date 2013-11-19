@@ -39,9 +39,9 @@ Rotina
 
 Trabalhar no branch de desenvolvimento (desenv)
 Começar o dia indo para a branch desenv
-$ git checkou desenv
+$ git checkout desenv
 
-- Fazer todos os commits aqui
+- Fazer todos os commits aqui (git commit -m "Início do projeto")
 
 - Verificar se a branch master possui atualizações:
 $ git checkout master
