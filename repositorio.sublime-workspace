@@ -1,0 +1,482 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"s",
+				"script"
+			],
+			[
+				"G",
+				"GO"
+			],
+			[
+				"db",
+				"dbEdinet"
+			],
+			[
+				"continua",
+				"continua2"
+			],
+			[
+				"str",
+				"strDataFinal"
+			],
+			[
+				"strDt",
+				"strDtInicial"
+			],
+			[
+				"dte",
+				"dteHoje"
+			],
+			[
+				"get",
+				"getDate"
+			],
+			[
+				"dia",
+				"dia"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"data",
+				"dataHoje"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"pad",
+				"padding-right"
+			],
+			[
+				"l",
+				"language"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 196.0,
+		"selected_items":
+		[
+			[
+				"Inst",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Set Syntax: ASP"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/workspaceJDOS/repositorio/comandos.txt",
+		"/C/workspaceJDOS/repositorio/cod-barras/manifest.json",
+		"/C/workspaceJDOS/repositorio/cod-barras/background.js",
+		"/C/workspaceJDOS/repositorio/cod-barras/window.html",
+		"/C/workspaceJDOS/repositorio/cod-barras/estilos/style.css",
+		"/C/sites/meusite/style.css",
+		"/C/workspaceJDOS/createmvc/index.html",
+		"/C/workspaceJDOS/createmvc/todo.css",
+		"/C/workspaceJDOS/createmvc/manifest.json",
+		"/C/workspaceJDOS/createmvc/controller.js",
+		"/C/workspaceJDOS/createmvc/main.js",
+		"/C/workspaceJDOS/myappdir/manifest.json",
+		"/C/workspaceJDOS/myappdir/index.html",
+		"/C/workspaceJDOS/myappdir/main.js",
+		"/C/EAGE/Client.v2.42.05/localwkst/BradescoDrivers.xml",
+		"/C/EAGE/Client.v2.42.05/DESE/TerminalFinanceiro/config/BradescoAuthenticatorPrinterDriverConfiguration.xml",
+		"/C/EAGE/Client.v9.00.00/localwkst/BradescoAuthenticatorPrinterDriverConfiguration.xml",
+		"/C/EAGE/Client.v2.42.05/iniciar_teste_depurando.bat",
+		"/C/EAGE/Client.v2.42.05/direto.bat",
+		"/C/bats/beanstf.cmd",
+		"/C/bats/configtf.cmd",
+		"/C/bats/xx.cmd",
+		"/C/EAGE/Client/iniciar_teste_depurando.bat",
+		"/C/EAGE/Client/direto.bat",
+		"/C/sites/meusite/amoemsp.html",
+		"/C/sites/meusite/estilo.css",
+		"/C/sites/meusite/index.html",
+		"/C/Eclipse35/eclipse/eclipse.ini",
+		"/C/Temp/MD5_Eclipse.txt",
+		"/C/workspaceEDI7/Site/ssl/Transferencia_Arquivos/transfarq_transmissoes_cliente_det_carrega_app.asp",
+		"/C/Saraiva/Documentos/Pagamentos/2013/Plano de Saúde/MEDIAL_20131102_COD_BARRAS.txt",
+		"/C/Saraiva/Documentos/Pagamentos/2013/Plano de Saúde/MEDIAL_20131102_COD_BARRAS.pdf",
+		"/C/Users/saraiva/Desktop/hs_err_pid4976.log",
+		"/C/Temp/FORMATOS_BANESE.txt.rpt",
+		"/C/Temp/PERFIL_TRANSACAO.sql",
+		"/C/Temp/USUARIO_TRANSACAO.sql",
+		"/C/Temp/TRANSACAO.sql",
+		"/C/workspaceEDI7/DataBase/010_InclusaoEmPerfilTransacao.sql",
+		"/C/workspaceEDI7/Componentes/Fontes-MS/EdiNet1Adm/CAltTransacoesDominio.cls",
+		"/E/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Adm.CAltTransacoesDominio_30102013.log",
+		"/C/Temp/003_AlteracaoItemDeMenu.sql",
+		"/C/workspaceEDI7/Componentes/Fontes-MS/EdiConnect/CData7.cls",
+		"/E/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1ModAdm.CListaTransacao_30102013.log",
+		"/C/workspaceEDI7/Componentes/Fontes-MS/EdiNet1ModAdm/CListaTransacao.cls",
+		"/C/workspaceEDI7/Componentes/Fontes-MS/EdiNet1Adm/CConTransacoesDominio.cls",
+		"/C/Temp/003b_InclusaoEmPerfilTransacao.sql",
+		"/C/workspaceEDI7/Componentes/Fontes-MS/EdiNet1Arquivo/CDiretorio.cls",
+		"/C/Edi7Cloud/CCO240/REM/CCO.DAT.banese.20131024.00003.REM",
+		"/C/Edi7Cloud/CDEDAT/REM/CDE.DAT.000000.20131024.000006.REM",
+		"/C/Temp/log_alteracoes_20131025.txt",
+		"/C/Edi7Cloud/CCO240/REM/CCO.DAT.BANESE.20131024.00002.REM",
+		"/C/workspaceEDI7/DataBase/FORMATOARQUIVO_FORMATOAQUIVODETALHE.sql",
+		"/C/workspaceEDI7/DataBase/003_AlteracaoItemDeMenu.sql",
+		"/C/Temp/script_para_pegar_navegador.txt",
+		"/C/workspaceEDI7/Componentes/Fontes-MS/EdiNetLoginGenerico/CValida.cls",
+		"/C/Temp/log_de_alteracoes.txt",
+		"/C/Temp/menusbanese.rpt",
+		"/C/sites/meusite/first.asp",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Temp/USUARIOCONFIGURACAO.sql",
+		"/C/Temp/UsuarioConfiguracao_b.sql",
+		"/C/Temp/scripts.sql",
+		"/C/Temp/FORMATOARQUIVO_FORMATOAQUIVODETALHE.sql",
+		"/C/Temp/Autran/FormatoArquivo.rpt",
+		"/C/Temp/FORMATOARQUIVO_7COMM.rpt",
+		"/C/Edi7Cloud/GSPDAT/REM/GSP.CTD.400700.20131017.00001.REM",
+		"/C/Temp/applicationContext-security.xml",
+		"/C/Temp/Autran/Untitled attachment 00111.txt",
+		"/C/Edi7Cloud/GSPDAT/REM/GSP.CTD.E03300.20131017.00007.REM",
+		"/C/Edi7Cloud/GSPDAT/REM/GSP.CTD.E03300.20131017.00005.REM",
+		"/C/workspaceEDI7/Componentes/Fontes-MS/EdiNet1Perfil/CDefinicoes.cls",
+		"/C/workspaceEDI7/Componentes/Fontes-MS/EdiNet1Perfil/CMenu.cls",
+		"/E/Aplicativos/7COMm/edi7web/ws/dll/Log/trace_on_EdiNet1Perfil.CMenu.txt",
+		"/E/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Perfil.CMenu_log.txt",
+		"/C/Temp/20131016_NovoMenu",
+		"/C/Temp/20131016_CriacaoNovoMenu.sql",
+		"/C/workspaceEDI7/DataBase/002_NovoItemDeMenu.sql",
+		"/C/Users/saraiva/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/QMB5XCQI/CCO DAT 100200 20130902 00001.REM",
+		"/C/Temp/EDISTO_005.sql",
+		"/C/workspaceEDI7/DataBase/EDISTO_005.sql",
+		"/C/Temp/ListaDeStatusArquivo.txt",
+		"/C/Temp/S1024X768.html",
+		"/C/workspaceEDI7/Componentes/Fontes-MS/EdiNet1RelOmega/CDefinicoes.cls",
+		"/C/workspaceEDI7/Componentes/Fontes-MS/EdiNet1Arquivo/CApoio.cls",
+		"/C/workspaceEDI7/Componentes/Fontes-MS/EdiNet1Arquivo/modApoio.bas",
+		"/E/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Arquivo.CApoio_11102013.log",
+		"/C/sites/meusite/igual.html",
+		"/C/Temp/lista.txt",
+		"/C/workspaceEDI7/DataBase/UPD_PATHTXOK_001.sql",
+		"/C/Banese/Docs/Transferencia_Arquivos/Transferencia_Arquivos_EDIVAN_V2/transfarq_transmissoes_cliente_det_trans.asp",
+		"/C/Banese/Docs/Transferencia_Arquivos/Transferencia_Arquivos_EDIVAN_V2/transfarq_transmissoes_cliente_det_carrega_app.asp",
+		"/C/Banese/Docs/Transferencia_Arquivos/Transferencia_Arquivos_EDIVAN_V2/transfarq_transmissoes_cliente_det_selecionados.asp",
+		"/C/workspaceEDI7/bats/envios.cmd",
+		"/C/Banese/Docs/Transferencia_Arquivos/Transferencia_Arquivos_EDIVAN_V2/transfarq_transmissoes_cliente_det_trans_b2b.asp",
+		"/C/Banese/Docs/Transferencia_Arquivos/Transferencia_Arquivos_EDIVAN_V2/transfarq_transmissoes_cliente_det.asp",
+		"/C/Banese/Docs/Transferencia_Arquivos/Transferencia_Arquivos_EDIVAN_V2/transfarq_transmissoes_cliente_det_ass.asp",
+		"/C/Temp/ENVIOS/TESTE.XXXXXX.000001.TXT",
+		"/C/Edi7Cloud/CDEDAT/REM/CDE.DAT.000000.20131002.000011.REM",
+		"/C/Temp/LIVRE.00002.REM",
+		"/C/Edi7Cloud/CDEDAT/REM/CDE.DAT.000000.20131002.000022.REM",
+		"/C/Edi7Cloud/CDEDAT/REM/CDE.DAT.000000.20131002.000023.REM",
+		"/C/Edi7Cloud/CDEDAT/REM/CDE.DAT.000000.20131002.000004.REM",
+		"/E/workspaceEdi7/20131001_UPD",
+		"/C/workspaceEDI7/Componentes/Fontes-MS/EdiNet1Arquivo/CProtocolo.cls",
+		"/E/Temp/Select20130926",
+		"/C/workspaceEDI7/fs/src/edi/Consiste.cpp",
+		"/C/workspaceEDI7/fs/src/cnf/CFormatoArquivo.h",
+		"/C/Temp/ENVIOS/SDA.DAT.110434.20130917.07285.REM"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\workspaceEDI7\\Site\\ssl\\Transferencia_Arquivos",
+			"C:\\workspaceEDI7\\Componentes\\Fontes-MS\\EdiNet1Arquivo",
+			"C:\\workspaceEDI7\\fs",
+			"C:\\workspaceEDI7\\Componentes\\Fontes-MS",
+			"C:\\workspaceEDI7\\Componentes\\Fontes-MS\\EdiNet1Usuario",
+			"C:\\workspaceEDI7\\Componentes\\Fontes-MS\\EdiNet1Dom",
+			"C:\\workspaceEDI7\\Componentes\\Fontes-MS\\EdiNet1DispArquivo",
+			"C:\\workspaceEDI7\\Componentes\\Fontes-MS",
+			"E:\\Aplicativos\\7COMm",
+			"E:\\Aplicativos\\7COMm\\edi7web\\ws\\dll",
+			"C:\\workspaceEDI7\\Componentes\\Fontes-MS",
+			"C:\\Banese\\MsSql-tags\\MNT_GMA_19930",
+			"C:\\workspaceEDI7\\Site\\ssl",
+			"E:\\Inetpub\\wwwroot\\edi7web\\site\\ssl",
+			"E:\\Inetpub\\wwwroot\\edi7web\\site\\ssl\\Administracao\\ConsultaClientes, *.asp",
+			"E:\\Inetpub\\wwwroot\\edi7web\\site\\ssl",
+			"C:\\Banese\\MsSql\\trunk\\ws\\Componentes\\Fontes-MS",
+			"\\\\192.168.138.128\\c$\\Inetpub\\wwwroot\\edi7web\\site\\ssl",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"\n    ",
+			"pinpad",
+			"C:\\EAGE\\Client.v2.42.05",
+			"Client.v2.42.05.v9.00.00",
+			"C:\\EAGE\\Client",
+			"C:\\EAGE\\Client.v9.00.00",
+			"C:\\EAGE\\Client.v9.00.00\\",
+			"C:\\EAGE\\Client.%1\\",
+			"C:\\EAGE\\Client\\",
+			"px",
+			"2px",
+			"20px",
+			"10px",
+			"APPLET",
+			"111",
+			"PesquisaTransmissao",
+			"CorFundo=255,255,255&CorBarra=102,102,102&CorTexto=0,0,0&CorFundoBarra=255,255,255",
+			"lFormatoRetorno",
+			"quer",
+			"objData7",
+			", ",
+			"CAMINHO_REGISTRY",
+			"D:\\Aplicativos\\edi7web",
+			"\\DN_I_ManutencaoMelhoria_WS\\ws\\Site\\ssl",
+			"20131025_DN_I_ManutencaoMelhoria",
+			"BANESE",
+			"E03300",
+			"@codDominio",
+			"C:\\TEMP\\DN_I_ManutencaoMelhoria_WS\\BACKUP\\WEB",
+			"DN_I_ManutencaoMelhoria",
+			"D:\\Aplicativos\\edi7web",
+			"\\DN_I_ManutencaoMelhoria",
+			"/",
+			"D /",
+			"   D",
+			"   ",
+			"   D",
+			"ID_COM",
+			"oD",
+			"iLimite",
+			"sQuery",
+			"EDISTO_005",
+			"\\n",
+			"Trace",
+			"'",
+			"rt7_transmissao_001",
+			"adicionar",
+			"VerTerminoTrans",
+			"IniciarTrack",
+			"transmitir",
+			"ListasSelecionados",
+			"submitPage",
+			"transmitir",
+			"ListaSelecionados",
+			"AtualizaValores",
+			"AppletCarregada",
+			"TestaAppletCarregada",
+			"appletcarregada",
+			"DetalheAcumValor1",
+			"offsetvalor1",
+			"buscarProtocolo",
+			"excedido",
+			"ParseString",
+			"CincluiUsuario",
+			"txt_codigo",
+			"EdiNet1Dom.CConTamCodCliente",
+			"CConTodosArquivos",
+			"iCnpj",
+			"ID_COM",
+			"trace",
+			"EDISTO_004",
+			"EDISTO_4",
+			"EdiNetLoginGenerico",
+			"CClientesMas",
+			"EdiNet1Adm",
+			"CDefinicoes",
+			"QuebraString",
+			"img_banese_2.PNG",
+			"transparen",
+			"img",
+			"EdiNet1Usuario",
+			"ValidaCampos",
+			"sBuffer2",
+			"EdiNet1Perfil.CIncluir",
+			"EdiNet1Perfil.CManutencao",
+			"EdiNet1Perfil.CInclir",
+			"objApoio",
+			"aPadrao",
+			"COL_PATH_TXOK",
+			"Processado",
+			"hora com 2 d",
+			"strDataInicial",
+			"Request.Form(\"txt_periodo_de\")",
+			"Per",
+			"sDataParmAte",
+			"Zeros",
+			"strDtInicial",
+			"DATA INICIAL",
+			"aRetorno",
+			"iframe",
+			"padrao destino",
+			"btnAlterar_onClick",
+			"edi7net",
+			"formata_Exemplo",
+			"adicionaValor",
+			"Y",
+			"Zeros",
+			"adicionaValor",
+			"inserir",
+			"help_adm_novo_cliente_alt",
+			"Para inserir um valor especial",
+			"%A",
+			"id=filtro",
+			"bota",
+			"transfarq_transmissoes_cliente_det.bkp_applet",
+			"Per&iacute;odo",
+			"dia1",
+			"filtro",
+			"dia1",
+			"hora1",
+			"dia1",
+			"filtro",
+			"MM_showHideLayers",
+			"dia1",
+			"dataini",
+			"EdiNet1Perfil",
+			"Comando(",
+			"Comando"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Client.v2.42.05",
+			"C:\\EAGE\\Client.v2.42.05",
+			"C:\\EAGE\\Client",
+			"C:\\EAGE\\Client\\",
+			"C:\\EAGE\\Client.v9.00.00\\",
+			"0.0020%",
+			"0.0195%",
+			"0.9765%",
+			"112",
+			"TransmissaoArquivos",
+			"CorFundo=255~255~255&CorBarra=102~102~102&CorTexto=0~0~0&CorFundoBarra=255~255~255",
+			", \\n",
+			"C:\\TEMP\\DN_I_ManutencaoMelhoria_WS\\BACKUP\\WEB",
+			"D:\\Aplicativos\\edi7web\\ws\\Site\\ssl\\",
+			"DN_I_ManutencaoMelhoria_WS",
+			"banese",
+			"BANESE",
+			"@codDominio",
+			"D:\\Aplicativos\\edi7web",
+			"DN_I_ManutencaoMelhoria_WS",
+			"C:\\TEMP\\DN_I_ManutencaoMelhoria_WS\\BACKUP\\WEB",
+			"C:\\TEMP\\DN_I_ManutencaoMelhoria_WS\\BACKUP\\WEB\\",
+			"D:\\Aplicativos\\edi7web",
+			"D:\\Aplicativos\\edi7web\\ws",
+			"\\",
+			"~",
+			"\""
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 182.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 237.0,
+	"status_bar_visible": true
+}
