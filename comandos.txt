@@ -1,0 +1,74 @@
+// Acessar o diretório compartilhado
+# mkdir /mnt/temp -- Acho que este aqui eu não preciso mais dar
+
+// Montando o diretorio compartilhado (para ver o diretório compartilhado)
+# sudo mount -t cifs -o guest //192.168.227.1/Temp /mnt/temp/
+# ls /mnt/temp
+
+===================================================================
+
+Minha istalação do rails vai para o saco, não sei porque então isto resolve
+$ curl -L get.rvm.io | bash -s stable --rails
+$ source $HOME/.rvm/scripts/rvm
+
+Controle de versões
+
+Repositório: git@github.com:jdosaraiva/mybookcase.git
+
+- Relacionando o local ao remoto
+$ git remote add origin git@github.com:jdosaraiva/mybookcase.git
+$ git push -u origin master
+
+git@github.com:jdosaraiva/mybooks.git
+
+Para saber a branch atual
+$ git branch
+
+Criar a branch
+git branch <nome_da_branch>
+$ git branch desenv
+
+Mudar de branch
+git checkout <nome_da_branch>
+$ git checkout desenv
+
+
+===========================================================
+
+Rotina
+
+Trabalhar no branch de desenvolvimento (desenv)
+Começar o dia indo para a branch desenv
+$ git checkou desenv
+
+- Fazer todos os commits aqui
+
+- Verificar se a branch master possui atualizações:
+$ git checkout master
+$ git pull
+
+- Mudar para a branch de desenvolvimento
+$ git checkout desenv
+
+- Informar desenv que último commit válido é o da master
+$ git rebase master
+
+- Fazer o merge da desenv com a master
+$ git checkout master
+$ git merge desenv
+
+- Enviar para o repositório remoto
+$ git push
+
+
+sudo apt-get install build-essential libreadline-dev libssl-dev curl libsqlite3-dev
+
+
+=================================================================
+Compactando
+Uso: tar -czf <nome_do_arquivo_compactado>.tar.gz <nome_do_diretorio_a_compactar>/
+Exemplo: $ tar -czf projetos.tar.gz projetos/
+
+Descompactando
+Uso: tar -xzf <nome_do_arquivo_compactado>.tar.gz
+Exemplo: tar -xzf projetos.tar.gz
