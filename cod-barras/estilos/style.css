@@ -9,15 +9,19 @@ div {
 }
 .container {
 	margin: 0 auto;
-	width: 66.66666%;
+	width: 80%;
 	background-color: #FFF;
 }
 .container h1{
 	text-align: center;
+	margin: 0;
+}
+.grupo {
+	margin: 0.5% auto;
 }
 .footer {
 	margin: 0 auto;
-	width: 66.66666%;
+	width: 80%;
 	text-align: center;
 	background: #444;
 	height: 2.1875%;
@@ -38,8 +42,28 @@ h1 a:hover {
 	background-color: #7E9F19;
 	color: #FFF;
 }
+h3 {
+	font-size: 0.9em;
+}
 .clear {
 	clear: both;
+}
+div .label {
+	font-size: 0.8em;
+	width: 18%;
+	clear: both;
+	display: inline-block;
+	text-align: right;
+}
+input[type=number], input[type=date] {
+	font-family: Tahoma,Arial,Sans-Serif;
+	border-bottom: 0.1px solid #D4D4D4;
+	border-right: 0.1px solid #D4D4D4;
+	border-left: 0.1px solid #7A7A7A;
+	border-top: 0.1% solid #7A7A7A;
+	padding: 0.20%;
+	background: #F4F4F4;
+	font-size: 0.8em;
 }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -51,4 +75,38 @@ input[type=number]::-webkit-outer-spin-button {
 	border: 0.0976% solid #CCC;
 	border-color: #CCC #999 #999 #CCC;
 	padding: 0.9765%;
+}
+.w11 {
+	width: 11px;
+}
+.w35 {
+	width: 35px;
+}
+.w42 {
+	width: 42px;
+}
+.w98 {
+	width: 98px;
+}
+@media (min-width: 640px) {
+	.container {
+		width: 100%;
+	}
+	.footer {
+		width: 100%;
+	}
+	div .label {
+		width: 27%;
+	}
+}
+@media (max-width: 640px) {
+	.container {
+		width: 100%;
+	}
+	.footer {
+		width: 100%;
+	}
+	div .label {
+		width: 140px;
+	}
 }
