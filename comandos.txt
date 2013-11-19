@@ -37,6 +37,10 @@ $ git checkout desenv
 
 Rotina
 
+Para que a sincronização seja realizada e o desenvolvedor tenha em seu computador as novas versões dos arquivos, 
+basta que ele execute o comando:
+$ git pull origin master
+
 Trabalhar no branch de desenvolvimento (desenv)
 Começar o dia indo para a branch desenv
 $ git checkout desenv
@@ -57,8 +61,8 @@ $ git rebase master
 $ git checkout master
 $ git merge desenv
 
-- Enviar para o repositório remoto
-$ git push
+- Ao final das alterações, realizar o envio dos commits para o repositório remoto através da execução do comando 
+$ git push origin master
 
 
 sudo apt-get install build-essential libreadline-dev libssl-dev curl libsqlite3-dev
