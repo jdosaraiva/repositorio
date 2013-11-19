@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "Código de Barras",
+  "version": "0.2",
+  "permissions": [],
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "minimum_chrome_version": "23"
+
+}

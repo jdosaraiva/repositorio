@@ -1,0 +1,54 @@
+body {
+	background: #FFF1D6 url(../images/noise.png);
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana,
+	sans-serif;
+	line-height: 1.6;
+}
+div {
+	display: block;
+}
+.container {
+	margin: 0 auto;
+	width: 66.66666%;
+	background-color: #FFF;
+}
+.container h1{
+	text-align: center;
+}
+.footer {
+	margin: 0 auto;
+	width: 66.66666%;
+	text-align: center;
+	background: #444;
+	height: 2.1875%;
+}
+.footer p {
+	font-family: century gothic, futura;
+	text-transform: uppercase;
+	letter-spacing: 0.1%;
+	font-size: 0.625em;
+	color: #fff;
+	margin: 0;
+}
+h1 a {
+	color: #7E9F19;
+	text-decoration: none;
+}
+h1 a:hover {
+	background-color: #7E9F19;
+	color: #FFF;
+}
+.clear {
+	clear: both;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.dados {
+	background-color: #FFF;
+	border: 0.0976% solid #CCC;
+	border-color: #CCC #999 #999 #CCC;
+	padding: 0.9765%;
+}
