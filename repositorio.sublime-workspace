@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"min",
+				"min-width"
+			],
+			[
+				"t",
+				"text-align"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
 				"s",
 				"script"
 			],
@@ -67,9 +79,17 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 196.0,
+		"height": 311.0,
 		"selected_items":
 		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"2",
+				"Preferences: 2pdf Key Bindings – Default"
+			],
 			[
 				"Inst",
 				"Package Control: Install Package"
@@ -79,7 +99,7 @@
 				"Set Syntax: ASP"
 			]
 		],
-		"width": 400.0
+		"width": 504.0
 	},
 	"console":
 	{
@@ -96,11 +116,20 @@
 	},
 	"file_history":
 	[
+		"/C/suportedbdc_logs/intranet/agse/Console-AGSE.log",
+		"/C/Temp/Logs/Console-AGSE.log.txt",
+		"/C/Temp/Relatório - DressCode Fonte.htm",
+		"/C/Temp/Logs/AWB-AQ-Bradesco.log2013-11-19.txt",
+		"/C/Temp/Logs/AWB-AQ-Bradesco.log.txt",
+		"/C/Temp/Logs/Console-AGSE.log2013-11-19.txt",
+		"/C/workspaceJDOS/repositorio/cod-barras/estilos/style.css",
+		"/C/workspaceJDOS/repositorio/cod-barras/window.html",
+		"/C/workspaceJDOS/repositorio/cod-barras/background.js",
+		"/C/apps/SublimeText/Data/Packages/2pdf/Default (Windows).sublime-keymap",
+		"/C/apps/SublimeText/Data/Packages/2pdf/2pdf.sublime-settings",
+		"/C/Saraiva/Documentos/Pagamentos/2013/Cartoes/Boletos/D_CITI_VISA_9065_20130926_COD_BARRAS.TXT",
 		"/C/workspaceJDOS/repositorio/comandos.txt",
 		"/C/workspaceJDOS/repositorio/cod-barras/manifest.json",
-		"/C/workspaceJDOS/repositorio/cod-barras/background.js",
-		"/C/workspaceJDOS/repositorio/cod-barras/window.html",
-		"/C/workspaceJDOS/repositorio/cod-barras/estilos/style.css",
 		"/C/sites/meusite/style.css",
 		"/C/workspaceJDOS/createmvc/index.html",
 		"/C/workspaceJDOS/createmvc/todo.css",
@@ -240,6 +269,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"h1",
+			"\n	",
 			"\n    ",
 			"pinpad",
 			"C:\\EAGE\\Client.v2.42.05",
@@ -365,9 +396,7 @@
 			"MM_showHideLayers",
 			"dia1",
 			"dataini",
-			"EdiNet1Perfil",
-			"Comando(",
-			"Comando"
+			"EdiNet1Perfil"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -451,6 +480,10 @@
 	"output.find_results":
 	{
 		"height": 182.0
+	},
+	"output.git":
+	{
+		"height": 100.0
 	},
 	"replace":
 	{
