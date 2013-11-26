@@ -1,4 +1,4 @@
-package leilao;
+package br.com.caelum.leilao.servico;
 
 public class Lance {
 

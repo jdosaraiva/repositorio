@@ -1,4 +1,4 @@
-package leilao;
+package br.com.caelum.leilao.servico;
 
 import java.util.ArrayList;
 import java.util.List;

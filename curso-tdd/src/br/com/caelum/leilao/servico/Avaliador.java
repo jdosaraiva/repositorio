@@ -1,4 +1,4 @@
-package leilao;
+package br.com.caelum.leilao.servico;
 
 public class Avaliador {
 
@@ -6,15 +6,25 @@ public class Avaliador {
 
 	private double menorDeTodos = Double.POSITIVE_INFINITY;
 
+	private double lanceMedio = 0;
+
     public void avalia(Leilao leilao) {
+    	
+    	double sum = 0;
 
         for(Lance lance : leilao.getLances()) {
             if(lance.getValor() > maiorDeTodos) {
                 maiorDeTodos = lance.getValor();
             }
-            else if(lance.getValor() < menorDeTodos) {
+            if(lance.getValor() < menorDeTodos) {
                 menorDeTodos = lance.getValor();
             }
+            
+            sum += lance.getValor();
+        }
+        
+        if (leilao.getLances().size() > 0) {
+        	lanceMedio = sum / leilao.getLances().size();
         }
  
     }
@@ -22,7 +32,11 @@ public class Avaliador {
     public double getMaiorLance() { 
         return maiorDeTodos; 
     }
-	public double getMenorDeTodos() {
+	public double getMenorLance() {
 		return menorDeTodos;
+	}
+	
+	public double getLanceMedio() {
+		return lanceMedio;
 	}
 }
