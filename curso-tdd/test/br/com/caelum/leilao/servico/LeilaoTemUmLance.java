@@ -25,12 +25,8 @@ public class LeilaoTemUmLance extends TypeSafeMatcher<Leilao> {
 	@Override
 	protected boolean matchesSafely(Leilao actual) {
 
-		for (Lance lance : actual.getLances()) {
-			if (lance.equals(expected))
-				return true;
-		}
-
-		return false;
+		return actual.getLances().contains(expected);
+		
 	}
 
 }
