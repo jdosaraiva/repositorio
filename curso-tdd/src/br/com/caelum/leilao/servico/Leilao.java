@@ -19,6 +19,9 @@ public class Leilao {
 	}
 
 	public void propoe(Lance lance) {
+		if (lance.getValor() <= 0)
+			throw new IllegalArgumentException("O valor do Lance deve ser maior que zero");
+		
 		if (lances.isEmpty() || podeDarLance(lance.getUsuario())) {
 			lances.add(lance);
 		}
