@@ -54,10 +54,6 @@ public class AvaliadorTest {
 
 		leiloeiro.avalia(leilao);
 
-		// comparando a saida com o esperado
-		double maiorEsperado = 400;
-		double menorEsperado = 250;
-
 		assertThat(leiloeiro.getMenorLance(), equalTo(250.0));
 	    assertThat(leiloeiro.getMaiorLance(), equalTo(400.0));
 	}
@@ -73,10 +69,6 @@ public class AvaliadorTest {
 				.constroi();
 
 		leiloeiro.avalia(leilao);
-
-		// comparando a saida com o esperado
-		double maiorEsperado = 400;
-		double menorEsperado = 100;
 
 		assertThat(leiloeiro.getMenorLance(), equalTo(100.0));
 	    assertThat(leiloeiro.getMaiorLance(), equalTo(400.0));
