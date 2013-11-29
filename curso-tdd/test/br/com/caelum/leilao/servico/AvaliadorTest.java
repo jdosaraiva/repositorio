@@ -1,10 +1,10 @@
 package br.com.caelum.leilao.servico;
 
+import static br.com.caelum.leilao.servico.LeilaoTemUmLance.temUmLance;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasItems;
 import static org.junit.Assert.assertEquals;
-import static br.com.caelum.leilao.servico.LeilaoTemUmLance.temUmLance;
 
 import java.util.List;
 
@@ -46,7 +46,7 @@ public class AvaliadorTest {
 	@Test
 	public void deveEntenderLancesEmOrdemCrescente() {
 
-		Leilao leilao = new TestDataBuilder().para("Playstation 3 Novo")
+		Leilao leilao = new CriadorDeLeilao().para("Playstation 3 Novo")
 				.lance(maria, 250.0)
 				.lance(joao, 300.0)
 				.lance(jose, 400.0)
@@ -61,7 +61,7 @@ public class AvaliadorTest {
 	@Test
 	public void deveEntenderLancesEmOrdemDecrescente() {
 
-		Leilao leilao = new TestDataBuilder().para("Playstation 3 Novo")
+		Leilao leilao = new CriadorDeLeilao().para("Playstation 3 Novo")
 				.lance(jose,  400.0)
 				.lance(joao,  300.0)
 				.lance(maria, 200.0)
@@ -76,7 +76,7 @@ public class AvaliadorTest {
 
 	@Test
 	public void deveEntenderLeilaoComApenasUmLance() {
-		Leilao leilao = new TestDataBuilder()
+		Leilao leilao = new CriadorDeLeilao()
 				.para("Playstation 3 Novo")
 				.lance(joao, 1000.0)
 				.constroi();
@@ -90,7 +90,7 @@ public class AvaliadorTest {
 	@Test
 	public void deveEntenderLeilaoComLancesAleatorios() {
 
-		Leilao leilao = new TestDataBuilder()
+		Leilao leilao = new CriadorDeLeilao()
 				.para("Sabre de Luz do mestre Yoda")
 				.lance(joao,  200.0)
 				.lance(maria, 450.0)
@@ -108,7 +108,7 @@ public class AvaliadorTest {
 
 	@Test
 	public void deveEncontrarOsTresMaioresLances() {
-		Leilao leilao = new TestDataBuilder()
+		Leilao leilao = new CriadorDeLeilao()
 		        .para("Playstation 3 Novo")
 				.lance(joao,  100.0)
 				.lance(maria, 200.0)
@@ -131,7 +131,7 @@ public class AvaliadorTest {
 	@Test
 	public void pegaAmediaDosLances() {
 
-		Leilao leilao = new TestDataBuilder().para("Playstation 3 Novo")
+		Leilao leilao = new CriadorDeLeilao().para("Playstation 3 Novo")
 				.lance(maria, 200.0)
 				.lance(joao,  300.0)
 				.lance(jose,  400.0)
@@ -144,7 +144,7 @@ public class AvaliadorTest {
 
 	@Test
 	public void umLeilaoCom5LancesDeveDevolverOsTresMaiores() {
-		Leilao leilao = new TestDataBuilder()
+		Leilao leilao = new CriadorDeLeilao()
 				.para("Sabre de Luz do mestre Yoda")
 				.lance(joao,  450.0)
 				.lance(maria, 120.0)
@@ -167,7 +167,7 @@ public class AvaliadorTest {
 
 	@Test
 	public void umLeilaoCom2LancesDeveDevolverOsLancesQueEncontrou() {
-		Leilao leilao = new TestDataBuilder()
+		Leilao leilao = new CriadorDeLeilao()
 				.para("Sabre de Luz do mestre Yoda")
 				.lance(joao,  450.0)
 				.lance(maria, 120.0)
@@ -186,7 +186,7 @@ public class AvaliadorTest {
 
 	@Test(expected = RuntimeException.class)
 	public void naoDeveAvaliarLeiloesSemNenhumLanceDado() {
-		Leilao leilao = new TestDataBuilder()
+		Leilao leilao = new CriadorDeLeilao()
 				.para("Playstation 3 Novo")
 				.constroi();
 
@@ -195,7 +195,7 @@ public class AvaliadorTest {
 	
 	@Test
 	public void verificaSeUmDeterminadoLanceEstaNoLeilao() {
-		Leilao leilao = new TestDataBuilder()
+		Leilao leilao = new CriadorDeLeilao()
 			.para("Playstation 3 Novo")
 			.lance(joao,  2000.0)
 			.lance(maria, 1000.0)

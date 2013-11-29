@@ -1,15 +1,16 @@
 package br.com.caelum.leilao.servico;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class Leilao {
 
-	private String item;
 	private List<Lance> lances = new ArrayList<Lance>();
+	private Calendar data;
+	private boolean encerrado;
 
 	public Leilao(String item) {
-		this.item = item;
 	}
 
 	public List<Lance> getLances() {
@@ -60,6 +61,24 @@ public class Leilao {
 
 	private Lance ultimoLanceDado() {
 		return lances.get(lances.size() - 1);
+	}
+
+	public void encerra() {
+		this.encerrado = true;
+	}
+
+	public Calendar getData() {
+		return this.data;
+	}
+
+	public boolean isEncerrado() {
+		return encerrado;
+	}
+
+	public void setData(Calendar antiga) {
+
+		this.data = antiga;
+		
 	}
 
 }

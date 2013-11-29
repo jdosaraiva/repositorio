@@ -1,6 +1,6 @@
 package br.com.caelum.leilao.servico;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
