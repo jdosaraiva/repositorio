@@ -11,6 +11,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import br.com.caelum.pm73.dominio.Lance;
 import br.com.caelum.pm73.dominio.Leilao;
 import br.com.caelum.pm73.dominio.Usuario;
 
@@ -275,4 +276,97 @@ public class LeilaoDaoTests {
         // garantindo que a query funcionou
         assertEquals(0, leiloes.size());
     }	
+	
+	@Test
+	public void deveRetornarOsLeiloesNaoEncerradosDeValoreNoRangeComAoMenosQuatroLances() {
+
+        Usuario mauricio = new Usuario("Mauricio Aniche", "mauricio@aniche.com.br");
+        Usuario joao = new Usuario("joao", "joao@aniche.com.br");
+        Usuario maria = new Usuario("maria", "mria@aniche.com.br");
+
+        // criando os leiloes, cada um com uma data
+        Leilao leilao1 = new LeilaoBuilder()
+				.comNome("Geladeira")
+				.comValor(1700.0)
+				.comDono(mauricio)
+				.constroi();
+        
+        Calendar dataLance = Calendar.getInstance();
+        
+        leilao1.adicionaLance(new Lance(dataLance, mauricio, 100.0, leilao1));
+        leilao1.adicionaLance(new Lance(dataLance, joao, 200.0, leilao1));
+        leilao1.adicionaLance(new Lance(dataLance, maria, 300.0, leilao1));
+        leilao1.adicionaLance(new Lance(dataLance, mauricio, 400.0, leilao1));
+		
+        // criando os leiloes, cada um com uma data
+        Leilao leilao2 = new LeilaoBuilder()
+				.comNome("XBox")
+				.comValor(700.0)
+				.comDono(mauricio)
+				.constroi();
+
+        leilao2.adicionaLance(new Lance(dataLance, mauricio, 100.0, leilao2));
+        leilao2.adicionaLance(new Lance(dataLance, joao, 200.0, leilao2));
+	
+        // persistindo os objetos no banco
+        usuarioDao.salvar(mauricio);
+        usuarioDao.salvar(joao);
+        usuarioDao.salvar(maria);
+        leilaoDao.salvar(leilao1);
+        leilaoDao.salvar(leilao2);
+
+        // invocando o metodo para testar
+        List<Leilao> leiloes = leilaoDao.disputadosEntre(700.0, 1700.0);
+        
+        // garantindo que a query funcionou
+        assertEquals(1, leiloes.size());
+        assertEquals("Geladeira", leiloes.get(0).getNome());
+	}
+	
+	@Test
+	public void naoDeveRetornarLeiloesEncerradosOuComTresOuMenosLances() {
+
+        Usuario mauricio = new Usuario("Mauricio Aniche", "mauricio@aniche.com.br");
+        Usuario joao = new Usuario("joao", "joao@aniche.com.br");
+        Usuario maria = new Usuario("maria", "mria@aniche.com.br");
+
+        // criando os leiloes, cada um com uma data
+        Leilao leilao1 = new LeilaoBuilder()
+				.comNome("Geladeira")
+				.comValor(1700.0)
+				.comDono(mauricio)
+				.encerrado()
+				.constroi();
+        
+        Calendar dataLance = Calendar.getInstance();
+        
+        leilao1.adicionaLance(new Lance(dataLance, mauricio, 100.0, leilao1));
+        leilao1.adicionaLance(new Lance(dataLance, joao, 200.0, leilao1));
+        leilao1.adicionaLance(new Lance(dataLance, maria, 300.0, leilao1));
+        leilao1.adicionaLance(new Lance(dataLance, mauricio, 400.0, leilao1));
+		
+        // criando os leiloes, cada um com uma data
+        Leilao leilao2 = new LeilaoBuilder()
+				.comNome("XBox")
+				.comValor(700.0)
+				.comDono(mauricio)
+				.constroi();
+
+        leilao2.adicionaLance(new Lance(dataLance, mauricio, 100.0, leilao2));
+        leilao2.adicionaLance(new Lance(dataLance, joao, 200.0, leilao2));
+        leilao2.adicionaLance(new Lance(dataLance, maria, 300.0, leilao2));
+	
+        // persistindo os objetos no banco
+        usuarioDao.salvar(mauricio);
+        usuarioDao.salvar(joao);
+        usuarioDao.salvar(maria);
+        leilaoDao.salvar(leilao1);
+        leilaoDao.salvar(leilao2);
+
+        // invocando o metodo para testar
+        List<Leilao> leiloes = leilaoDao.disputadosEntre(700.0, 1700.0);
+        
+        // garantindo que a query funcionou
+        assertEquals(0, leiloes.size());
+	}
 }
