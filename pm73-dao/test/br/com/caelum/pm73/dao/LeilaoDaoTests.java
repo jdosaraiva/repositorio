@@ -1,7 +1,8 @@
 package br.com.caelum.pm73.dao;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.*;
 
 import java.util.Calendar;
 import java.util.List;
@@ -368,5 +369,122 @@ public class LeilaoDaoTests {
         
         // garantindo que a query funcionou
         assertEquals(0, leiloes.size());
+	}
+	
+	@Test
+	public void deveRetornarUmaListaDeLeiloesQueOUsuarioDeuLances() {
+
+		Usuario mauricio = new Usuario("Mauricio Aniche", "mauricio@aniche.com.br");
+        Usuario joao = new Usuario("joao", "joao@aniche.com.br");
+        Usuario maria = new Usuario("maria", "mria@aniche.com.br");
+        
+        Calendar dataLance = Calendar.getInstance();
+
+        // criando os leiloes
+        Leilao leilao1 = new LeilaoBuilder()
+				.comNome("Geladeira")
+				.comValor(1700.0)
+				.comDono(mauricio)
+				.comLance(dataLance, joao, 1700.0)
+				.comLance(dataLance, maria, 1750.0)
+				.comLance(dataLance, mauricio, 1800.0)
+				.comLance(dataLance, joao, 1850.0)
+				.encerrado()
+				.constroi();
+		
+        Leilao leilao2 = new LeilaoBuilder()
+				.comNome("XBox")
+				.comValor(700.0)
+				.comDono(joao)
+				.comLance(dataLance, joao, 700.0)
+				.comLance(dataLance, maria, 750.0)
+				.comLance(dataLance, mauricio, 800.0)
+				.comLance(dataLance, joao, 850.0)
+				.encerrado()
+				.constroi();
+
+        // persistindo os objetos no banco
+        usuarioDao.salvar(mauricio);
+        usuarioDao.salvar(joao);
+        usuarioDao.salvar(maria);
+        leilaoDao.salvar(leilao1);
+        leilaoDao.salvar(leilao2);
+        
+        
+        // invocando o metodo para testar
+        List<Leilao> leiloes = leilaoDao.listaLeiloesDoUsuario(joao);
+
+        // garantindo que a query funcionou
+        assertEquals(2, leiloes.size());
+	}
+	
+	@Test
+	public void deveRetornarOValorMedioDosLancesDeUmUsuario() {
+
+		Usuario mauricio = new Usuario("Mauricio Aniche", "mauricio@aniche.com.br");
+        Usuario joao = new Usuario("joao", "joao@aniche.com.br");
+        Usuario maria = new Usuario("maria", "mria@aniche.com.br");
+        
+        Calendar dataLance = Calendar.getInstance();
+
+        // criando os leiloes
+        Leilao leilao1 = new LeilaoBuilder()
+				.comNome("Geladeira")
+				.comValor(1700.0)
+				.comDono(mauricio)
+				.comLance(dataLance, joao, 1700.0)
+				.comLance(dataLance, maria, 1750.0)
+				.comLance(dataLance, mauricio, 800.0)
+				.comLance(dataLance, joao, 1850.0)
+				.encerrado()
+				.constroi();
+		
+        Leilao leilao2 = new LeilaoBuilder()
+				.comNome("XBox")
+				.comValor(700.0)
+				.comDono(joao)
+				.comLance(dataLance, joao, 700.0)
+				.comLance(dataLance, maria, 750.0)
+				.comLance(dataLance, mauricio, 800.0)
+				.comLance(dataLance, joao, 850.0)
+				.encerrado()
+				.constroi();
+
+        // persistindo os objetos no banco
+        usuarioDao.salvar(mauricio);
+        usuarioDao.salvar(joao);
+        usuarioDao.salvar(maria);
+        leilaoDao.salvar(leilao1);
+        leilaoDao.salvar(leilao2);
+        
+        
+        // invocando o metodo para testar
+        double valorMedio = leilaoDao.getValorInicialMedioDoUsuario(mauricio);
+
+        // garantindo que a query funcionou
+		assertThat(valorMedio, equalTo(800.0));
+	}
+	
+	@Test
+	public void deveDeletarUmLeilao() {
+		Usuario usuario = new Usuario("Mauricio Aniche", "mauricio@aniche.com.br");
+
+		usuarioDao.salvar(usuario);
+		
+        // criando os leiloes
+        Leilao leilao = new LeilaoBuilder()
+				.comNome("Geladeira")
+				.comValor(1700.0)
+				.comDono(usuario)
+				.constroi();
+        
+        leilaoDao.salvar(leilao);
+        leilaoDao.deleta(leilao);
+
+		// envia tudo para o banco de dados        
+        session.flush();
+        
+        assertNull(leilaoDao.porId(leilao.getId()));
+
 	}
 }

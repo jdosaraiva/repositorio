@@ -48,4 +48,43 @@ public class UsuarioDaoTest {
 
         assertNull(usuarioDoBanco);
     }
+    
+    
+	@Test
+	public void deveDeletarUmUsuario() {
+		Usuario usuario = new Usuario("Mauricio Aniche", "mauricio@aniche.com.br");
+
+		usuarioDao.salvar(usuario);
+		usuarioDao.deletar(usuario);
+
+		// envia tudo para o banco de dados        
+        session.flush();
+        
+		Usuario usuarioNoBanco = usuarioDao.porNomeEEmail("Mauricio Aniche", "mauricio@aniche.com.br");
+
+		assertNull(usuarioNoBanco);
+
+	}
+	
+	@Test
+	public void deveAlterarUmUsuario() {
+		Usuario usuario = new Usuario("Mauricio Aniche", "mauricio@aniche.com.br");
+
+		usuarioDao.salvar(usuario);
+		
+		usuario.setNome("Mauricio Manieri");
+
+		// invocando o metódo a testar.
+		usuarioDao.atualizar(usuario);
+		
+		// envia tudo para o banco de dados        
+        session.flush();
+        
+		Usuario usuarioNoBanco1 = usuarioDao.porNomeEEmail("Mauricio Aniche", "mauricio@aniche.com.br");
+		Usuario usuarioNoBanco2 = usuarioDao.porNomeEEmail("Mauricio Manieri", "mauricio@aniche.com.br");
+
+		assertNull(usuarioNoBanco1);
+        assertEquals("Mauricio Manieri", usuarioNoBanco2.getNome());
+        assertEquals("mauricio@aniche.com.br", usuarioNoBanco2.getEmail());
+	}
 }
