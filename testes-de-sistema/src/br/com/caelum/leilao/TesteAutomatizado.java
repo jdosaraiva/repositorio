@@ -20,11 +20,11 @@ public class TesteAutomatizado {
         // abre o IE
         // WebDriver driver = new InternetExplorerDriver();
         
-        System.setProperty("webdriver.chrome.driver","D:\\Ferramental\\chromedriver_win32\\chromedriver");
+        System.setProperty("webdriver.chrome.driver","D:\\Ferramental\\chromedriver_win32\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         // acessa o site do google
-        driver.get("http://www.bing.com/");
+        driver.get("http://www.google.com.br/");
 
         // digita no campo com nome "q" do google
         WebElement campoDeTexto = driver.findElement(By.name("q"));
