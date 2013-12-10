@@ -18,9 +18,9 @@ public class TesteAutomatizado {
 		// Com o firefox é lançada uma exception
 
         // abre o IE
-        // WebDriver driver = new InternetExplorerDriver();
+		// WebDriver driver = new InternetExplorerDriver();
         
-        System.setProperty("webdriver.chrome.driver","D:\\Ferramental\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","c:\\Ferramental\\chromedriver_win32\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         // acessa o site do google
