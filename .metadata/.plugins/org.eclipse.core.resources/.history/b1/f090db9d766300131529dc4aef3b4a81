@@ -1,0 +1,36 @@
+package br.com.sevencomm.agse.acertocontabil;
+
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+public class AcertoContabilPage {
+
+	public static void main(String[] args) {
+		
+		WebDriver browser = new InternetExplorerDriver();
+		
+		browser.get("http://10.100.49.146:9080/agse");
+		
+	     //Code to handle Basic Browser Authentication in Selenium.
+        Alert aa = browser.switchTo().alert();
+        aa.sendKeys("username");   
+        
+        Robot a = new Robot();
+        a.keyPress(KeyEvent.VK_ENTER);
+        a.keyPress(KeyEvent.VK_ENTER);
+        
+        Thread.sleep(5000);
+        
+        Alert bb = browser.switchTo().alert();
+        bb.sendKeys("password");
+    
+        a.keyPress(KeyEvent.VK_ENTER);
+        a.keyPress(KeyEvent.VK_ENTER);
+
+	}
+
+}
