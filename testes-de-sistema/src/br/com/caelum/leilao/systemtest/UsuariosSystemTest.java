@@ -19,6 +19,9 @@ public class UsuariosSystemTest {
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Ferramental\\chromedriver_win32\\chromedriver.exe");
 		driver = new ChromeDriver();
+
+		driver.get("localhost:8080/apenas-teste/limpa");
+		
 		this.usuarios = new UsuariosPage(driver);
 	}
 
@@ -66,6 +69,8 @@ public class UsuariosSystemTest {
 
 	@Test
 	public void deveExcluirUmUsuario() {
+		usuarios.visita();
+		
 		usuarios.novo().cadastra("Jose Saraiva", "jd.saraiva@gmail.com");
 		
         assertTrue(usuarios.existeNaListagem("Jose Saraiva", "jd.saraiva@gmail.com"));
@@ -74,6 +79,19 @@ public class UsuariosSystemTest {
 
         assertFalse(usuarios.existeNaListagem("Jose Saraiva", "jd.saraiva@gmail.com"));	
     }
+	
+	@Test
+	public void deveAlterarUmUsuario() {
+		usuarios.visita();
+
+		usuarios.novo().cadastra("Paulo Henrique", "paulo@henrique.com");
+		
+        usuarios.alteraUsuarioNaPosicao(1).edita("Paulo Henrique Ganso", "ph@ganso.com");
+
+        assertTrue(usuarios.existeNaListagem("Paulo Henrique Ganso", "ph@ganso.com"));	
+    }
+	
+	
 
 	@After
 	public void encerra() {

@@ -13,7 +13,7 @@ class UsuariosPage {
 	}
 
 	public void visita() {
-		driver.get("localhost:8080/usuarios");
+		driver.get(new URLDaAplicacao().getUrlBase() +  "/usuarios");
 	}
 
 	public NovoUsuarioPage novo() {
@@ -45,5 +45,12 @@ class UsuariosPage {
 		Alert alert = driver.switchTo().alert();
 		// confirma
 		alert.accept();
+	}
+	
+	public AlteraUsuarioPage alteraUsuarioNaPosicao(int posicao) {
+		// clica no link de editar usuario
+		driver.findElements(By.linkText("editar")).get(posicao-1).click();		
+		// retorna a classe que representa a nova pagina
+		return new AlteraUsuarioPage(driver);
 	}
 }
