@@ -1,0 +1,14 @@
+package br.com.caelum.orcamento;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ICCCTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

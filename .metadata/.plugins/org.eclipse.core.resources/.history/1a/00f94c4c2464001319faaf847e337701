@@ -1,0 +1,23 @@
+package br.com.caelum.investimento;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class RealizadorDeInvestimentosTest {
+
+	@Test
+	public void test() {
+        ContaBancaria conta = new ContaBancaria(10000.0);
+
+        Investimento conservador = new Conservador();
+        Investimento moderado = new Moderado();
+        Investimento arrojado = new Arrojado();
+
+        RealizadorDeInvestimentos realizador = new RealizadorDeInvestimentos();
+
+		
+		fail("Not yet implemented");
+	}
+
+}
