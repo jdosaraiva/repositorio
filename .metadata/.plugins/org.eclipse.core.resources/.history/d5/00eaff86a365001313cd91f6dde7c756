@@ -19,23 +19,16 @@ public class RealizadorDeInvestimentosTest {
         
         realizador.realizaInvestimento(conta, conservador);
 		assertThat(conta.getSaldo(), equalTo(10600.0));
+
 		
-		conta.setSaldo(10000.0);
-		
-		double min = 10000.0 * (1 + (0.025 * 0.75));
-		double max = 10000.0 * (1 + (0.070 * 0.75));
+		double min = 10600.0 * (1 + (0.025 * 0.75));
+		double max = 10600.0 * (1 + (0.070 * 0.75));
 		
 		realizador.realizaInvestimento(conta, moderado);
 		assertThat(conta.getSaldo(), anyOf(equalTo(min), equalTo(max)));
 
-		conta.setSaldo(10000.0);
-
-		double avg = 10000.0 * (1 + (0.03 * 0.75));
-		min = 10000.0 * (1 + (0.05 * 0.75));
-		max = 10000.0 * (1 + (0.06 * 0.75));
-		
 		realizador.realizaInvestimento(conta, arrojado);
-		assertThat(conta.getSaldo(), anyOf(equalTo(min), equalTo(avg), equalTo(max)));
+		assertThat(conta.getSaldo(), equalTo(11203.703125));
 		
 	}
 

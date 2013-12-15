@@ -35,7 +35,7 @@ public class RealizadorDeInvestimentosTest {
 		max = 10000.0 * (1 + (0.06 * 0.75));
 		
 		realizador.realizaInvestimento(conta, arrojado);
-		assertThat(conta.getSaldo(), anyOf(equalTo(min), equalTo(avg), equalTo(max)));
+		assertThat(conta.getSaldo(), anyOf(equalTo(min), anyOf(equalTo(avg), equalTo(max));
 		
 	}
 
