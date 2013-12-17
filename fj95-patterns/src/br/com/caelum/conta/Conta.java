@@ -1,10 +1,14 @@
 package br.com.caelum.conta;
 
+import java.util.GregorianCalendar;
+import java.util.List;
+
 public class Conta {
 	private String nome;
 	private double saldo;
 	private String agencia;
 	private int numero;
+	private GregorianCalendar dataAbertura;
 
 	public String getAgencia() {
 		return agencia;
@@ -44,6 +48,14 @@ public class Conta {
 
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
+	}
+
+	public GregorianCalendar getDataAbertura() {
+		return dataAbertura;
+	}
+
+	public void setDataAbertura(GregorianCalendar dataAbertura) {
+		this.dataAbertura = dataAbertura;
 	}
 
 }

@@ -3,8 +3,8 @@ package br.com.caelum.orcamento;
 public class TesteDeImpostos {
 
 	public static void main(String[] args) {
-		Imposto iss = new ISS();
-		Imposto icms = new ICMS();
+		Imposto iss = new ISS(null);
+		Imposto icms = new ICMS(null);
 
 		Orcamento orcamento = new Orcamento(500.0);
 

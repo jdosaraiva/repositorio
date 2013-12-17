@@ -1,6 +1,10 @@
 package br.com.caelum.orcamento;
 
-public class IHIT implements Imposto {
+public class IHIT extends Imposto {
+
+	public IHIT(Imposto outroImposto) {
+		super(outroImposto);
+	}
 
 	@Override
 	public double calcula(Orcamento orcamento) {

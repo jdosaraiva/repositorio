@@ -17,7 +17,7 @@ public class IHITTest {
 			.comItem("TABLET", 500.0)
 			.constroi();
 		
-		Imposto ihit = new IHIT();
+		Imposto ihit = new IHIT(null);
 		
 		assertThat(230.0, equalTo(ihit.calcula(orcamento)));
 	}
@@ -30,7 +30,7 @@ public class IHITTest {
 			.comItem("SMART PHONE", 500.0)
 			.constroi();
 		
-		Imposto ihit = new IHIT();
+		Imposto ihit = new IHIT(null);
 		
 		assertThat(20.0, equalTo(ihit.calcula(orcamento)));
 	}

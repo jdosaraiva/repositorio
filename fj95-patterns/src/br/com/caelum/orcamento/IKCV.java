@@ -2,6 +2,14 @@ package br.com.caelum.orcamento;
 
 public class IKCV extends TemplateDeImpostoCondicional {
 
+	public IKCV(Imposto outroImposto) {
+		super(outroImposto);
+	}
+	
+	public IKCV() {
+		super();
+	}
+
 	@Override
 	public boolean deveUsarMaximaTaxacao(Orcamento orcamento) {
 		return orcamento.getValor() > 500

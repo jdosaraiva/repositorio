@@ -1,6 +1,14 @@
 package br.com.caelum.orcamento;
 
-public class ICMS implements Imposto {
+public class ICMS extends Imposto {
+
+	public ICMS(Imposto outroImposto) {
+		super(outroImposto);
+	}
+	
+	public ICMS() {
+		super();
+	}
 
 	@Override
 	public double calcula(Orcamento orcamento) {

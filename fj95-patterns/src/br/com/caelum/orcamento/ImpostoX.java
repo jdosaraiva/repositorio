@@ -2,6 +2,10 @@ package br.com.caelum.orcamento;
 
 public class ImpostoX extends TemplateDeImpostoCondicional {
 
+	public ImpostoX(Imposto outroImposto) {
+		super(outroImposto);
+	}
+
 	@Override
 	public boolean deveUsarMaximaTaxacao(Orcamento orcamento) {
 		return orcamento.getValor() > 500;
