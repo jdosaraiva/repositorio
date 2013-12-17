@@ -7,12 +7,12 @@ public class OrcamentoBuilder {
 	
 	private Orcamento orc;
 	
-	public OrcamentoBuilder(Orcamento orcamento) {
-		this.orc = orcamento;
+	public OrcamentoBuilder(double valor) {
+		this.orc = new Orcamento(valor);
 	}
 	
-	public OrcamentoBuilder addItem(Item item) {
-		this.orc.getItens().add(item);
+	public OrcamentoBuilder comItem(String nome, double valor) {
+		this.orc.getItens().add(new Item(nome, valor));
 		return this;
 	}
 	

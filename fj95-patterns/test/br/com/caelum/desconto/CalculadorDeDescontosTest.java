@@ -6,9 +6,6 @@ import static org.hamcrest.Matchers.equalTo;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.fail;
-
-import br.com.caelum.orcamento.Item;
 import br.com.caelum.orcamento.Orcamento;
 
 public class CalculadorDeDescontosTest {
@@ -21,13 +18,13 @@ public class CalculadorDeDescontosTest {
 
 	@Test
 	public void deveCalcularUmDescontoPor5ItensSimples() {
-		orcamento = new OrcamentoBuilder(new Orcamento(1000))
-				.addItem(new Item("CANETA",    100.0))
-				.addItem(new Item("LAPIS",     100.0))
-				.addItem(new Item("BORRACHA",  100.0))
-				.addItem(new Item("REGUA",     100.0))
-				.addItem(new Item("APONTADOR", 100.0))
-				.addItem(new Item("LAPISEIRA", 100.0))
+		orcamento = new OrcamentoBuilder(1000)
+				.comItem("LAPIS",  100.0)
+				.comItem("LAPIS",  100.0)
+				.comItem("CANETA", 200.0)
+				.comItem("CANETA", 200.0)
+				.comItem("CANETA", 200.0)
+				.comItem("CANETA", 200.0)
 				.constroi();
 		
 		Desconto d1 = new DescontoPorCincoItens();
@@ -37,8 +34,8 @@ public class CalculadorDeDescontosTest {
 
 	@Test
 	public void deveCalcularUmDescontoPorMaisDeQuinhentosReais() {
-		orcamento = new OrcamentoBuilder(new Orcamento(1000))
-				.addItem(new Item("CANETA",    100.0))
+		orcamento = new OrcamentoBuilder(1000)
+				.comItem("TABLET NEXUS 7", 1000.0)
 				.constroi();
 		
 		Desconto d1 = new DescontoPorCincoItens();
@@ -54,9 +51,9 @@ public class CalculadorDeDescontosTest {
 
 	@Test
 	public void deveCalcularUmDescontoPorVendaCasada() {
-		orcamento = new OrcamentoBuilder(new Orcamento(200))
-				.addItem(new Item("CANETA", 100.0))
-				.addItem(new Item("LAPIS",  100.0))
+		orcamento = new OrcamentoBuilder(200)
+				.comItem("CANETA", 150.0)
+				.comItem("LAPIS", 50.0)
 				.constroi();
 		
 		Desconto d1 = new DescontoPorCincoItens();
