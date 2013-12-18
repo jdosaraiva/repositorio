@@ -31,11 +31,9 @@ public class BancoBuilder {
 	}
 	
 	public BancoBuilder comConta(String titular, String agencia, int numeroConta, double saldo) {
-		Conta conta = new Conta();
-		conta.setNome(titular);
+		Conta conta = new Conta(titular, saldo);
 		conta.setAgencia(agencia);
 		conta.setNumero(numeroConta);
-		conta.setSaldo(saldo);
 		this.banco.getContas().add(conta);
 		return this;
 	}

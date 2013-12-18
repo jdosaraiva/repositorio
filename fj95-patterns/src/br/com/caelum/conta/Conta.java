@@ -1,7 +1,6 @@
 package br.com.caelum.conta;
 
 import java.util.GregorianCalendar;
-import java.util.List;
 
 public class Conta {
 	private String nome;
@@ -9,6 +8,7 @@ public class Conta {
 	private String agencia;
 	private int numero;
 	private GregorianCalendar dataAbertura;
+	protected EstadoDeUmaConta estado;
 
 	public String getAgencia() {
 		return agencia;
@@ -26,12 +26,14 @@ public class Conta {
 		this.numero = numero;
 	}
 
-	public Conta() {
-	}
-
 	public Conta(String nome, double saldo) {
 		this.setNome(nome);
 		this.setSaldo(saldo);
+		if (saldo > 0) {
+			this.estado = new POSITIVO();
+		} else {
+			this.estado = new NEGATIVO();
+		}
 	}
 
 	public String getNome() {
@@ -56,6 +58,14 @@ public class Conta {
 
 	public void setDataAbertura(GregorianCalendar dataAbertura) {
 		this.dataAbertura = dataAbertura;
+	}
+
+	public void efetuarSaque(double valorSaque) {
+		estado.efetuarSaque(this, valorSaque);
+	}
+
+	public void eftuarDeposito(double valorDeposito) {
+		estado.efetuarDeposito(this, valorDeposito);
 	}
 
 }
