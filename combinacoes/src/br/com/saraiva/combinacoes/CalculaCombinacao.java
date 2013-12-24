@@ -17,6 +17,7 @@ public class CalculaCombinacao {
 		System.out.println("Combinacao(n=[" + n + "], p=[" + p + "]):[" + combinacao(n, p) + "]");
 		
 		System.exit(1);
+
 	}
 
 }
