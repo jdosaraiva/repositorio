@@ -1,7 +1,12 @@
 package br.com.saraiva.utils;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import br.com.saraiva.combinacoes.Combinacao;
@@ -47,10 +52,10 @@ public class GeradorDeCombinacoes {
 		Chronometer.stop();
 		
 		if (Chronometer.stime() <= 60) { 
-			System.out.printf("Tempo de Processamento:[%,.2f]s\n",
+			System.out.printf("Tempo de Processamento:[%,.2fs]\n",
 					Chronometer.stime());
 		} else {
-			System.out.printf("Tempo de Processamento:[%,.2f]m\n",
+			System.out.printf("Tempo de Processamento:[%,.2fm]\n",
 					Chronometer.mtime());
 		}
 
@@ -58,13 +63,26 @@ public class GeradorDeCombinacoes {
 	}
 
 	private static void listaCombinacoes(Integer[] dezenasEscolhidas,
-			int profundidade) {
-		List<Integer[]> listaInicial = new ArrayList<Integer[]>();
+			int numeroDeDezenasPorCombinacao) {
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmm");
+		
+		File arquivo = new File("c:\\temp\\combinacoes" + sdf.format(GregorianCalendar.getInstance().getTime()) + ".txt");
+		PrintWriter pw = null;
+		try {
+			pw = new PrintWriter(arquivo);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		int profundidade = (numeroDeDezenasPorCombinacao <= (dezenasEscolhidas.length / 2)) ? numeroDeDezenasPorCombinacao : dezenasEscolhidas.length - numeroDeDezenasPorCombinacao;    
+		
+		List<Integer[]> listaBase = new ArrayList<Integer[]>();
 
 		for (int i = 0; i < dezenasEscolhidas.length; i++) {
 			for (int j = i + 1; j < dezenasEscolhidas.length; j++) {
 				Integer[] x = { dezenasEscolhidas[i], dezenasEscolhidas[j] };
-				listaInicial.add(x);
+				listaBase.add(x);
 			}
 		}
 
@@ -73,28 +91,70 @@ public class GeradorDeCombinacoes {
 				+ Combinacao.combinacao(dezenasEscolhidas.length, profundidade)
 				+ "]");
 
-		List<Integer[]> listaSemRepetidos = null;
+		pw.println("Combinacao(n:[" + dezenasEscolhidas.length
+				+ "], p:[" + profundidade + "]):["
+				+ Combinacao.combinacao(dezenasEscolhidas.length, profundidade)
+				+ "]");
 
 		for (int i = 0; i < profundidade - 2; i++) {
 
-			List<Integer[]> m = geraListaDeCombinacoes(dezenasEscolhidas,
-					listaInicial);
+			List<Integer[]> listaAuxiliar = geraListaDeCombinacoes(dezenasEscolhidas,
+					listaBase);
 
-			listaSemRepetidos = m;
-
-			listaInicial = listaSemRepetidos;
+			listaBase = listaAuxiliar;
 
 		}
 		
 		System.out.println(); 
+		pw.println();
 		
-
-		for (Integer[] integers : listaSemRepetidos) {
+		if (numeroDeDezenasPorCombinacao != profundidade) {
+			listaBase = geraListaDeCombinacoesComplementares(dezenasEscolhidas, listaBase);
+		}
+		
+		for (Integer[] integers : listaBase) {
 			for (int i = 0; i < integers.length; i++) {
 				System.out.printf("%02d ", integers[i]);
+				pw.printf("%02d ", integers[i]);
 			}
 			System.out.println();
+			pw.println();
 		}
+		
+		pw.close();
+	}
+
+	private static List<Integer[]> geraListaDeCombinacoesComplementares(
+			Integer[] dezenasEscolhidas, List<Integer[]> listaBase) {
+		
+		List<Integer[]> listaComplementar = new ArrayList<Integer[]>();
+		
+		for (Integer[] combinacao : listaBase) {
+			
+			listaComplementar.add(pegaADiferenca(dezenasEscolhidas, combinacao));
+			
+		}
+		
+		return listaComplementar;
+	}
+
+	private static Integer[] pegaADiferenca(Integer[] dezenasEscolhidas,
+			Integer[] combinacao) {
+		
+		int tamanho = dezenasEscolhidas.length - combinacao.length;
+		
+		int pos = 0;
+		
+		Integer[] combinacaoComplementar = new Integer[tamanho]; 
+		
+		for (int i = 0; i < dezenasEscolhidas.length; i ++) {
+			if (Arrays.binarySearch(combinacao, dezenasEscolhidas[i]) < 0) {
+				combinacaoComplementar[pos] = dezenasEscolhidas[i];
+				pos++;
+			}
+		}
+		
+		return combinacaoComplementar;
 	}
 
 	private static boolean achou(List<Integer[]> lista, Integer[] item,
@@ -197,13 +257,10 @@ public class GeradorDeCombinacoes {
 				
 				novaListaDeCombinacoes.add(novaCombinacao);
 
-				// System.out.print(novaListaDeCombinacoes.size() + " "); 
-
 			}
 
 		}
 
-		// System.out.println(); 
 		return novaListaDeCombinacoes;
 
 	}
