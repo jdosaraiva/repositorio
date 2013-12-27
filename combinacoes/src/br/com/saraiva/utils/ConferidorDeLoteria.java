@@ -36,7 +36,7 @@ public class ConferidorDeLoteria {
 		
 		if (acertos > 10) {
 			System.out.print("Jogo:[ ");
-			if (pw != null) pw.printf("Número de Arcertos:[%d] - ", acertos, strAcertos);
+			if (pw != null) pw.printf("Número de Arcertos:[%d] - ", acertos);
 
 			if (pw != null) pw.print("Jogo:[ ");
 			
