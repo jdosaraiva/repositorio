@@ -17,40 +17,36 @@ public class Lotofacil {
 
 		Lotofacil lf = new Lotofacil();
 
-//		String conteudoArquivo = lf.leConteudoArquivo("c:\\temp\\lotofacil.txt");
-//
-//		Map<Integer, String> mapa = lf.trataConteudo(conteudoArquivo);
-//
-//		System.out.println("Tamanho do mapa:[" + mapa.size() + "]");
-//
-//		lf.gravaMapaEmArquivo(mapa, "c:\\temp\\lotofacil_2.txt");
-		
 		lf.compararaTodosOsResultadosComMinhasApostas("C:\\Temp\\16_DE_18_combinacoes201312261425.txt");
 	}
 
 	/**
 	 * Compara todos os resultadados da Lotofacil com um arquivo de apostas
-	 * @param arquivoApostas arquivo com apostas
+	 * 
+	 * @param arquivoApostas
+	 *            arquivo com apostas
 	 */
-	private void compararaTodosOsResultadosComMinhasApostas(String arquivoApostas) {
-		
+	private void compararaTodosOsResultadosComMinhasApostas(
+			String arquivoApostas) {
+
 		System.out.println("Iniciando comparação...");
 
 		boolean temPremiado = false;
-		
+
 		String s1 = this.leConteudoArquivo("c:\\temp\\lotofacil_2.txt");
 		String s2 = this.leConteudoArquivo(arquivoApostas);
 
 		Map<Integer, String> todos = this.trataConteudo(s1);
 		Map<Integer, String> meus = this.trataConteudo(s2);
-		
+
 		for (Integer chave : meus.keySet()) {
 			if (todos.containsKey(chave)) {
-				System.out.println("Jogo:[" + todos.get(chave) + "] já foi premiado.");
+				System.out.println("Jogo:[" + todos.get(chave)
+						+ "] já foi premiado.");
 				temPremiado = true;
 			}
 		}
-		
+
 		for (Integer chave : todos.keySet()) {
 			ConferidorDeLoteria cl = new ConferidorDeLoteria(todos.get(chave));
 			for (Integer aposta : meus.keySet()) {
@@ -58,15 +54,23 @@ public class Lotofacil {
 				cl.premiado(aux);
 			}
 		}
-		
+
 		if (!temPremiado) {
-			System.out.println("Nenhuma das apostas deste arquivo já fez os 15 pontos.");
+			System.out
+					.println("Nenhuma das apostas deste arquivo já fez os 15 pontos.");
 		}
-		
+
 	}
 
+	/**
+	 * Grava um mapa num arquivo
+	 * 
+	 * @param mapa a percorrer
+	 * @param nomeArquivoSaida nome do arquivo de saída
+	 */
 	@SuppressWarnings("unused")
-	private void gravaMapaEmArquivo(Map<Integer, String> mapa, String nomeArquivoSaida) {
+	private void gravaMapaEmArquivo(Map<Integer, String> mapa,
+			String nomeArquivoSaida) {
 
 		FileWriter arq;
 		try {
@@ -86,6 +90,12 @@ public class Lotofacil {
 
 	}
 
+	/**
+	 * Trata o conteúdo de um string transformando o mesmo num mapa
+	 * 
+	 * @param conteudoArquivo String a tratar
+	 * @return Mapa onde cada entrada representa uma "linha" do conteúdo passado
+	 */
 	private Map<Integer, String> trataConteudo(String conteudoArquivo) {
 
 		String[] conteudo = conteudoArquivo.split("\n");
@@ -109,6 +119,13 @@ public class Lotofacil {
 		return mapa;
 	}
 
+	/**
+	 * Recebe um array de inteiros e devolve um string com os números formatados
+	 * e separados por espaços
+	 * 
+	 * @param old o array que se deseja converter
+	 * @return um String que representa o array
+	 */
 	private String paraStr(int[] old) {
 		StringBuilder sb = new StringBuilder();
 
@@ -121,6 +138,12 @@ public class Lotofacil {
 		return sb.toString().trim();
 	}
 
+	/**
+	 * Converte uma String em int[] usando o espaço como separador
+	 * 
+	 * @param origem String com números separados por espaços
+	 * @return um array de inteiros
+	 */
 	private static int[] paraArrayInt(String origem) {
 
 		String[] bolas = origem.split(" ");
@@ -136,6 +159,12 @@ public class Lotofacil {
 		return numeros;
 	}
 
+	/**
+	 * Le o conteúdo de um arquivo pequeno e o coloca numa string
+	 * 
+	 * @param nomeArquivo nome do arquivo para leitura
+	 * @return uma String com o conteúdo do arquivo
+	 */
 	private String leConteudoArquivo(String nomeArquivo) {
 		String conteudoArquivo = null;
 		try {
