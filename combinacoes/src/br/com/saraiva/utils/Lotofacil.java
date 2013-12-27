@@ -11,20 +11,26 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Uma classe que compara um arquivo de apostas efetuadas com todos os resultados publicados num arquivo
+ * @author saraiva
+ *
+ */
 public class Lotofacil {
 
 	public static void main(String[] args) {
 
 		Lotofacil lf = new Lotofacil();
 
-		lf.compararaTodosOsResultadosComMinhasApostas("C:\\Temp\\16_DE_18_combinacoes201312261425.txt");
+		String nomeDoArquivoComApostas = "C:\\Temp\\16_DE_18_combinacoes201312261425.txt";
+		
+		lf.compararaTodosOsResultadosComMinhasApostas(nomeDoArquivoComApostas);
 	}
 
 	/**
 	 * Compara todos os resultadados da Lotofacil com um arquivo de apostas
 	 * 
-	 * @param arquivoApostas
-	 *            arquivo com apostas
+	 * @param arquivoApostas arquivo com apostas
 	 */
 	private void compararaTodosOsResultadosComMinhasApostas(
 			String arquivoApostas) {
