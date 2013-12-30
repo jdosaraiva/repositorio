@@ -26,14 +26,14 @@ public class ConferidorDeLoteria {
 		int acertos = 0;
 		String strAcertos = "";
 
-		OUTERLOOP : 
+		OUTER_LOOP : 
 		for (String dezena : jogo) {
 			for (int i = 0; i < dezenasSorteadas.length; i++) {
 				// System.out.println(" " + dezena + " == " + dezenasSorteadas[i].trim() + " - " + dezena.equals(dezenasSorteadas[i]));
 				if (dezena.trim().equals(dezenasSorteadas[i].trim())) {
 					acertos++;
 					strAcertos = strAcertos.concat(dezenasSorteadas[i].trim()).concat(" ");
-					continue OUTERLOOP;
+					continue OUTER_LOOP;
 				}
 			}
 		}
