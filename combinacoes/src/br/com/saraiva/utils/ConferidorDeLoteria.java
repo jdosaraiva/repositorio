@@ -11,6 +11,7 @@ import java.util.GregorianCalendar;
 public class ConferidorDeLoteria {
 
 	private String[] dezenasSorteadas = null;
+	private int[] numAcertos = new int[4]; 
 
 	public ConferidorDeLoteria(String dezenasSorteadas) {
 		this.dezenasSorteadas = dezenasSorteadas.split(" ");
@@ -25,17 +26,21 @@ public class ConferidorDeLoteria {
 		int acertos = 0;
 		String strAcertos = "";
 
-		for (String dezena : jogo) {
+		outerloop : for (String dezena : jogo) {
 			for (int i = 0; i < dezenasSorteadas.length; i++) {
-				if (dezena.equals(dezenasSorteadas[i])) {
+				// System.out.println(" " + dezena + " == " + dezenasSorteadas[i].trim() + " - " + dezena.equals(dezenasSorteadas[i]));
+				if (dezena.trim().equals(dezenasSorteadas[i].trim())) {
 					acertos++;
-					strAcertos = strAcertos.concat(dezenasSorteadas[i]).concat(
-							" ");
+					strAcertos = strAcertos.concat(dezenasSorteadas[i].trim()).concat(" ");
+					continue outerloop;
 				}
 			}
 		}
 
 		if (acertos > 10) {
+			
+			numAcertos[acertos-11] = numAcertos[acertos-11] + 1; 
+			
 			System.out.print("Jogo:[ ");
 			if (pw != null)
 				pw.printf("Número de Arcertos:[%d] - ", acertos);
@@ -61,10 +66,19 @@ public class ConferidorDeLoteria {
 	}
 
 	public static void main(String[] args) {
-		ConferidorDeLoteria cl = new ConferidorDeLoteria(
-				"01 02 05 06 07 09 12 14 15 17 18 21 22 24 25");
+
+		Lotofacil lf = new Lotofacil();
+		
+		ConferidorDeLoteria cl = new ConferidorDeLoteria("01 02 05 06 07 09 12 14 15 17 18 21 22 24 25");
+		if (args.length > 0) {
+			cl = new ConferidorDeLoteria(lf.leConteudoArquivo(args[0]));
+		}
+		System.out.println("Dezenas Sorteadas:[" + cl + "]");
 
 		String fileName = "C:\\Temp\\combinacoes201312261407.txt";
+		if (args.length > 1) {
+			fileName = args[1];
+		}
 
 		RandomAccessFile f;
 
@@ -100,6 +114,7 @@ public class ConferidorDeLoteria {
 
 		for (String string : aux) {
 			String aposta = string.replaceAll("\r", "").trim();
+			System.out.println("Aposta:[" + aposta + "]");
 			String[] dezenasApostadas = aposta.split(" ");
 			cl.premiado(dezenasApostadas, pw);
 		}
@@ -107,5 +122,26 @@ public class ConferidorDeLoteria {
 		pw.close();
 
 		System.out.println("===============");
+		cl.trataNumAcertos();
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		for (String dezena : this.dezenasSorteadas) {
+			sb.append(dezena).append(" ");
+		}
+		return sb.toString().trim();
+	}
+	
+	public void trataNumAcertos() {
+		
+		for (int i = 0; i < numAcertos.length; i++) {
+			if (numAcertos[i] > 0) {
+				double multiplicador = i == 0 ? 2.5 : i == 1 ? 5.0 : 12.5; 
+				double valor = numAcertos[i] * multiplicador;
+				System.out.printf("Apostas com %d acertos:[%03d] - Valor:[%.2f]\n", (i+11), numAcertos[i], valor);
+			}
+		}
 	}
 }
