@@ -2,15 +2,14 @@ package br.com.saraiva.utils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.RandomAccessFile;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 
 public class ConferidorDeLoteria {
 
 	private String[] dezenasSorteadas = null;
+	private int[] numAcertos = new int[4];
 
 	public ConferidorDeLoteria(String dezenasSorteadas) {
 		this.dezenasSorteadas = dezenasSorteadas.split(" ");
@@ -25,17 +24,24 @@ public class ConferidorDeLoteria {
 		int acertos = 0;
 		String strAcertos = "";
 
-		for (String dezena : jogo) {
+		OUTER_LOOP: for (String dezena : jogo) {
 			for (int i = 0; i < dezenasSorteadas.length; i++) {
-				if (dezena.equals(dezenasSorteadas[i])) {
+				// System.out.println(" " + dezena + " == " +
+				// dezenasSorteadas[i].trim() + " - " +
+				// dezena.equals(dezenasSorteadas[i]));
+				if (dezena.trim().equals(dezenasSorteadas[i].trim())) {
 					acertos++;
-					strAcertos = strAcertos.concat(dezenasSorteadas[i]).concat(
-							" ");
+					strAcertos = strAcertos.concat(dezenasSorteadas[i].trim())
+							.concat(" ");
+					continue OUTER_LOOP;
 				}
 			}
 		}
 
 		if (acertos > 10) {
+
+			numAcertos[acertos - 11] = numAcertos[acertos - 11] + 1;
+
 			System.out.print("Jogo:[ ");
 			if (pw != null)
 				pw.printf("Número de Arcertos:[%d] - ", acertos);
@@ -61,32 +67,47 @@ public class ConferidorDeLoteria {
 	}
 
 	public static void main(String[] args) {
+
+		Lotofacil lf = new Lotofacil();
+
 		ConferidorDeLoteria cl = new ConferidorDeLoteria(
-				"01 02 05 06 07 09 12 14 15 17 18 21 22 24 25");
+				"01 02 05 06 07 08 10 12 13 14 15 16 18 21 24"); // C0999
+		if (args.length > 0) {
+			cl = new ConferidorDeLoteria(lf.leConteudoArquivo(args[0]));
+		}
+		System.out.println("Dezenas Sorteadas:[" + cl + "]");
 
-		String fileName = "C:\\Temp\\combinacoes201312261407.txt";
-
-		RandomAccessFile f;
-
-		byte[] b = null;
-
-		try {
-			f = new RandomAccessFile(fileName, "r");
-			b = new byte[(int) f.length()];
-			f.read(b);
-			f.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+		String fileName = "C:\\Temp\\26_DE_18_combinacoes201312301018.txt";
+		if (args.length > 1) {
+			fileName = args[1];
 		}
 
-		String conteudo = new String(b);
+		String conteudo = lf.leConteudoArquivo(fileName);
 
 		String[] aux = conteudo.split("\n");
 
 		System.out.println("===============");
 
+		imprimeResultados(cl, aux);
+
+		System.out.println("===============");
+		cl.trataNumAcertos();
+	}
+
+	private static void imprimeResultados(ConferidorDeLoteria cl, String[] aux) {
+		PrintWriter pw = getPrinterWriter();
+
+		for (String string : aux) {
+			String aposta = string.replaceAll("\r", "").trim();
+			System.out.println("Aposta:[" + aposta + "]");
+			String[] dezenasApostadas = aposta.split(" ");
+			cl.premiado(dezenasApostadas, pw);
+		}
+
+		pw.close();
+	}
+
+	private static PrintWriter getPrinterWriter() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmm");
 		File arquivo = new File("c:\\temp\\conferindo"
 				+ sdf.format(GregorianCalendar.getInstance().getTime())
@@ -97,15 +118,28 @@ public class ConferidorDeLoteria {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		return pw;
+	}
 
-		for (String string : aux) {
-			String aposta = string.replaceAll("\r", "").trim();
-			String[] dezenasApostadas = aposta.split(" ");
-			cl.premiado(dezenasApostadas, pw);
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		for (String dezena : this.dezenasSorteadas) {
+			sb.append(dezena).append(" ");
 		}
+		return sb.toString().trim();
+	}
 
-		pw.close();
+	public void trataNumAcertos() {
 
-		System.out.println("===============");
+		for (int i = 0; i < numAcertos.length; i++) {
+			if (numAcertos[i] > 0) {
+				double multiplicador = i == 0 ? 2.5 : i == 1 ? 5.0 : 12.5;
+				double valor = numAcertos[i] * multiplicador;
+				System.out.printf(
+						"Apostas com %d acertos:[%03d] - Valor:[%.2f]\n",
+						(i + 11), numAcertos[i], valor);
+			}
+		}
 	}
 }

@@ -22,11 +22,18 @@ public class Lotofacil {
 
 		Lotofacil lf = new Lotofacil();
 
-		String nomeDoArquivoComApostas = "C:\\Temp\\16_DE_18_combinacoes201312261425.txt";
-		
+		String nomeDoArquivoComApostas = "C:\\Temp\\18_combinacoes201312301018.txt";
+				
 		lf.compararaTodosOsResultadosComMinhasApostas(nomeDoArquivoComApostas);
 	}
 
+	@SuppressWarnings("unused")
+	private void preparaArquivoDeResultados(String arqEntrada, String arqSaida) {
+		Map<Integer, String> results = this.trataConteudo(this.leConteudoArquivo(arqEntrada));
+		System.out.println("Tamanho do mapa:[" + results.size() + "]");
+		this.gravaMapaEmArquivo(results, arqSaida);
+	}
+	
 	/**
 	 * Compara todos os resultadados da Lotofacil com um arquivo de apostas
 	 * 
@@ -74,7 +81,6 @@ public class Lotofacil {
 	 * @param mapa a percorrer
 	 * @param nomeArquivoSaida nome do arquivo de saída
 	 */
-	@SuppressWarnings("unused")
 	private void gravaMapaEmArquivo(Map<Integer, String> mapa,
 			String nomeArquivoSaida) {
 
@@ -171,7 +177,7 @@ public class Lotofacil {
 	 * @param nomeArquivo nome do arquivo para leitura
 	 * @return uma String com o conteúdo do arquivo
 	 */
-	private String leConteudoArquivo(String nomeArquivo) {
+	public String leConteudoArquivo(String nomeArquivo) {
 		String conteudoArquivo = null;
 		try {
 			File filename = new File(nomeArquivo);
