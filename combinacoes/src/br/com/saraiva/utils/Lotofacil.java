@@ -7,8 +7,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.RandomAccessFile;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,9 +24,54 @@ public class Lotofacil {
 
 		Lotofacil lf = new Lotofacil();
 
-		String nomeDoArquivoComApostas = "C:\\Temp\\18_combinacoes201312301018.txt";
+		// String nomeDoArquivoComApostas = "C:\\Temp\\26_DE_18_combinacoes201312301018.txt";
 				
-		lf.compararaTodosOsResultadosComMinhasApostas(nomeDoArquivoComApostas);
+		// lf.compararaTodosOsResultadosComMinhasApostas(nomeDoArquivoComApostas);
+		
+		listaDezenasNoArquivo(lf.leConteudoArquivo("C:\\Temp\\26_DE_18_combinacoes201312301018.txt"), lf.leConteudoArquivo("c:\\temp\\Lotofacil_C1000.txt"));
+		
+	}
+
+	private static void listaDezenasNoArquivo(String conteudo, String resultado) {
+		
+		List<String> lista = new ArrayList<String>();
+		
+		for (String linha : conteudo.split("\n")) {
+			String[] aux = linha.trim().replaceAll("\r", "").split(" ");
+			for (String string : aux) {
+				if (!lista.contains(string)) {
+					lista.add(string);
+				}
+			}
+		}
+		
+		System.out.println(" Tamanho do Array:[" + lista.size() + "]");
+		
+		System.out.print("Dezenas Apostadas:[");
+		for (String string : lista) {
+			System.out.printf("%s ", string);
+		}
+		System.out.println("]");
+		
+		System.out.println("        Resultado:[" + resultado.replaceAll("\n", "").trim() + "]");
+		
+		String[] aux = resultado.replaceAll("\n", "").trim().split(" ");
+		
+		int acertos = 0;
+		String strAcertos = "";
+		EXTERNO:
+		for (String string : aux) {
+			for (String apostada : lista) {
+				if (string.equals(apostada)) {
+					acertos++;
+					strAcertos = strAcertos.concat(apostada).concat(" ");
+					continue EXTERNO;
+				}
+			}
+		}
+		
+		System.out.println("          Acertos:[" + acertos + "]");
+		System.out.println("      Str Acertos:[" + strAcertos.trim() + "]");
 	}
 
 	@SuppressWarnings("unused")
