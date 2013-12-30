@@ -22,9 +22,10 @@ public class Lotofacil {
 
 		Lotofacil lf = new Lotofacil();
 
-		// String nomeDoArquivoComApostas = "C:\\Temp\\16_DE_18_combinacoes201312261425.txt";
-		// String nomeDoArquivoComApostas = "C:\\Temp\\18_combinacoes201312261425.txt";
-		String nomeDoArquivoComApostas = "C:\\Temp\\26_DE_18_combinacoes201312301018.txt";
+//		String nomeDoArquivoComApostas = "C:\\Temp\\16_DE_18_combinacoes201312261425.txt";
+//		String nomeDoArquivoComApostas = "C:\\Temp\\18_combinacoes201312261425.txt";
+//		String nomeDoArquivoComApostas = "C:\\Temp\\26_DE_18_combinacoes201312301018.txt";
+		String nomeDoArquivoComApostas = "C:\\Temp\\18_combinacoes201312301018.txt";
 				
 		// lf.preparaArquivoDeResultados("C:\\Temp\\lotofacil_resultados.txt","C:\\Temp\\lotofacil_2.txt");
 
