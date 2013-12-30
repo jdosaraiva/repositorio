@@ -81,27 +81,32 @@ public class ConferidorDeLoteria {
 			fileName = args[1];
 		}
 
-		RandomAccessFile f;
-
-		byte[] b = null;
-
-		try {
-			f = new RandomAccessFile(fileName, "r");
-			b = new byte[(int) f.length()];
-			f.read(b);
-			f.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		String conteudo = new String(b);
+		String conteudo = lf.leConteudoArquivo(fileName);
 
 		String[] aux = conteudo.split("\n");
 
 		System.out.println("===============");
 
+		imprimeResultados(cl, aux);
+
+		System.out.println("===============");
+		cl.trataNumAcertos();
+	}
+
+	private static void imprimeResultados(ConferidorDeLoteria cl, String[] aux) {
+		PrintWriter pw = getPrinterWriter();
+
+		for (String string : aux) {
+			String aposta = string.replaceAll("\r", "").trim();
+			System.out.println("Aposta:[" + aposta + "]");
+			String[] dezenasApostadas = aposta.split(" ");
+			cl.premiado(dezenasApostadas, pw);
+		}
+
+		pw.close();
+	}
+
+	private static PrintWriter getPrinterWriter() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmm");
 		File arquivo = new File("c:\\temp\\conferindo"
 				+ sdf.format(GregorianCalendar.getInstance().getTime())
@@ -112,18 +117,7 @@ public class ConferidorDeLoteria {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-
-		for (String string : aux) {
-			String aposta = string.replaceAll("\r", "").trim();
-			System.out.println("Aposta:[" + aposta + "]");
-			String[] dezenasApostadas = aposta.split(" ");
-			cl.premiado(dezenasApostadas, pw);
-		}
-
-		pw.close();
-
-		System.out.println("===============");
-		cl.trataNumAcertos();
+		return pw;
 	}
 	
 	@Override

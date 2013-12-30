@@ -36,7 +36,7 @@ public class Lotofacil {
 	private void preparaArquivoDeResultados(String arqEntrada, String arqSaida) {
 		Map<Integer, String> results = this.trataConteudo(this.leConteudoArquivo(arqEntrada));
 		System.out.println("Tamanho do mapa:[" + results.size() + "]");
-		//this.gravaMapaEmArquivo(results, arqSaida);
+		this.gravaMapaEmArquivo(results, arqSaida);
 	}
 	
 	/**
