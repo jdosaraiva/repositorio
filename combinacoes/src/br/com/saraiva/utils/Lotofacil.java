@@ -39,7 +39,7 @@ public class Lotofacil {
 
 		boolean temPremiado = false;
 
-		String s1 = this.leConteudoArquivo("c:\\temp\\lotofacil_2.txt");
+		String s1 = this.leConteudoArquivo("c:\\temp\\lotofacil_999.txt");
 		String s2 = this.leConteudoArquivo(arquivoApostas);
 
 		Map<Integer, String> todos = this.trataConteudo(s1);
