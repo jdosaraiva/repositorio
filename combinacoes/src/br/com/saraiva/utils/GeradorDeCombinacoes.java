@@ -17,7 +17,7 @@ public class GeradorDeCombinacoes {
 
 		if (args.length < 5) {
 			System.out.println("Voce deve passar o numero de dezenas em cada combinacao e");
-			System.out.println("no minimos 4 dezenas a combinar.");
+			System.out.println("no minimo 4 dezenas a combinar.");
 			System.exit(1);
 		}
 		
@@ -34,7 +34,7 @@ public class GeradorDeCombinacoes {
 			System.exit(1);
 		}
 
-		if (profundidade > 15 ) {
+		if (profundidade > 15 & ((args.length - profundidade -1) > 2)) {
 			System.out.println("O maior numero de dezenas por combinacao e 15.");
 			System.exit(1);
 		}
@@ -75,13 +75,21 @@ public class GeradorDeCombinacoes {
 			e.printStackTrace();
 		}
 		
-		int profundidade = (numeroDeDezenasPorCombinacao <= (dezenasEscolhidas.length / 2)) ? numeroDeDezenasPorCombinacao : dezenasEscolhidas.length - numeroDeDezenasPorCombinacao;    
+		int profundidade = (numeroDeDezenasPorCombinacao <= (dezenasEscolhidas.length / 2)) ? numeroDeDezenasPorCombinacao
+				: dezenasEscolhidas.length - numeroDeDezenasPorCombinacao;
 		
 		List<Integer[]> listaBase = new ArrayList<Integer[]>();
 
-		for (int i = 0; i < dezenasEscolhidas.length; i++) {
-			for (int j = i + 1; j < dezenasEscolhidas.length; j++) {
-				Integer[] x = { dezenasEscolhidas[i], dezenasEscolhidas[j] };
+		if (profundidade > 1) {
+			for (int i = 0; i < dezenasEscolhidas.length; i++) {
+				for (int j = i + 1; j < dezenasEscolhidas.length; j++) {
+					Integer[] x = { dezenasEscolhidas[i], dezenasEscolhidas[j] };
+					listaBase.add(x);
+				}
+			}
+		} else {
+			for (int i = 0; i < dezenasEscolhidas.length; i++) {
+				Integer[] x = { dezenasEscolhidas[i] };
 				listaBase.add(x);
 			}
 		}
@@ -96,13 +104,15 @@ public class GeradorDeCombinacoes {
 				+ Combinacao.combinacao(dezenasEscolhidas.length, profundidade)
 				+ "]");
 
-		for (int i = 0; i < profundidade - 2; i++) {
-
-			List<Integer[]> listaAuxiliar = geraListaDeCombinacoes(dezenasEscolhidas,
-					listaBase);
-
-			listaBase = listaAuxiliar;
-
+		if (profundidade > 1) {
+			for (int i = 0; i < profundidade - 2; i++) {
+	
+				List<Integer[]> listaAuxiliar = geraListaDeCombinacoes(dezenasEscolhidas,
+						listaBase);
+	
+				listaBase = listaAuxiliar;
+	
+			}
 		}
 		
 		System.out.println(); 
