@@ -68,12 +68,10 @@ public class ConferidorDeLoteria {
 
 	public static void main(String[] args) {
 
-		Lotofacil lf = new Lotofacil();
-
 		ConferidorDeLoteria cl = new ConferidorDeLoteria(
 				"01 02 05 06 07 08 10 12 13 14 15 16 18 21 24"); // C0999
 		if (args.length > 0) {
-			cl = new ConferidorDeLoteria(lf.leConteudoArquivo(args[0]));
+			cl = new ConferidorDeLoteria(Utils.leConteudoArquivo(args[0]));
 		}
 		System.out.println("Dezenas Sorteadas:[" + cl + "]");
 
@@ -82,7 +80,7 @@ public class ConferidorDeLoteria {
 			fileName = args[1];
 		}
 
-		String conteudo = lf.leConteudoArquivo(fileName);
+		String conteudo = Utils.leConteudoArquivo(fileName);
 
 		String[] aux = conteudo.split("\n");
 

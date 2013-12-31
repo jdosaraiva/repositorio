@@ -1,11 +1,5 @@
 package br.com.saraiva.utils;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.RandomAccessFile;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,6 +14,7 @@ import java.util.Map;
  */
 public class Lotofacil {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 
 		Lotofacil lf = new Lotofacil();
@@ -28,7 +23,7 @@ public class Lotofacil {
 				
 		// lf.compararaTodosOsResultadosComMinhasApostas(nomeDoArquivoComApostas);
 		
-		listaDezenasNoArquivo(lf.leConteudoArquivo("C:\\Temp\\26_DE_18_combinacoes201312301018.txt"), lf.leConteudoArquivo("c:\\temp\\Lotofacil_C1000.txt"));
+		listaDezenasNoArquivo(Utils.leConteudoArquivo("C:\\Temp\\26_DE_18_combinacoes201312301018.txt"), Utils.leConteudoArquivo("c:\\temp\\Lotofacil_C1000.txt"));
 		
 	}
 
@@ -76,9 +71,9 @@ public class Lotofacil {
 
 	@SuppressWarnings("unused")
 	private void preparaArquivoDeResultados(String arqEntrada, String arqSaida) {
-		Map<Integer, String> results = this.trataConteudo(this.leConteudoArquivo(arqEntrada));
+		Map<Integer, String> results = this.trataConteudo(Utils.leConteudoArquivo(arqEntrada));
 		System.out.println("Tamanho do mapa:[" + results.size() + "]");
-		this.gravaMapaEmArquivo(results, arqSaida);
+		Utils.gravaMapaEmArquivo(results, arqSaida);
 	}
 	
 	/**
@@ -86,6 +81,7 @@ public class Lotofacil {
 	 * 
 	 * @param arquivoApostas arquivo com apostas
 	 */
+	@SuppressWarnings("unused")
 	private void compararaTodosOsResultadosComMinhasApostas(
 			String arquivoApostas) {
 
@@ -93,8 +89,8 @@ public class Lotofacil {
 
 		boolean temPremiado = false;
 
-		String s1 = this.leConteudoArquivo("c:\\temp\\lotofacil_999.txt");
-		String s2 = this.leConteudoArquivo(arquivoApostas);
+		String s1 = Utils.leConteudoArquivo("c:\\temp\\lotofacil_999.txt");
+		String s2 = Utils.leConteudoArquivo(arquivoApostas);
 
 		Map<Integer, String> todos = this.trataConteudo(s1);
 		Map<Integer, String> meus = this.trataConteudo(s2);
@@ -118,33 +114,6 @@ public class Lotofacil {
 		if (!temPremiado) {
 			System.out
 					.println("Nenhuma das apostas deste arquivo já fez os 15 pontos.");
-		}
-
-	}
-
-	/**
-	 * Grava um mapa num arquivo
-	 * 
-	 * @param mapa a percorrer
-	 * @param nomeArquivoSaida nome do arquivo de saída
-	 */
-	private void gravaMapaEmArquivo(Map<Integer, String> mapa,
-			String nomeArquivoSaida) {
-
-		FileWriter arq;
-		try {
-			arq = new FileWriter(nomeArquivoSaida);
-			PrintWriter gravarArq = new PrintWriter(arq);
-
-			for (Integer chave : mapa.keySet()) {
-				String resultado = mapa.get(chave);
-				gravarArq.println(resultado);
-			}
-
-			gravarArq.close();
-			arq.close();
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 
 	}
@@ -216,31 +185,6 @@ public class Lotofacil {
 		Arrays.sort(numeros);
 
 		return numeros;
-	}
-
-	/**
-	 * Le o conteúdo de um arquivo pequeno e o coloca numa string
-	 * 
-	 * @param nomeArquivo nome do arquivo para leitura
-	 * @return uma String com o conteúdo do arquivo
-	 */
-	public String leConteudoArquivo(String nomeArquivo) {
-		String conteudoArquivo = null;
-		try {
-			File filename = new File(nomeArquivo);
-			RandomAccessFile raf = new RandomAccessFile(filename, "r");
-			byte[] b = new byte[(int) raf.length()];
-			raf.read(b);
-			raf.close();
-
-			conteudoArquivo = new String(b);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		return conteudoArquivo;
 	}
 
 }

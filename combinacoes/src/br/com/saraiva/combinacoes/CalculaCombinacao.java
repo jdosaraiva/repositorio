@@ -1,6 +1,6 @@
 package br.com.saraiva.combinacoes;
 
-import static br.com.saraiva.combinacoes.Combinacao.*;
+import static br.com.saraiva.combinacoes.Combinacao.combinacao;
 
 public class CalculaCombinacao {
 
