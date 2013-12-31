@@ -5,6 +5,8 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 
+import br.com.saraiva.combinacoes.Combinacao;
+
 public class NovoGeradorDeCombinacoes {
 
 	public static void main(String[] args) {
@@ -31,6 +33,9 @@ public class NovoGeradorDeCombinacoes {
 		Chronometer.start();
 		
 		Map<Integer, String> mapa = new HashMap<Integer, String>();
+		
+		double combs = Combinacao.combinacao(dezenas.length, dezenasPorCombinacao);
+		System.out.printf("Combinacao(%d,%d)=Combinacao(%d,%d)=[%.0f]\n", dezenas.length, dezenasPorCombinacao, dezenas.length, (dezenas.length - dezenasPorCombinacao), combs);
 
 		geradorDeCombinacoes(dezenas, mapa, dezenasPorCombinacao);
 
@@ -48,9 +53,14 @@ public class NovoGeradorDeCombinacoes {
 		
 	}
 
-	private static String geraNomeArquivo(int dezenasPorCombinacao,
-			SimpleDateFormat sdf) {
-		return "C:\\temp\\" + dezenasPorCombinacao + "_COMBINACOES_" + sdf.format(GregorianCalendar.getInstance().getTime()) + ".txt";
+	private static String geraNomeArquivo(int numeroTotalDeDezenas, int dezenasPorCombinacao) {
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmm");
+		
+		return "C:\\temp\\" + numeroTotalDeDezenas + "_" + dezenasPorCombinacao
+				+ "_A_" + dezenasPorCombinacao + "_COMBINACOES_"
+				+ sdf.format(GregorianCalendar.getInstance().getTime())
+				+ ".txt";
 	}
 
 	private static void geradorDeCombinacoes(String[] dezenas,
@@ -63,9 +73,13 @@ public class NovoGeradorDeCombinacoes {
 			mapa = gerarComplementares(mapa, dezenas);
 		}
 		
-		Utils.imprimeMapa(mapa);
+		// Utils.imprimeMapa(mapa);
+		System.out.printf("Tamanho do Mapa:[%d]\n", mapa.size());
 		
-		Utils.gravaMapaEmArquivo(mapa, geraNomeArquivo(dezenasPorCombinacao, new SimpleDateFormat("yyyyMMddHHmm")));
+		String arqSaida = geraNomeArquivo(dezenas.length, dezenasPorCombinacao);
+		System.out.println("Arquivo de Saida:[" + arqSaida + "]");
+		
+		Utils.gravaMapaEmArquivo(mapa, arqSaida);
 		
 	}
 
