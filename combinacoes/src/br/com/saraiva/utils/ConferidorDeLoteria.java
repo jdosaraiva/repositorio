@@ -38,9 +38,9 @@ public class ConferidorDeLoteria {
 			}
 		}
 
-		if (acertos > 8) {
+		if (acertos > 10) {
 
-			numAcertos[acertos - 9] = numAcertos[acertos - 9] + 1;
+			numAcertos[acertos - 11] = numAcertos[acertos - 11] + 1;
 
 			System.out.print("Jogo:[ ");
 			if (pw != null)

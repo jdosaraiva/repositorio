@@ -3,6 +3,7 @@ package br.com.saraiva.utils;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,16 +15,16 @@ import java.util.Map;
  */
 public class Lotofacil {
 
-	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 
+		@SuppressWarnings("unused")
 		Lotofacil lf = new Lotofacil();
 
-		// String nomeDoArquivoComApostas = "C:\\Temp\\26_DE_18_combinacoes201312301018.txt";
+		String nomeDoArquivoComApostas = "C:\\Temp\\08_DE_21_15_A_15_COMBINACOES_201401020946.txt";
 				
 		// lf.compararaTodosOsResultadosComMinhasApostas(nomeDoArquivoComApostas);
 		
-		listaDezenasNoArquivo(Utils.leConteudoArquivo("C:\\Temp\\26_DE_18_combinacoes201312301018.txt"), Utils.leConteudoArquivo("c:\\temp\\Lotofacil_C1000.txt"));
+		listaDezenasNoArquivo(Utils.leConteudoArquivo(nomeDoArquivoComApostas), Utils.leConteudoArquivo("c:\\temp\\Lotofacil_C1001.txt"));
 		
 	}
 
@@ -41,6 +42,8 @@ public class Lotofacil {
 		}
 		
 		System.out.println(" Tamanho do Array:[" + lista.size() + "]");
+		
+		Collections.sort(lista);
 		
 		System.out.print("Dezenas Apostadas:[");
 		for (String string : lista) {
@@ -89,7 +92,7 @@ public class Lotofacil {
 
 		boolean temPremiado = false;
 
-		String s1 = Utils.leConteudoArquivo("c:\\temp\\lotofacil_999.txt");
+		String s1 = Utils.leConteudoArquivo("c:\\temp\\lotofacil_2.txt");
 		String s2 = Utils.leConteudoArquivo(arquivoApostas);
 
 		Map<Integer, String> todos = this.trataConteudo(s1);
