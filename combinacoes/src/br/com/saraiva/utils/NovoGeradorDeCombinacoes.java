@@ -65,7 +65,7 @@ public class NovoGeradorDeCombinacoes {
 
 	private static void geradorDeCombinacoes(String[] dezenas,
 			Map<Integer, String> mapa, int dezenasPorCombinacao) {
-		int profundidade = (dezenas.length - dezenasPorCombinacao) >= (dezenas.length / 2) ? dezenasPorCombinacao : dezenas.length - dezenasPorCombinacao;  
+		int profundidade = dezenasPorCombinacao <= (dezenas.length - dezenasPorCombinacao) ? dezenasPorCombinacao : dezenas.length - dezenasPorCombinacao;  
 
 		mapa = gerarCombinacoes(dezenas, mapa, profundidade);
 
