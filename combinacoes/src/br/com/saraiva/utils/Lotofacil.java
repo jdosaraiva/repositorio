@@ -17,17 +17,33 @@ public class Lotofacil {
 
 	public static void main(String[] args) {
 
-		@SuppressWarnings("unused")
+		if (args.length < 2) {
+			System.out.println("Uso: br.com.saraiva.utils Lotofacil 1 <nome do arquivo com apostas>");
+			System.out.println("Uso: br.com.saraiva.utils Lotofacil 2 <nome do arquivo com apostas> <nome do arquivo com resultado>");
+			System.exit(1);
+		}
+		
 		Lotofacil lf = new Lotofacil();
 
-//		String nomeDoArquivoComApostas = "C:\\Temp\\08_DE_21_15_A_15_COMBINACOES_201401020946.txt";
-		String nomeDoArquivoComApostas = "C:\\Temp\\21_15_A_15_COMBINACOES_201401021504.txt";
-				
-		// lf.compararaTodosOsResultadosComMinhasApostas(nomeDoArquivoComApostas);
+		String nomeDoArquivoComApostas = args[1];
 		
-//		listaDezenasNoArquivo(Utils.leConteudoArquivo(nomeDoArquivoComApostas), Utils.leConteudoArquivo("c:\\temp\\Lotofacil_C1001.txt"));
-
-		listaDezenasNoArquivo(Utils.leConteudoArquivo(nomeDoArquivoComApostas), Utils.leConteudoArquivo("c:\\temp\\resultadofake.txt"));
+		if ("1".equals(args[0])) {
+			lf.compararaTodosOsResultadosComMinhasApostas(nomeDoArquivoComApostas);
+		} else if ("2".equals(args[0])) {
+			if (args.length < 3) {
+				System.out.println("Uso: br.com.saraiva.utils Lotofacil 2 <nome do arquivo com apostas> <nome do arquivo com resultado>");
+				System.exit(1);
+			} else {
+				String arqResultados = args[2];
+				listaDezenasNoArquivo(Utils.leConteudoArquivo(nomeDoArquivoComApostas), Utils.leConteudoArquivo(arqResultados));
+			}
+		} else {
+			System.out.println("Uso: br.com.saraiva.utils Lotofacil 1 <nome do arquivo com apostas>");
+			System.out.println("Uso: br.com.saraiva.utils Lotofacil 2 <nome do arquivo com apostas> <nome do arquivo com resultado>");
+			System.exit(1);
+		}
+		
+		System.exit(0);
 		
 	}
 
@@ -87,7 +103,6 @@ public class Lotofacil {
 	 * 
 	 * @param arquivoApostas arquivo com apostas
 	 */
-	@SuppressWarnings("unused")
 	private void compararaTodosOsResultadosComMinhasApostas(
 			String arquivoApostas) {
 
