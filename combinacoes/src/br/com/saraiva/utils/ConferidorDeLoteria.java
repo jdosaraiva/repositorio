@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
 public class ConferidorDeLoteria {
 
 	private String[] dezenasSorteadas = null;
-	private int[] numAcertos = new int[4];
+	private int[] numAcertos = new int[5];
 
 	public ConferidorDeLoteria(String dezenasSorteadas) {
 		this.dezenasSorteadas = dezenasSorteadas.split(" ");

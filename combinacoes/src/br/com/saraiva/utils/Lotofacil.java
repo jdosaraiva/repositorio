@@ -20,11 +20,14 @@ public class Lotofacil {
 		@SuppressWarnings("unused")
 		Lotofacil lf = new Lotofacil();
 
-		String nomeDoArquivoComApostas = "C:\\Temp\\08_DE_21_15_A_15_COMBINACOES_201401020946.txt";
+//		String nomeDoArquivoComApostas = "C:\\Temp\\08_DE_21_15_A_15_COMBINACOES_201401020946.txt";
+		String nomeDoArquivoComApostas = "C:\\Temp\\21_15_A_15_COMBINACOES_201401021504.txt";
 				
 		// lf.compararaTodosOsResultadosComMinhasApostas(nomeDoArquivoComApostas);
 		
-		listaDezenasNoArquivo(Utils.leConteudoArquivo(nomeDoArquivoComApostas), Utils.leConteudoArquivo("c:\\temp\\Lotofacil_C1001.txt"));
+//		listaDezenasNoArquivo(Utils.leConteudoArquivo(nomeDoArquivoComApostas), Utils.leConteudoArquivo("c:\\temp\\Lotofacil_C1001.txt"));
+
+		listaDezenasNoArquivo(Utils.leConteudoArquivo(nomeDoArquivoComApostas), Utils.leConteudoArquivo("c:\\temp\\resultadofake.txt"));
 		
 	}
 
