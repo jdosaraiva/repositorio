@@ -1,0 +1,9 @@
+package br.com.saraiva.utils;
+
+import java.util.ArrayList;
+
+@SuppressWarnings("serial")
+public class MinhaLista<E> extends ArrayList<E> {
+
+	
+}

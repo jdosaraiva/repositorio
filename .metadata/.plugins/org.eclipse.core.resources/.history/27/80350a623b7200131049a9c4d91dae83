@@ -1,0 +1,37 @@
+package br.com.saraiva.utils;
+
+import java.text.DecimalFormat;
+import java.util.Arrays;
+import java.util.Map;
+
+public class Utils {
+
+	public static String toStr(int[] iDezenas) {
+		StringBuilder sb = new StringBuilder();
+		DecimalFormat df = new DecimalFormat("00");
+		for (int iDezena : iDezenas) {
+			sb.append(df.format(iDezena)).append(" ");
+		}
+		String str = sb.toString().trim();
+		return str;
+	}
+
+	public static int[] toIntArraySorted(String novaCombinacao) {
+		String[] sDezenas = novaCombinacao.trim().split(" ");
+		int[] iDezenas = new int[sDezenas.length];
+		for (int i = 0; i < sDezenas.length; i++) {
+			iDezenas[i] = Integer.parseInt(sDezenas[i]);
+		}
+		Arrays.sort(iDezenas);
+		return iDezenas;
+	}
+
+	public static void imprimeMapa(Map<Integer, String> mapa) {
+		for (Integer key : mapa.keySet()) {
+			String entrada = mapa.get(key);
+			System.out.printf("%s \n", entrada);
+		}
+		System.out.println("-- Tamanho do mapa:[" + mapa.size() + "]");
+	}
+	
+}

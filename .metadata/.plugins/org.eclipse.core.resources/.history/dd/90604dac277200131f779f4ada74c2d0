@@ -1,0 +1,20 @@
+package br.com.saraiva.utils;
+
+import java.util.HashMap;
+import java.util.Map;
+
+
+public class TestesAleatorios {
+
+	public static void main(String[] args) {
+
+		System.out.println("Novo gerador com tudo o que já sabemos!");
+		
+		String[] dezenas = new String[4];
+		
+		Map<Integer, String> mapa = new HashMap<Integer, String>();
+		
+		gerar()
+	}
+
+}

@@ -1,0 +1,136 @@
+package br.com.saraiva.utils;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
+public class Util {
+	
+	public static void main(String[] args) {
+		
+		Integer[] a = { 1, 2, 3, 4, 5 };
+		
+		List<Integer[]> l = new ArrayList<Integer[]>();
+		
+		for (int i = 0; i < a.length; i++) {
+			for (int j = i+1; j < a.length; j++) {
+				Integer[] x = { a[i], a[j] };
+				l.add(x);
+			}
+		}
+
+		for (Integer[] integers : l) {
+			for (int i = 0; i < integers.length; i++) {
+				System.out.print(integers[i] + " ");
+			}
+			System.out.println();
+		}
+		
+		List<Integer[]> m = geraListaDeCombinacoes(a, l);
+		
+		for (Integer[] integers : m) {
+			for (int i = 0; i < integers.length; i++) {
+				System.out.print(integers[i] + " ");
+			}
+			System.out.println();
+		}
+
+		System.out.println("=========================================");
+		System.out.println("Repeticoes eliminadas?");
+		
+		List<Integer[]> n = eliminaRepeticoes(m);
+
+		for (Integer[] integers : n) {
+			for (int i = 0; i < integers.length; i++) {
+				System.out.print(integers[i] + " ");
+			}
+			System.out.println();
+		}
+		
+		
+	}
+	
+	private static boolean achou(List<Integer[]> lista, Integer[] item, int posicao) {
+		
+		String procurada = "";
+		for (int i = 0; i < item.length; i++) {
+			procurada = procurada.concat(String.valueOf(item[i])).concat("-");
+			System.out.println("Procurada:[" + procurada + "]");
+		}
+		
+		String aux = null;
+		
+		int posAtual = 0;
+		
+		for(Integer[] inteiros : lista) {
+			
+			if(posAtual > posicao) {
+				posAtual++;
+				continue;
+			}
+			
+			aux = new String();
+			for (int i = 0; i < inteiros.length; i++) {
+				aux = aux.concat(String.valueOf(inteiros[i])).concat("-");
+			}
+
+			if(procurada.equals(aux))
+				return true;
+			
+			
+		}
+		
+		
+		return false;
+	}
+	
+	
+	private static List<Integer[]> eliminaRepeticoes(List<Integer[]> listaOriginal) {
+		
+		List<Integer[]> semRepeticoes = new ArrayList<Integer[]>();
+
+		for (int i = 0; i < listaOriginal.size() - 1; i++) {
+			
+		}
+
+		return semRepeticoes;
+		
+	}
+
+
+	public static List<Integer[]> geraListaDeCombinacoes(Integer[] numerosEscolhidos, List<Integer[]> combinacoesAuxiliares) {
+		
+		List<Integer[]> novaListaDeCombinacoes = new ArrayList<Integer[]>();
+		
+		for (int i = 0; i < numerosEscolhidos.length; i++) {
+			
+			for (int j = 0; j < combinacoesAuxiliares.size(); j++) {
+				
+				Integer[] combinacaoAtual = combinacoesAuxiliares.get(j);
+				
+				int tamanho = combinacaoAtual.length + 1;
+				
+				Integer[] novaCombinacao = new Integer[tamanho];
+				
+				novaCombinacao[0] = numerosEscolhidos[i];
+				
+				for (int k = 0; k < combinacaoAtual.length; k++) {
+					
+					novaCombinacao[k+1] = combinacaoAtual[k]; 
+					
+				}
+				
+				Arrays.sort(novaCombinacao);
+				
+				novaListaDeCombinacoes.add(novaCombinacao);
+			}
+			
+		}
+		
+		return novaListaDeCombinacoes;
+		
+	}
+	
+
+}

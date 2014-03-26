@@ -1,0 +1,23 @@
+package br.com.saraiva.utils;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+@SuppressWarnings("serial")
+public class MinhaLista<E> extends ArrayList<Integer[]> {
+
+	public MinhaLista() {
+		super();
+	}
+	
+	public boolean contains(Integer[] o) {
+		// percorre o bjeto 'Lista':
+		for (int i = 0; i < this.size(); i++) {
+			Integer[] toCompare = (Integer[]) this.get(i);
+			if (Arrays.equals(o, toCompare)) {
+				return true;
+			}
+		}
+		return false;
+	}
+}

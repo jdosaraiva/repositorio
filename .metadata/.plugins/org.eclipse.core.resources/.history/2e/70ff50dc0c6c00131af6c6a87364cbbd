@@ -1,0 +1,12 @@
+package br.com.saraiva.utils;
+
+import java.util.ArrayList;
+
+@SuppressWarnings("serial")
+public class MinhaLista<Integer[]> extends ArrayList<Integer[]> {
+
+	@Override
+	public boolean contains(Object o) {
+		return super.contains(o);
+	}
+}

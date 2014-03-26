@@ -1,0 +1,66 @@
+package br.com.saraiva.utils;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.RandomAccessFile;
+import java.util.Map;
+
+public class UtilArquivo {
+	
+	/**
+	 * Grava um mapa num arquivo
+	 * 
+	 * @param mapa a percorrer
+	 * @param nomeArquivoSaida nome do arquivo de saída
+	 */
+	public static void gravaMapaEmArquivo(Map<Integer, String> mapa,
+			String nomeArquivoSaida) {
+
+		FileWriter arq;
+		try {
+			arq = new FileWriter(nomeArquivoSaida);
+			PrintWriter gravarArq = new PrintWriter(arq);
+
+			for (Integer chave : mapa.keySet()) {
+				String resultado = mapa.get(chave);
+				gravarArq.println(resultado);
+			}
+
+			gravarArq.close();
+			arq.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+
+	/**
+	 * Le o conteúdo de um arquivo pequeno e o coloca numa string
+	 * 
+	 * @param nomeArquivo nome do arquivo para leitura
+	 * @return uma String com o conteúdo do arquivo
+	 */
+	public static String leConteudoArquivo(String nomeArquivo) {
+		String conteudoArquivo = null;
+		try {
+			File filename = new File(nomeArquivo);
+			RandomAccessFile raf = new RandomAccessFile(filename, "r");
+			byte[] b = new byte[(int) raf.length()];
+			raf.read(b);
+			raf.close();
+
+			conteudoArquivo = new String(b);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return conteudoArquivo;
+	}
+
+}

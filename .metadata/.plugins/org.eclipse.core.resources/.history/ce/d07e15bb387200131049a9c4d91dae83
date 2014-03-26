@@ -1,0 +1,47 @@
+package br.com.saraiva.utils;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Map;
+
+public class Arquivo {
+	
+	private static UtilArquivo instance = null;
+	
+	public static UtilArquivo getInstance() {
+		if (instance == null) {
+			instance = new UtilArquivo();
+		}
+		return instance;
+	}
+	
+	/**
+	 * Grava um mapa num arquivo
+	 * 
+	 * @param mapa a percorrer
+	 * @param nomeArquivoSaida nome do arquivo de saída
+	 */
+	public void gravaMapaEmArquivo(Map<Integer, String> mapa,
+			String nomeArquivoSaida) {
+
+		FileWriter arq;
+		try {
+			arq = new FileWriter(nomeArquivoSaida);
+			PrintWriter gravarArq = new PrintWriter(arq);
+
+			for (Integer chave : mapa.keySet()) {
+				String resultado = mapa.get(chave);
+				gravarArq.println(resultado);
+			}
+
+			gravarArq.close();
+			arq.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+
+}

@@ -1,0 +1,52 @@
+package br.com.saraiva.utils;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Util {
+	
+	public static void main(String[] args) {
+		
+		Integer[] a = { 1, 2, 3, 4, 5 };
+		
+		List<Integer> l = new ArrayList<Integer>();
+		
+		l.add( new Integer[] = {1, 2})
+		
+	}
+	
+	
+	public static void processa(Integer[] a, List<Integer[]> b) {
+		
+		List<Integer[]> x = new ArrayList<Integer[]>();
+		
+		for (int i = 0; i < a.length; i++) {
+			
+			for (int j = 0; j < b.size(); j++) {
+				
+				Integer[] c = b.get(j);
+				
+				int tamanho = c.length + 1;
+				
+				Integer[] d = new Integer[tamanho];
+				
+				d[0] = a[i];
+				
+				for (int k = 0; k < c.length; k++) {
+					
+					d[k+1] = c[k]; 
+					
+				}
+				
+				Arrays.sort(d);
+				
+				x.add(d);
+			}
+			
+		}
+		
+	}
+	
+
+}

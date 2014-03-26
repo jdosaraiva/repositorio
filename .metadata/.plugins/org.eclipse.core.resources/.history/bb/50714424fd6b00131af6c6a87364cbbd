@@ -1,0 +1,31 @@
+package br.com.saraiva.utils;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Util {
+	
+	public static void main(String[] args) {
+		
+		List a = new ArrayList<>();
+		a.add("1");
+		a.add("2");
+		a.add("3");
+		a.add("4");
+		a.add("5");
+		
+		List l = new ArrayList<>();
+		
+		
+		for (int i = 0; i < a.size() - 1; i++) {
+			
+			for (int j = i+1; j < a.size(); j++) {
+				
+			}
+			
+		}
+		
+	}
+	
+
+}

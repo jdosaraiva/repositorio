@@ -1,0 +1,80 @@
+package br.com.saraiva.utils;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Util {
+	
+	public static void main(String[] args) {
+		
+		List<Integer> a = new ArrayList<Integer>();
+		a.add(1);
+		a.add(2);
+		a.add(3);
+		a.add(4);
+		a.add(5);
+		
+		List<Integer> l = new ArrayList<Integer>();
+		
+		
+		for (int i = 0; i < a.size() - 1; i++) {
+			
+			for (int j = i+1; j < a.size(); j++) {
+				
+				List<Integer> b = new ArrayList<Integer>();
+				
+				b.add(a.get(i));
+				b.add(a.get(j));
+				
+				Integer[] c = b.toArray(new Integer[b.size()]);
+				
+				Arrays.sort(c);
+				
+				List<Integer[]> d = new ArrayList<Integer[]>();
+				
+				d.add(c);
+				
+				for (int k = 0; k < c.length; k++) {
+					System.out.print(c[k] + " ");
+				}
+				
+				System.out.println();
+				
+			}
+			
+		}
+		
+	}
+	
+	
+	public static void processa(Integer[] a, List<Integer[]> b) {
+		
+		List<Integer[]> x = new ArrayList<Integer[]>();
+		
+		for (int i = 0; i < a.length; i++) {
+			
+			for (int j = 0; j < b.size(); j++) {
+				
+				Integer[] c = b.get(j);
+				
+				int tamanho = c.length + 1;
+				
+				Integer[] d = new Integer[tamanho];
+				
+				d[0] = a[i];
+				
+				for (int k = 0; k < c.length; k++) {
+					
+					d[k+1] = c[k]; 
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+
+}

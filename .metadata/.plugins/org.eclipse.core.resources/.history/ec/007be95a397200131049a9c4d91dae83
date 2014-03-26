@@ -1,0 +1,28 @@
+package br.com.saraiva.utils;
+
+import java.text.DecimalFormat;
+import java.util.Arrays;
+
+public class Utils {
+
+	private static String toStr(int[] iDezenas) {
+		StringBuilder sb = new StringBuilder();
+		DecimalFormat df = new DecimalFormat("00");
+		for (int iDezena : iDezenas) {
+			sb.append(df.format(iDezena)).append(" ");
+		}
+		String str = sb.toString().trim();
+		return str;
+	}
+
+	private static int[] toIntArraySorted(String novaCombinacao) {
+		String[] sDezenas = novaCombinacao.trim().split(" ");
+		int[] iDezenas = new int[sDezenas.length];
+		for (int i = 0; i < sDezenas.length; i++) {
+			iDezenas[i] = Integer.parseInt(sDezenas[i]);
+		}
+		Arrays.sort(iDezenas);
+		return iDezenas;
+	}
+
+}

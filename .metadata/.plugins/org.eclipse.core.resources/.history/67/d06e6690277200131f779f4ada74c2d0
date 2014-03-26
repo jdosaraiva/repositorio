@@ -1,0 +1,11 @@
+package br.com.saraiva.utils;
+
+
+public class TestesAleatorios {
+
+	public static void main(String[] args) {
+
+		System.out.println("Novo gerador com tudo o que já sabemos!");
+	}
+
+}

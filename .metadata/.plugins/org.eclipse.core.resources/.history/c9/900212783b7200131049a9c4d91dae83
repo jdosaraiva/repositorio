@@ -1,0 +1,190 @@
+package br.com.saraiva.utils;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Uma classe que compara um arquivo de apostas efetuadas com todos os resultados publicados num arquivo
+ * @author saraiva
+ *
+ */
+public class Lotofacil {
+
+	@SuppressWarnings("unused")
+	public static void main(String[] args) {
+
+		Lotofacil lf = new Lotofacil();
+
+		// String nomeDoArquivoComApostas = "C:\\Temp\\26_DE_18_combinacoes201312301018.txt";
+				
+		// lf.compararaTodosOsResultadosComMinhasApostas(nomeDoArquivoComApostas);
+		
+		listaDezenasNoArquivo(Utils.leConteudoArquivo("C:\\Temp\\26_DE_18_combinacoes201312301018.txt"), Utils.leConteudoArquivo("c:\\temp\\Lotofacil_C1000.txt"));
+		
+	}
+
+	private static void listaDezenasNoArquivo(String conteudo, String resultado) {
+		
+		List<String> lista = new ArrayList<String>();
+		
+		for (String linha : conteudo.split("\n")) {
+			String[] aux = linha.trim().replaceAll("\r", "").split(" ");
+			for (String string : aux) {
+				if (!lista.contains(string)) {
+					lista.add(string);
+				}
+			}
+		}
+		
+		System.out.println(" Tamanho do Array:[" + lista.size() + "]");
+		
+		System.out.print("Dezenas Apostadas:[");
+		for (String string : lista) {
+			System.out.printf("%s ", string);
+		}
+		System.out.println("]");
+		
+		System.out.println("        Resultado:[" + resultado.replaceAll("\n", "").trim() + "]");
+		
+		String[] aux = resultado.replaceAll("\n", "").trim().split(" ");
+		
+		int acertos = 0;
+		String strAcertos = "";
+		EXTERNO:
+		for (String string : aux) {
+			for (String apostada : lista) {
+				if (string.equals(apostada)) {
+					acertos++;
+					strAcertos = strAcertos.concat(apostada).concat(" ");
+					continue EXTERNO;
+				}
+			}
+		}
+		
+		System.out.println("          Acertos:[" + acertos + "]");
+		System.out.println("      Str Acertos:[" + strAcertos.trim() + "]");
+	}
+
+	@SuppressWarnings("unused")
+	private void preparaArquivoDeResultados(String arqEntrada, String arqSaida) {
+		Map<Integer, String> results = this.trataConteudo(UtilArquivo.getInstance().leConteudoArquivo(arqEntrada));
+		System.out.println("Tamanho do mapa:[" + results.size() + "]");
+		UtilArquivo.getInstance().gravaMapaEmArquivo(results, arqSaida);
+	}
+	
+	/**
+	 * Compara todos os resultadados da Lotofacil com um arquivo de apostas
+	 * 
+	 * @param arquivoApostas arquivo com apostas
+	 */
+	@SuppressWarnings("unused")
+	private void compararaTodosOsResultadosComMinhasApostas(
+			String arquivoApostas) {
+
+		System.out.println("Iniciando comparação...");
+
+		boolean temPremiado = false;
+
+		String s1 = UtilArquivo.getInstance().leConteudoArquivo("c:\\temp\\lotofacil_999.txt");
+		String s2 = UtilArquivo.getInstance().leConteudoArquivo(arquivoApostas);
+
+		Map<Integer, String> todos = this.trataConteudo(s1);
+		Map<Integer, String> meus = this.trataConteudo(s2);
+
+		for (Integer chave : meus.keySet()) {
+			if (todos.containsKey(chave)) {
+				System.out.println("Jogo:[" + todos.get(chave)
+						+ "] já foi premiado.");
+				temPremiado = true;
+			}
+		}
+
+		for (Integer chave : todos.keySet()) {
+			ConferidorDeLoteria cl = new ConferidorDeLoteria(todos.get(chave));
+			for (Integer aposta : meus.keySet()) {
+				String[] aux = meus.get(aposta).split(" ");
+				cl.premiado(aux);
+			}
+		}
+
+		if (!temPremiado) {
+			System.out
+					.println("Nenhuma das apostas deste arquivo já fez os 15 pontos.");
+		}
+
+	}
+
+	/**
+	 * Trata o conteúdo de um string transformando o mesmo num mapa
+	 * 
+	 * @param conteudoArquivo String a tratar
+	 * @return Mapa onde cada entrada representa uma "linha" do conteúdo passado
+	 */
+	private Map<Integer, String> trataConteudo(String conteudoArquivo) {
+
+		String[] conteudo = conteudoArquivo.split("\n");
+
+		Map<Integer, String> mapa = new HashMap<Integer, String>();
+
+		for (String linha : conteudo) {
+			String aux = linha.replaceAll("\r", "");
+
+			// System.out.println("> " + aux);
+
+			int[] resultado = paraArrayInt(aux);
+
+			String sResultado = paraStr(resultado);
+
+			// System.out.println("< " + sResultado);
+
+			mapa.put(sResultado.hashCode(), sResultado);
+		}
+
+		return mapa;
+	}
+
+	/**
+	 * Recebe um array de inteiros e devolve um string com os números formatados
+	 * e separados por espaços
+	 * 
+	 * @param old o array que se deseja converter
+	 * @return um String que representa o array
+	 */
+	private String paraStr(int[] old) {
+		StringBuilder sb = new StringBuilder();
+
+		DecimalFormat df = new DecimalFormat("00");
+
+		for (int i : old) {
+			sb.append(df.format(i)).append(" ");
+		}
+
+		return sb.toString().trim();
+	}
+
+	/**
+	 * Converte uma String em int[] usando o espaço como separador
+	 * 
+	 * @param origem String com números separados por espaços
+	 * @return um array de inteiros
+	 */
+	private static int[] paraArrayInt(String origem) {
+
+		String[] bolas = origem.split(" ");
+
+		int[] numeros = new int[bolas.length];
+
+		for (int i = 0; i < bolas.length; i++) {
+			numeros[i] = Integer.parseInt(bolas[i]);
+		}
+
+		Arrays.sort(numeros);
+
+		return numeros;
+	}
+
+}

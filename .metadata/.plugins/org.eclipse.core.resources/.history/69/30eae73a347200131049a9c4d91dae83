@@ -1,0 +1,135 @@
+package br.com.saraiva.utils;
+
+import java.text.DecimalFormat;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+public class TestesAleatorios {
+
+	public static void main(String[] args) {
+
+		System.out.println("Novo gerador com tudo o que já sabemos!");
+
+		String[] dezenas = { "01", "02", "03", "04", "05", "06", "07", "08",
+				"09", "10", "11", "12", "13", "14", "15", "16", "17", "18" };
+
+		Map<Integer, String> mapa = new HashMap<Integer, String>();
+		
+		int dezenasPorCombinacao = 1;
+
+		Chronometer.start();
+		
+		geradorDeCombinacoes(dezenas, mapa, dezenasPorCombinacao);
+
+		Chronometer.stop();
+		
+		if (Chronometer.time() <= 1000) {
+			System.out.println("Tempo de Processamento:[" + Chronometer.time() + " ms]");
+		} else if (Chronometer.stime() <= 60) {
+			System.out.println("Tempo de Processamento:[" + Chronometer.stime() + " s]");
+		} else {
+			System.out.println("Tempo de Processamento:[" + Chronometer.mtime() + " m]");
+		}
+
+	}
+
+	private static void geradorDeCombinacoes(String[] dezenas,
+			Map<Integer, String> mapa, int dezenasPorCombinacao) {
+		int profundidade = (dezenas.length - dezenasPorCombinacao) >= (dezenas.length / 2) ? dezenasPorCombinacao : dezenas.length - dezenasPorCombinacao;  
+
+		mapa = gerarCombinacoes(dezenas, mapa, profundidade);
+
+		if (dezenasPorCombinacao != profundidade) {
+			mapa = gerarComplementares(mapa, dezenas);
+		}
+		
+		imprimeMapa(mapa);
+	}
+
+	private static Map<Integer, String> gerarComplementares(
+			Map<Integer, String> mapa, String[] dezenas) {
+		
+		Map<Integer, String> newmapa = new HashMap<Integer, String>();
+		
+		for (Integer key : mapa.keySet()) {
+			String combinacao = mapa.get(key);
+			StringBuilder sb = new StringBuilder();
+			for (String dezena : dezenas) {
+				if (combinacao.indexOf(dezena) < 0) {
+					sb.append(dezena).append(" ");
+				}
+			}
+			newmapa.put(sb.toString().trim().hashCode(), sb.toString().trim());
+		}
+
+		return newmapa;
+	}
+
+	private static Map<Integer, String> gerarCombinacoes(String[] dezenas,
+			Map<Integer, String> mapa, int profundidade) {
+		for (int i = 0; i < profundidade; i++) {
+			mapa = gerar(mapa, dezenas);
+		}
+		return mapa;
+	}
+
+	private static void imprimeMapa(Map<Integer, String> mapa) {
+		for (Integer key : mapa.keySet()) {
+			String entrada = mapa.get(key);
+			System.out.printf("%s \n", entrada);
+		}
+		System.out.println("-- Tamanho do mapa:[" + mapa.size() + "]");
+	}
+
+	private static Map<Integer, String> gerar(Map<Integer, String> mapa,
+			String[] dezenas) {
+
+		Map<Integer, String> newmapa = new HashMap<Integer, String>();
+
+		if (mapa.size() == 0) {
+			for (String dezena : dezenas) {
+				Integer hash = dezena.hashCode();
+				newmapa.put(hash, dezena);
+			}
+			return newmapa;
+		}
+
+		for (Integer key : mapa.keySet()) {
+			String aux = mapa.get(key);
+			for (String dezena : dezenas) {
+				if (aux.indexOf(dezena) >= 0) {
+					continue;
+				} else {
+					String novaCombinacao = aux.concat(" ").concat(dezena);
+					int[] iDezenas = toIntArraySorted(novaCombinacao);
+					String str = toStr(iDezenas);
+					newmapa.put(str.hashCode(), str);
+				}
+			}
+		}
+
+		return newmapa;
+	}
+
+	private static String toStr(int[] iDezenas) {
+		StringBuilder sb = new StringBuilder();
+		DecimalFormat df = new DecimalFormat("00");
+		for (int iDezena : iDezenas) {
+			sb.append(df.format(iDezena)).append(" ");
+		}
+		String str = sb.toString().trim();
+		return str;
+	}
+
+	private static int[] toIntArraySorted(String novaCombinacao) {
+		String[] sDezenas = novaCombinacao.trim().split(" ");
+		int[] iDezenas = new int[sDezenas.length];
+		for (int i = 0; i < sDezenas.length; i++) {
+			iDezenas[i] = Integer.parseInt(sDezenas[i]);
+		}
+		Arrays.sort(iDezenas);
+		return iDezenas;
+	}
+
+}

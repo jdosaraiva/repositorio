@@ -1,0 +1,12 @@
+package br.com.caelum.orcamento;
+
+public abstract class Imposto {
+	
+	private final Imposto outroImposto;
+	
+	public Imposto(Imposto outroImposto) {
+		this.outroImposto = outroImposto; 
+	}
+	
+	double calcula(Orcamento orcamento);
+}

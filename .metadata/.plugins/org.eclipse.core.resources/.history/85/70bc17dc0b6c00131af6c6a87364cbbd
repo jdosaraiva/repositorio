@@ -1,0 +1,94 @@
+package br.com.saraiva.utils;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
+public class Util {
+	
+	public static void main(String[] args) {
+		
+		Integer[] a = { 1, 2, 3, 4, 5 };
+		
+		List<Integer[]> l = new ArrayList<Integer[]>();
+		
+		for (int i = 0; i < a.length; i++) {
+			for (int j = i+1; j < a.length; j++) {
+				Integer[] x = { a[i], a[j] };
+				l.add(x);
+			}
+		}
+
+		for (Integer[] integers : l) {
+			for (int i = 0; i < integers.length; i++) {
+				System.out.print(integers[i] + " ");
+			}
+			System.out.println();
+		}
+		
+		List<Integer[]> m = geraListaDeCombinacoes(a, l);
+		
+		for (Integer[] integers : m) {
+			for (int i = 0; i < integers.length; i++) {
+				System.out.print(integers[i] + " ");
+			}
+			System.out.println();
+		}
+		
+		
+		eliminaRepeticoes(m);
+		
+	}
+	
+	
+	private static void eliminaRepeticoes(List<Integer[]> listaOriginal) {
+		
+		List<Integer[]> semRepeticoes = new ArrayList<Integer[]>();
+		
+		for (Integer[] integers : listaOriginal) {
+			if (!semRepeticoes.contains(integers)) {
+				semRepeticoes.add(integers);
+			}
+		}
+		
+		listaOriginal = semRepeticoes;
+		
+	}
+
+
+	public static List<Integer[]> geraListaDeCombinacoes(Integer[] numerosEscolhidos, List<Integer[]> combinacoesAuxiliares) {
+		
+		List<Integer[]> novaListaDeCombinacoes = new ArrayList<Integer[]>();
+		
+		for (int i = 0; i < numerosEscolhidos.length; i++) {
+			
+			for (int j = 0; j < combinacoesAuxiliares.size(); j++) {
+				
+				Integer[] combinacaoAtual = combinacoesAuxiliares.get(j);
+				
+				int tamanho = combinacaoAtual.length + 1;
+				
+				Integer[] novaCombinacao = new Integer[tamanho];
+				
+				novaCombinacao[0] = numerosEscolhidos[i];
+				
+				for (int k = 0; k < combinacaoAtual.length; k++) {
+					
+					novaCombinacao[k+1] = combinacaoAtual[k]; 
+					
+				}
+				
+				Arrays.sort(novaCombinacao);
+				
+				novaListaDeCombinacoes.add(novaCombinacao);
+			}
+			
+		}
+		
+		return novaListaDeCombinacoes;
+		
+	}
+	
+
+}
