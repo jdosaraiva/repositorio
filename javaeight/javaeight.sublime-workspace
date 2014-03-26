@@ -1,0 +1,366 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "JavaSource/br/com/saraiva/java8/Usuario.java",
+			"settings":
+			{
+				"buffer_size": 456,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "JavaSource/br/com/saraiva/java8/Capitulo2.java",
+			"settings":
+			{
+				"buffer_size": 522,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "JavaSource/br/com/saraiva/java8/Mostrador.java",
+			"settings":
+			{
+				"buffer_size": 194,
+				"line_ending": "Windows",
+				"name": "public class Mostrador implements Consumer<Usuario"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 196.0,
+		"selected_items":
+		[
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 504.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/Daniel/Documentos/Pagamentos/2014/02_Fev/OFFICE_2013_KEY_20140222.txt",
+		"/D/workspace/repositorio/javaeight/JavaSource/br/com/saraiva/java8/Usuario.java",
+		"/D/Daniel/Documentos/Pagamentos/2014/02_Fev/CODIGOS_BARRA_201402.txt",
+		"/D/Roque/APTO_ROQUE_DADOS.txt",
+		"/D/Daniel/Documentos/Pagamentos/2014/02_Fev/CODIGOS_BARRA_201402",
+		"/D/Daniel/Documentos/REPEDITOR",
+		"/C/Temp/19_15_A_15_COMBINACOES_201401032111.txt",
+		"/C/Temp/16_DE_19_15_A_15_COMBINACOES_201401032111.txt",
+		"/C/Temp/19_dezenas.txt",
+		"/C/Temp/lotofacil_2.txt",
+		"/C/bats/geraapostas.cmd",
+		"/C/bats/confere.cmd",
+		"/C/bats/geracombinacoes.cmd",
+		"/C/bats/lfresultado.cmd",
+		"/C/bats/lftodos.cmd",
+		"/C/Temp/08_DE_21_15_A_15_COMBINACOES_201401020946.txt",
+		"/C/Temp/lf_c1001.txt",
+		"/C/Temp/dezenas.txt",
+		"/C/Temp/20_15_A_15_COMBINACOES_201312311654.txt",
+		"/C/Temp/20_15_A_15_COMBINACOES_201312311652.txt",
+		"/C/Temp/15_COMBINACOES_201312311518.txt",
+		"/C/Temp/15_COMBINACOES_201312311523.txt",
+		"/C/Temp/combinacoes201312302222.txt",
+		"/C/Temp/15_COMBINACOES_201312311516.txt",
+		"/C/Temp/lotofacil_999.txt",
+		"/C/Temp/Lotofacil_C1000.txt",
+		"/C/Temp/conferindo201312302109.txt",
+		"/D/Temp/18_15_A_15_20131224.txt",
+		"/D/Temp/combinacoes.txt",
+		"/D/workspace/repositorio/cod-barras/estilos/style.css",
+		"/D/workspace/repositorio/cod-barras/window.html",
+		"/D/workspace/repositorio/comandos.txt",
+		"/D/workspace/repositorio/hello-world/manifest.json",
+		"/D/workspace/repositorio/hello-world/window.html",
+		"/D/workspace/repositorio/hello-world/background.js",
+		"/C/Users/Saraiva/Downloads/zGreenFood_zerotheme.com/zGreenFood/index.html",
+		"/C/Users/Saraiva/Downloads/meusite/meusite/index.html",
+		"/D/Temp/index.html",
+		"/D/Daniel/Documentos/Pagamentos/2013/Casa/Telefones/Faturas/CODIGOS_BARRA.TXT",
+		"/D/Ferramental/ubuntu/MD5SUMS.txt",
+		"/D/workspaceruby/job_board/app/views/layouts/application.html.erb",
+		"/D/workspaceruby/job_board/config/locales/en.yml",
+		"/D/workspaceruby/job_board/config/locales/pt-BR.yml",
+		"/D/workspaceruby/job_board/app/views/jobs/index.html.erb",
+		"/D/workspaceruby/job_board/app/models/job.rb",
+		"/D/workspaceruby/job_board/app/controllers/jobs_controller.rb",
+		"/D/Ferramental/Nero 8.2.8.0 Lite/Serial.txt",
+		"/D/workspaceruby/job_board/app/controllers/application_controller.rb",
+		"/D/workspaceruby/job_board/Gemfile",
+		"/D/workspaceruby/job_board/config/application.rb",
+		"/D/workspaceruby/job_board/app/views/comments/_comment.html.erb",
+		"/D/workspaceruby/job_board/app/views/comments/_form.html.erb",
+		"/D/workspaceruby/job_board/app/views/comments/create.js.erb",
+		"/D/workspaceruby/job_board/app/views/login/_form.html.erb",
+		"/D/workspaceruby/job_board/app/views/login/new.html.erb",
+		"/D/workspaceruby/job_board/app/models/comment.rb",
+		"/D/workspaceruby/job_board/app/views/company_mailer/new_comment.html.erb",
+		"/D/workspaceruby/job_board/app/views/company_mailer/new_comment.text.erb",
+		"/D/workspaceruby/job_board/app/views/companies/new.html.erb",
+		"/C/Users/Saraiva/AppData/Local/Temp/7zOC92A.tmp/_form.html.erb",
+		"/D/workspaceruby/job_board/app/views/jobs/premium.html.erb",
+		"/D/workspaceruby/job_board/app/views/jobs/show.html.erb",
+		"/D/workspaceruby/job_board/app/views/hello/world.html.erb",
+		"/D/workspaceruby/job_board/app/views/jobs/new.html.erb",
+		"/D/workspaceruby/job_board/app/views/jobs/edit.html.erb",
+		"/D/workspaceruby/job_board/app/mailers/company_mailer.rb",
+		"/D/workspaceruby/job_board/app/views/jobs/_job.html.erb",
+		"/D/workspaceruby/job_board/config/environments/development.rb",
+		"/D/workspaceruby/job_board/app/controllers/comments_controller.rb",
+		"/D/workspaceruby/job_board/app/assets/javascripts/application.js",
+		"/D/workspaceruby/job_board/app/helpers/jobs_helper.rb",
+		"/D/workspaceruby/job_board/db/migrate/20130914122434_add_comments_count_to_jobs.rb",
+		"/D/workspaceruby/job_board/db/migrate/20130914122734_update_comments_count_in_jobs.rb",
+		"/D/workspaceruby/job_board/app/helpers/hello_helper.rb",
+		"/D/workspaceruby/job_board/db/migrate/20130913003439_add_company_id_to_jobs.rb",
+		"/D/workspaceruby/job_board/app/models/company.rb",
+		"/D/workspaceruby/job_board/config/routes.rb",
+		"/D/workspaceruby/job_board/app/controllers/login_controller.rb",
+		"/D/workspaceruby/job_board/app/views/jobs/_form.html.erb",
+		"/D/workspaceruby/job_board/config/initializers/session_store.rb",
+		"/C/Users/Saraiva/Downloads/plataformatec-curso-RA-02-b71dfae/plataformatec-curso-RA-02-b71dfae/app/views/layouts/application.html.erb",
+		"/D/Daniel/Documentos/Pagamentos/2013/ContasConsumo201309",
+		"/D/workspaceruby/used_cars/app/controllers/cars_controller.rb",
+		"/D/workspaceruby/used_cars/config/routes.rb",
+		"/D/workspaceruby/job_board/app/controllers/hello_controller.rb",
+		"/D/workspaceruby/job_board/db/migrate/20130906190849_add_premium_to_jobs.rb",
+		"/D/workspaceruby/job_board/public/index.html",
+		"/D/workspaceruby/used_cars/app/views/cars/edit.html.erb",
+		"/D/workspaceruby/used_cars/app/views/cars/new.html.erb",
+		"/C/mysql/my-default.ini",
+		"/C/mysql/my.ini"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"D:\\workspaceruby\\job_board"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"03 04",
+			"	",
+			"c:\\workspaceJDOS",
+			"	",
+			"\n ",
+			"find",
+			"listing",
+			"job_title",
+			"companies_login_path"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			" ",
+			"d:\\workspace",
+			" "
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "JavaSource/br/com/saraiva/java8/Usuario.java",
+					"settings":
+					{
+						"buffer_size": 456,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								29,
+								29
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "JavaSource/br/com/saraiva/java8/Capitulo2.java",
+					"settings":
+					{
+						"buffer_size": 522,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								516,
+								516
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "JavaSource/br/com/saraiva/java8/Mostrador.java",
+					"settings":
+					{
+						"buffer_size": 194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								155,
+								155
+							]
+						],
+						"settings":
+						{
+							"auto_name": "public class Mostrador implements Consumer<Usuario",
+							"syntax": "Packages/Java/Java.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.git":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/D/Daniel/Documentos/Pagamentos/2014/02_Fev/CODIGOS_BARRA_201402"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 243.0,
+	"status_bar_visible": true
+}
