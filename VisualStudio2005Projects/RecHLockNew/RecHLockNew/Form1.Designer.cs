@@ -46,6 +46,7 @@ namespace RecHLockNew
             this.rdOption1.TabStop = true;
             this.rdOption1.Text = "HardLock";
             this.rdOption1.UseVisualStyleBackColor = true;
+            this.rdOption1.Click += new System.EventHandler(this.rdOption1_Click);
             // 
             // rdOption2
             // 
@@ -57,6 +58,7 @@ namespace RecHLockNew
             this.rdOption2.TabStop = true;
             this.rdOption2.Text = "CP - 500";
             this.rdOption2.UseVisualStyleBackColor = true;
+            this.rdOption2.Click += new System.EventHandler(this.rdOption2_Click);
             // 
             // rdOption3
             // 
@@ -68,9 +70,11 @@ namespace RecHLockNew
             this.rdOption3.TabStop = true;
             this.rdOption3.Text = "FT - Rockey";
             this.rdOption3.UseVisualStyleBackColor = true;
+            this.rdOption3.Click += new System.EventHandler(this.rdOption3_Click);
             // 
             // btnEntrar
             // 
+            this.btnEntrar.Enabled = false;
             this.btnEntrar.Location = new System.Drawing.Point(80, 119);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(75, 33);

@@ -7,3 +7,4 @@ C:\workspaceJDOS\repositorio\VisualStudio2005Projects\RecHLockNew\RecHLockNew\ob
 C:\workspaceJDOS\repositorio\VisualStudio2005Projects\RecHLockNew\RecHLockNew\obj\Debug\RecHLockNew.exe
 C:\workspaceJDOS\repositorio\VisualStudio2005Projects\RecHLockNew\RecHLockNew\obj\Debug\RecHLockNew.pdb
 C:\workspaceJDOS\repositorio\VisualStudio2005Projects\RecHLockNew\RecHLockNew\obj\Debug\RecHLockNew.FormMain.resources
+C:\workspaceJDOS\repositorio\VisualStudio2005Projects\RecHLockNew\RecHLockNew\bin\Debug\hasp_net_windows.dll

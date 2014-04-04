@@ -19,6 +19,10 @@ namespace RecHLockNew
         {
             grbOptions.Left = (this.ClientSize.Width - grbOptions.Width) / 2;
             btnEntrar.Left = (this.ClientSize.Width - btnEntrar.Width) / 2;
+            rdOption1.Checked = false;
+            rdOption2.Checked = false;
+            rdOption3.Checked = false;
+            btnEntrar.Enabled = false;
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -29,6 +33,22 @@ namespace RecHLockNew
             frmMain.ShowDialog();
 
             this.Close();
+
+        }
+
+        private void rdOption1_Click(object sender, EventArgs e)
+        {
+            btnEntrar.Enabled = true;
+        }
+
+        private void rdOption2_Click(object sender, EventArgs e)
+        {
+            btnEntrar.Enabled = true;
+        }
+
+        private void rdOption3_Click(object sender, EventArgs e)
+        {
+            btnEntrar.Enabled = true;
 
         }
     }
