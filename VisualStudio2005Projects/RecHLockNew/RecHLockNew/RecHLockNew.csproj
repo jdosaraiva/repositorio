@@ -53,6 +53,9 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="HardLock.cs" />
+    <Compile Include="HardLockBuilder.cs" />
+    <Compile Include="HardLockHelper.cs" />
     <Compile Include="HaspStatusDic.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Program.cs" />

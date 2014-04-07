@@ -12,8 +12,9 @@ namespace RecHLockNew
     public partial class FormMain : Form
     {
 
-        private Logger log = new Logger();
-        private MapaStatus mpst = new MapaStatus();
+        private Logger log = new Logger(typeof(FormMain));
+
+        private HardLockHelper helper = new HardLockHelper();
         
         public FormMain()
         {
@@ -25,7 +26,7 @@ namespace RecHLockNew
             txtHardLockValido.Text = "HARDLOCK VÁLIDO";
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -33,200 +34,140 @@ namespace RecHLockNew
         private void btnLoginHasp_Click(object sender, EventArgs e)
         {
 
-            Hasp hasp;
-            HaspStatus status;
-            loginInHasp(out hasp, out status);
+            HaspStatus status = helper.loginInHasp();
 
             if (HaspStatus.StatusOk == status)
             {
-                logoutInHasp(hasp, ref status);
+                helper.logoutInHasp();
             }
-
-        }
-
-        private void logoutInHasp(Hasp hasp, ref HaspStatus status)
-        {
-            status = hasp.Logout();
-
-            string mensagem = "";
-
-            if (HaspStatus.StatusOk != status)
-            {
-                mensagem = "ERRO: [" + mpst.getStatus((int)status) + "]";
-            }
-            else
-            {
-                mensagem = "Logout no HASP efetuado com sucesso!";
-            }
-
-            log.info("#logoutInHasp - " + mensagem);
-        }
-
-        private void loginInHasp(out Hasp hasp, out HaspStatus status)
-        {
-            //HaspFeature feature = HaspFeature.FromFeature(10);
-            HaspFeature feature = HaspFeature.FromFeature(50);
-            string mensagem = "";
-
-            string scope =
-                "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" +
-                "<haspscope>" +
-                "    <hasp type=\"HASP-HL\" />" +
-                "</haspscope>";
-
-            hasp = new Hasp(feature);
-            //HaspStatus status = hasp.Login(VendorCode.Code);
-            status = hasp.Login(VendorCode.Code, scope);
-
-            mensagem = exibeMensagem(status, "Login no HASP efetuado com sucesso!");
-
-            log.info("#loginInHasp - " + mensagem);
 
         }
 
         private void btnCmdWrite_Click(object sender, EventArgs e)
         {
-            Hasp hasp;
             HaspStatus status;
 
             string msgaux = "";
 
-            loginInHasp(out hasp, out status);
+            DateTime? validade = null;
+            if (!chkIlimitado.Checked)
+            {
+                validade = Calendar.SelectionRange.Start;
+            }
+
+            if (!validaCampos()) return;
+
+            HardLock hl = new HardLockBuilder()
+                    .withVersaHardLock(Convert.ToInt32(txtVersaoHardLock.Text))
+                    .withNCanais(Convert.ToInt32(txtNCanais.Text))
+                    .withValidade(validade)
+                    .withVMajor(Convert.ToInt32(txtVMajor.Text))
+                    .withVMinor(Convert.ToInt32(txtVMinor.Text))
+                    .withNUsers(Convert.ToInt32(txtNUsers.Text))
+                    .withVoiceMail(chkVoiceMail.Checked)
+                    .withFaxMail(chkFaxMail.Checked)
+                    .withCampanha(chkCampanha.Checked)
+                    .withXFace(chkXFace.Checked)
+                    .withBroadcast(chkBroadcast.Checked)
+                    .withRobot(chkRobot.Checked)
+                    .withSpeech(chkSpeech.Checked)
+                    .withTextToSpeech(chkTextToSpeech.Checked)
+                    .build();
+
+            status = helper.loginInHasp();
 
             if (HaspStatus.StatusOk != status)
             {
                 return;
             }
 
-            int size = 100;
-            byte[] data = new byte[size];
-
-            string strgravar = addLeadingWhiteSpaces(texto.Text, size);
-
-            log.info("#btnCmdWrite_Click - String a gravar:[" + strgravar + "]");
-
-            data = Encoding.ASCII.GetBytes(strgravar);
-
-            //byte[] data = {
-            //        0x48, 0xce, 0x04, 0x95, 0x09, 0xac, 0x62, 0x63, 
-            //        0x0e, 0x4b, 0x8e, 0xe3, 0x85, 0x6e, 0x7b, 0x59, 
-            //        0x5a, 0xa1, 0xde, 0x30, 0xfc, 0xe7, 0x06, 0x1e, 
-            //        0x4f, 0xba, 0x35, 0x3f, 0x1b, 0xe5, 0x67, 0xaa, 
-            //        0x63, 0xbe, 0x47, 0x35, 0xdc, 0x6a, 0x49, 0xd8, 
-            //        0xd2, 0x9c, 0xf4, 0xa1, 0x38, 0xae, 0xa9, 0x77, 
-            //        0xf5, 0x4f, 0x15, 0x0e, 0x1d, 0x17, 0x51, 0xba, 
-            //        0x03, 0x80, 0xff, 0x11, 0x9d, 0x61, 0x62, 0xc3, 
-            //        0xe8, 0xab, 0x26, 0x79, 0x4e, 0x14, 0xbe, 0x0e, 
-            //        0x0e, 0x82, 0xa2, 0x82, 0xd0, 0x41, 0x8f, 0x4c, 
-            //        0x9d, 0x02, 0x96, 0x31, 0xf2, 0x0d, 0xa7, 0x23, 
-            //        0x0c, 0xc2, 0x77, 0xfc, 0xa4, 0xfe, 0x4c, 0x57, 
-            //        0x36, 0xe6, 0x33, 0x3e};
-
-            status = hasp.Encrypt(data);
-
-            if (HaspStatus.StatusOk != status)
+            if (helper.writeInHasp(ref msgaux, hl))
             {
-                msgaux = "ERRO: [" + mpst.getStatus((int)status) + "]";
-                MessageBox.Show(msgaux, FormMain.ActiveForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                log.info("#btnCmdWrite_Click - " + msgaux);
-
-                logoutInHasp(hasp, ref status);
-
-                return;
+                helper.logoutInHasp();
             }
 
-            HaspFile file = hasp.GetFile(HaspFileId.ReadWrite);
-
-            status = file.Write(data, 0, data.Length);
-
-            msgaux = exibeMensagem(status, "Gravação efetuada com sucesso!");
-
-            log.info("#btnCmdWrite_Click - " + msgaux);
-
-            logoutInHasp(hasp, ref status);
         }
 
-        private string addLeadingWhiteSpaces(string str, int tam)
+        private bool validaCampos()
         {
-            StringBuilder sb = new StringBuilder(str);
-            while (sb.Length < tam) sb.Append(" ");
-
-            return sb.ToString();
-        }
-
-        private string exibeMensagem(HaspStatus status, string msgSucesso)
-        {
-            MessageBoxIcon mbi  = MessageBoxIcon.Information;
-
-            string alert = "";
-
-            if (HaspStatus.StatusOk != status)
+            if (string.Empty == txtVersaoHardLock.Text)
             {
-                alert = "ERRO: [" + mpst.getStatus((int)status) + "]";
-                mbi = MessageBoxIcon.Error;
-            }
-            else
-            {
-                alert = msgSucesso;
+                MessageBox.Show("O campo Versão HardLock deve ser preenchido.", FormMain.ActiveForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                txtVersaoHardLock.Focus();
+                return false;
             }
 
-            MessageBox.Show(alert, FormMain.ActiveForm.Text, MessageBoxButtons.OK, mbi);
-            return alert;
+            if (string.Empty == txtNCanais.Text)
+            {
+                MessageBox.Show("O campo Canais deve ser preenchido.", FormMain.ActiveForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                txtNCanais.Focus();
+                return false;
+            }
+
+            if (string.Empty == txtVMajor.Text)
+            {
+                MessageBox.Show("O campo Versão Crytal deve ser preenchido.", FormMain.ActiveForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                txtVMajor.Focus();
+                return false;
+            }
+
+            if (string.Empty == txtVMinor.Text)
+            {
+                MessageBox.Show("O campo Versão Crytal deve ser preenchido.", FormMain.ActiveForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                txtVMinor.Focus();
+                return false;
+            }
+
+            if (string.Empty == txtNUsers.Text)
+            {
+                MessageBox.Show("O campo Máximo de usuários deve ser preenchido.", FormMain.ActiveForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                txtNUsers.Focus();
+                return false;
+            }
+
+            return true;
         }
 
         private void btnCmdLer_Click(object sender, EventArgs e)
         {
-            Hasp hasp;
             HaspStatus status;
             string mensagem = "";
 
-            loginInHasp(out hasp, out status);
+            status = helper.loginInHasp();
 
             if (HaspStatus.StatusOk != status)
             {
                 return;
             }
 
-            readInHasp(hasp, ref status, ref mensagem);
+            txtRead.Text = helper.readInHasp(ref status, ref mensagem);
             
-            logoutInHasp(hasp, ref status);
+            helper.logoutInHasp();
         }
 
-        private void readInHasp(Hasp hasp, ref HaspStatus status, ref string mensagem)
+        private void AceitaApenasNumeros_KeyPress(object sender, KeyPressEventArgs e)
         {
-            HaspFile file = hasp.GetFile(HaspFileId.ReadWrite);
-            int size = 100;
-            byte[] data = new byte[size];
-            status = file.Read(data, 0, data.Length);
-
-            mensagem = exibeMensagem(status, "Leitura efetuada com sucesso!");
-
-            status = hasp.Decrypt(data);
-
-            System.Text.ASCIIEncoding enc = new System.Text.ASCIIEncoding();
-            string dadosDecriptados = enc.GetString(data);
-
-            dadosDecriptados = dadosDecriptados.Replace("\0", String.Empty);
-
-            log.info("#readInHasp - Dados decriptados:[" + dadosDecriptados + "]");
-
-            // MessageBox.Show("Lido:[" + dadosDecriptados + "]", FormMain.ActiveForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            txtRead.Text = dadosDecriptados.Trim();
-
-            log.info("#readInHasp - " + mensagem);
+            if (char.IsDigit(e.KeyChar)) return;
+            if (char.IsControl(e.KeyChar)) return;
+            
+            e.Handled = true;
 
         }
 
-        private void texto_TextChanged(object sender, EventArgs e)
+        private void chkIlimitado_CheckedChanged(object sender, EventArgs e)
         {
-            if (String.Empty != texto.Text)
+            if (chkIlimitado.Checked)
             {
-                if (!(btnCmdWrite.Enabled == true)) btnCmdWrite.Enabled = true;
+                if (Calendar.Enabled) Calendar.Enabled = false;
             }
-            else {
-                if (btnCmdWrite.Enabled == true) btnCmdWrite.Enabled = false;
+            else
+            {
+                if (!Calendar.Enabled) Calendar.Enabled = true;
             }
         }
 
