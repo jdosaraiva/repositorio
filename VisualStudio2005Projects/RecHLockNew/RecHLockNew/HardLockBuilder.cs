@@ -107,6 +107,12 @@ namespace RecHLockNew
             return this;
         }
 
+        public HardLockBuilder withDTControle(DateTime dtControle)
+        {
+            hl.DTControle = dtControle;
+            return this;
+        }
+
         public HardLockBuilder bloqueado()
         {
             hl.Bloqueado = true;

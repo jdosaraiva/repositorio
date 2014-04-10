@@ -60,6 +60,9 @@ namespace RecHLockNew
             this.label1 = new System.Windows.Forms.Label();
             this.txtHardLockValido = new System.Windows.Forms.TextBox();
             this.txtRead = new System.Windows.Forms.TextBox();
+            this.btnLoginInHasp = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.txtWrite = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -282,7 +285,7 @@ namespace RecHLockNew
             // txtNUsers
             // 
             this.txtNUsers.Location = new System.Drawing.Point(103, 114);
-            this.txtNUsers.MaxLength = 1;
+            this.txtNUsers.MaxLength = 3;
             this.txtNUsers.Name = "txtNUsers";
             this.txtNUsers.Size = new System.Drawing.Size(35, 20);
             this.txtNUsers.TabIndex = 5;
@@ -291,7 +294,7 @@ namespace RecHLockNew
             // txtVMinor
             // 
             this.txtVMinor.Location = new System.Drawing.Point(160, 88);
-            this.txtVMinor.MaxLength = 1;
+            this.txtVMinor.MaxLength = 3;
             this.txtVMinor.Name = "txtVMinor";
             this.txtVMinor.Size = new System.Drawing.Size(35, 20);
             this.txtVMinor.TabIndex = 4;
@@ -300,7 +303,7 @@ namespace RecHLockNew
             // txtVMajor
             // 
             this.txtVMajor.Location = new System.Drawing.Point(103, 88);
-            this.txtVMajor.MaxLength = 1;
+            this.txtVMajor.MaxLength = 3;
             this.txtVMajor.Name = "txtVMajor";
             this.txtVMajor.Size = new System.Drawing.Size(35, 20);
             this.txtVMajor.TabIndex = 3;
@@ -309,7 +312,7 @@ namespace RecHLockNew
             // txtNCanais
             // 
             this.txtNCanais.Location = new System.Drawing.Point(103, 62);
-            this.txtNCanais.MaxLength = 2;
+            this.txtNCanais.MaxLength = 3;
             this.txtNCanais.Name = "txtNCanais";
             this.txtNCanais.Size = new System.Drawing.Size(35, 20);
             this.txtNCanais.TabIndex = 2;
@@ -318,7 +321,7 @@ namespace RecHLockNew
             // txtVersaoHardLock
             // 
             this.txtVersaoHardLock.Location = new System.Drawing.Point(103, 10);
-            this.txtVersaoHardLock.MaxLength = 1;
+            this.txtVersaoHardLock.MaxLength = 3;
             this.txtVersaoHardLock.Name = "txtVersaoHardLock";
             this.txtVersaoHardLock.Size = new System.Drawing.Size(35, 20);
             this.txtVersaoHardLock.TabIndex = 0;
@@ -394,11 +397,47 @@ namespace RecHLockNew
             this.txtRead.Size = new System.Drawing.Size(529, 58);
             this.txtRead.TabIndex = 4;
             // 
+            // btnLoginInHasp
+            // 
+            this.btnLoginInHasp.Location = new System.Drawing.Point(12, 476);
+            this.btnLoginInHasp.Name = "btnLoginInHasp";
+            this.btnLoginInHasp.Size = new System.Drawing.Size(115, 23);
+            this.btnLoginInHasp.TabIndex = 5;
+            this.btnLoginInHasp.Text = "Login In Hasp";
+            this.btnLoginInHasp.UseVisualStyleBackColor = true;
+            this.btnLoginInHasp.Click += new System.EventHandler(this.btnLoginHasp_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Location = new System.Drawing.Point(426, 476);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(115, 23);
+            this.btnLimpar.TabIndex = 6;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
+            // txtWrite
+            // 
+            this.txtWrite.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.txtWrite.Enabled = false;
+            this.txtWrite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWrite.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtWrite.Location = new System.Drawing.Point(12, 402);
+            this.txtWrite.Multiline = true;
+            this.txtWrite.Name = "txtWrite";
+            this.txtWrite.ReadOnly = true;
+            this.txtWrite.Size = new System.Drawing.Size(529, 58);
+            this.txtWrite.TabIndex = 4;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 411);
+            this.ClientSize = new System.Drawing.Size(553, 511);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnLoginInHasp);
+            this.Controls.Add(this.txtWrite);
             this.Controls.Add(this.txtRead);
             this.Controls.Add(this.txtHardLockValido);
             this.Controls.Add(this.panel2);
@@ -451,5 +490,8 @@ namespace RecHLockNew
         private System.Windows.Forms.CheckBox chkIlimitado;
         private System.Windows.Forms.TextBox txtDTControle;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnLoginInHasp;
+        private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.TextBox txtWrite;
     }
 }

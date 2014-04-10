@@ -12,9 +12,11 @@ namespace RecHLockNew
     public partial class FormMain : Form
     {
 
-        private Logger log = new Logger(typeof(FormMain));
+        private Logger logger = new Logger(typeof(FormMain));
 
         private HardLockHelper helper = new HardLockHelper();
+
+        private static readonly string FORM_CAPTION = "Gravador de HardLock";
         
         public FormMain()
         {
@@ -23,7 +25,7 @@ namespace RecHLockNew
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            txtHardLockValido.Text = "HARDLOCK VÁLIDO";
+
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -36,12 +38,35 @@ namespace RecHLockNew
 
             HaspStatus status = helper.loginInHasp();
 
+            exibeMensagem(status, "Login no HASP efetuado com sucesso!");
+
             if (HaspStatus.StatusOk == status)
             {
                 helper.logoutInHasp();
             }
 
         }
+
+        private string exibeMensagem(HaspStatus status, string msgSucesso)
+        {
+            string alert = "";
+
+            if (HaspStatus.StatusOk != status)
+            {
+                alert = "ERRO: [" + HardLockHelper.MapaDeStatus.getStatus((int)status) + "]";
+                MessageBox.Show(alert, FORM_CAPTION, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logger.logError("#exibeMensagem - " + alert);
+            }
+            else
+            {
+                alert = msgSucesso;
+                MessageBox.Show(alert, FORM_CAPTION, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                logger.logInfo("#exibeMensagem - " + alert);
+            }
+
+            return alert;
+        }
+
 
         private void btnCmdWrite_Click(object sender, EventArgs e)
         {
@@ -78,13 +103,23 @@ namespace RecHLockNew
 
             if (HaspStatus.StatusOk != status)
             {
+                string msg = "Não foi possível fazer o login no HASP!\n"
+                    + "Verifique se a chave está conectada.";
+                MessageBox.Show(msg, FORM_CAPTION, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logger.logError("#btnCmdWrite_Click - " + msg.Replace("\n", " "));
                 return;
             }
 
-            if (helper.writeInHasp(ref msgaux, hl))
+            string aux = "";
+
+            if (helper.writeInHasp(ref msgaux, hl, ref aux))
             {
                 helper.logoutInHasp();
             }
+
+            txtWrite.Text = aux;
+
+            txtDTControle.Text = hl.DTControle.ToString("dd/MM/yyyy HH:00:00");
 
         }
 
@@ -142,12 +177,58 @@ namespace RecHLockNew
 
             if (HaspStatus.StatusOk != status)
             {
+                string msg = "Não foi possível fazer o login no HASP!\n"
+                    + "Verifique se a chave está conectada.";
+                MessageBox.Show(msg, FORM_CAPTION, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logger.logError("#btnCmdLer_Click - " + msg.Replace("\n", " "));
                 return;
             }
 
-            txtRead.Text = helper.readInHasp(ref status, ref mensagem);
-            
+            string strlida = helper.readInHasp(ref status, ref mensagem);
+
             helper.logoutInHasp();
+
+            HardLock hardlock = helper.str2Hardlock(strlida);
+
+            txtRead.Text = strlida;
+
+            toScreen(hardlock);
+                        
+        }
+
+        private void toScreen(HardLock hardlock)
+        {
+            txtVersaoHardLock.Text = Convert.ToString(hardlock.VersaHardLock);
+            txtDTControle.Text = hardlock.DTControle.ToString("dd/MM/yyyy HH:00:00");
+            txtNCanais.Text = Convert.ToString(hardlock.NCanais);
+            txtVMajor.Text = Convert.ToString(hardlock.VMajor);
+            txtVMinor.Text = Convert.ToString(hardlock.VMinor);
+            txtNUsers.Text = Convert.ToString(hardlock.NUsers);
+            chkVoiceMail.Checked = hardlock.VoiceMail;
+            chkFaxMail.Checked = hardlock.FaxMail;
+            chkCampanha.Checked = hardlock.Campanha;
+            chkXFace.Checked = hardlock.XFace;
+            chkBroadcast.Checked = hardlock.Broadcast;
+            chkRobot.Checked = hardlock.Robot;
+            chkSpeech.Checked = hardlock.Speech;
+            chkTextToSpeech.Checked = hardlock.TextToSpeech;
+
+            if (hardlock.Valido)
+            {
+                txtHardLockValido.Text = "HARDLOCK VÁLIDO";
+                if (hardlock.Validade == null)
+                {
+                    chkIlimitado.Checked = true;
+                }
+                else
+                {
+                    chkIlimitado.Checked = false;
+                }
+            }
+            else
+            {
+                txtHardLockValido.Text = "HARDLOCK INVÁLIDO";
+            }
         }
 
         private void AceitaApenasNumeros_KeyPress(object sender, KeyPressEventArgs e)
@@ -156,7 +237,6 @@ namespace RecHLockNew
             if (char.IsControl(e.KeyChar)) return;
             
             e.Handled = true;
-
         }
 
         private void chkIlimitado_CheckedChanged(object sender, EventArgs e)
@@ -171,6 +251,28 @@ namespace RecHLockNew
             }
         }
 
-    }
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtVersaoHardLock.Text = "";
+            txtDTControle.Text = "";
+            txtNCanais.Text = "";
+            txtVMajor.Text = "";
+            txtVMinor.Text = "";
+            txtNUsers.Text = "";
+            chkVoiceMail.Checked = false;
+            chkFaxMail.Checked = false;
+            chkCampanha.Checked = false;
+            chkXFace.Checked = false;
+            chkBroadcast.Checked = false;
+            chkRobot.Checked = false;
+            chkSpeech.Checked = false;
+            chkTextToSpeech.Checked = false;
+            chkIlimitado.Checked = false;
+            txtRead.Text = "";
+            //txtWrite.Text = "";
 
+        }
+
+    }
+ 
 }
