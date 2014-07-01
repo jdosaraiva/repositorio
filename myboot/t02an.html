@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>Pessoas</title>
+	<style type="text/css">
+		#content {
+			width: 800px;
+			margin: 0 auto;
+			background-color: #D8D8D8;
+			text-align: center;
+		}
+		table { 
+			margin-right:auto; 
+			margin-left:auto; 
+		}
+		.ar {
+			text-align: right;
+		}
+		.al {
+			text-align: left;
+		}
+		#content table {
+			border: 1px solid #FFFFFF;
+		}
+	</style>
+</head>
+<body >
+	<div id="content" ng-controller="PeopleController">
+		<h1>Cadastro de Pessoas</h1>
+		<table width="60%" >
+			<tr>
+				<td class="ar">Nome:</td>
+				<td class="al"><input type="text" size="45" ng-model="peopleName"></td>
+			</tr>
+			<tr>
+				<td class="ar">Email:</td>
+				<td class="al"><input type="email" size="35" ng-model="peopleEmail"></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="al">
+					<button type="button" ng-click="addPeople()">Criar</button>
+				</td>
+			</tr>
+		</table>
+		<br />
+
+		<table width="60%" >
+			<tr >
+				<td >Nome</td>
+				<td >Email</td>
+			</tr>
+			<tr ng-repeat="people in allPeople">
+				<td >{{ people.name }}</td>
+				<td >{{ people.mail }}</td>
+			</tr>
+		</table>
+		<br />
+	</div>
+
+<script src="js/angular.js"></script>
+<script type="text/javascript">
+<!--
+
+function PeopleController($scope) {
+
+	$scope.allPeople = [
+		{"name": "Jose Daniel", "mail": "saraiva@7comm.com.br" },
+		{"name": "Daniel Saraiva", "mail": "jd.saraiva@gmail.com" }
+	];
+
+	$scope.addPeople = function() {
+		$scope.allPeople.push( {"name":$scope.peopleName, "mail":$scope.peopleEmail} );
+    	$scope.peopleName = '';
+    	$scope.peopleEmail = '';
+	};
+
+}
+
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teste angular</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>Digite o seu nome aqui:</h1>
+	<input type="text" id="name" placeholder="Nome">
+	<br />
+	<p id="result"></p>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+<!--
+
+$( document ).ready(function() {
+
+	var name = $("#name");
+	var result = $("#result");
+
+	name.keyup(function() {
+		result.text(name.val());
+	});
+
+});
+
+//-->
+</script>
+</body>
+</html>

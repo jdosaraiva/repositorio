@@ -1,0 +1,664 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"people",
+				"peopleEmail"
+			],
+			[
+				"SR",
+				"script	Tag"
+			],
+			[
+				"s",
+				"style	Tag"
+			],
+			[
+				"TD",
+				"td	Tag"
+			],
+			[
+				"l",
+				"label	Tag"
+			],
+			[
+				"h",
+				"h1	Tag"
+			],
+			[
+				"t",
+				"text"
+			],
+			[
+				"end",
+				"End"
+			],
+			[
+				"T",
+				"Then"
+			],
+			[
+				"alt",
+				"altsenha"
+			],
+			[
+				"txt",
+				"txt_codigo"
+			],
+			[
+				"rs",
+				"rsRetornoNivel"
+			],
+			[
+				"su",
+				"submit"
+			],
+			[
+				"al",
+				"altsenha"
+			],
+			[
+				"cbo",
+				"cbo_statusRegistro"
+			],
+			[
+				"Move",
+				"MoveNext"
+			],
+			[
+				"obj",
+				"objConexao"
+			],
+			[
+				"sE",
+				"sEmail"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"sUr",
+				"sURL"
+			],
+			[
+				"URL",
+				"sURL"
+			],
+			[
+				"sC",
+				"sChaveDominio"
+			],
+			[
+				"Chave",
+				"ChaveDominio"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"G",
+				"GO"
+			],
+			[
+				"db",
+				"dbEdinet"
+			],
+			[
+				"continua",
+				"continua2"
+			],
+			[
+				"str",
+				"strDataFinal"
+			],
+			[
+				"strDt",
+				"strDtInicial"
+			],
+			[
+				"dte",
+				"dteHoje"
+			],
+			[
+				"dia",
+				"dia"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"data",
+				"dataHoje"
+			],
+			[
+				"in",
+				"input	Tag"
+			],
+			[
+				"pad",
+				"padding-right"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 380.0,
+		"selected_items":
+		[
+			[
+				"prin",
+				"Preferences: 2pdf Key Bindings – Default"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"2",
+				"Preferences: 2pdf Key Bindings – Default"
+			],
+			[
+				"Inst",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Set Syntax: ASP"
+			]
+		],
+		"width": 504.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/workspaces/JDOS/workspaceJDOS/repositorio/myboot/t02an.html",
+		"/C/workspaces/JDOS/workspaceJDOS/repositorio/myboot/index.html",
+		"/C/workspaces/JDOS/workspaceJDOS/repositorio/myboot/t01an.html",
+		"/C/workspaces/JDOS/workspaceJDOS/repositorio/myboot/t01jq.html",
+		"//sw410/Temp/xml editados/Cenários novos (Cod. Lote 3)/12 Lotes - 1 Dep. - 1 Chq  ou 2 Chq/TLOTEDIGIT.xml",
+		"/C/Users/saraiva/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/DRAXD42Y/ConflitoFWOP.TXT",
+		"/C/suportedbdc_logs/internet/novoib/AWB-AQ-Bradesco.log",
+		"/C/suportedbdc_logs/intranet/eint/AWB-AQ-Bradesco.log",
+		"/C/AGSE/Client.v5.02.04/DESE/TerminalFinanceiro/log/bradesco.log",
+		"/C/AGSE/Client.v5.02.04/DESE/TerminalFinanceiro/log/MP01.log",
+		"/C/Users/saraiva/AppData/Local/Temp/7zOC8F0F829/application.xml",
+		"/C/AGSE/Client.v5.02.01/DESE/TerminalFinanceiro/log/bradesco.log",
+		"/C/EAGE/Client.v2.51.01/DESE/TerminalFinanceiro/log/bradesco.log",
+		"//SW373/Temp/URA_OCXs/Solexis Dialer Report/NotaSetup.txt",
+		"/C/Users/saraiva/AppData/Local/Temp/build.xml-revHEAD.svn002.tmp.xml",
+		"/C/Users/saraiva/AppData/Local/Temp/build.xml-revHEAD.svn001.tmp.xml",
+		"/C/Users/saraiva/AppData/Local/Temp/build.xml-revHEAD.svn000.tmp.xml",
+		"/C/Users/saraiva/AppData/Local/Temp/build_sant.txt-revHEAD.svn000.tmp.txt",
+		"/C/Users/saraiva/Downloads/TLOTEDIGIT (1).xml",
+		"/C/ProgramData/IBM/Installation Manager/installed.xml",
+		"/C/suportedbdc_logs/intranet/sant_carga_diaria_ws_client/sant_carga_diaria_ws_client.log",
+		"/C/Users/saraiva/Downloads/BISDC2.txt",
+		"/C/Users/saraiva/Downloads/BISDC1.txt",
+		"/C/suportedbdc_apl/intranet/config/sant/application.properties",
+		"/C/Users/saraiva/Downloads/UPDP0012.TXT",
+		"/C/suportedbdc_apl/frameworkopen/config/fwop_api/servidores-nomenclatura-desenv.properties",
+		"/C/Program Files (x86)/IBM/SDP/runtimes/base_v61/profiles/sant/logs/server1/SystemOut.log",
+		"/C/Program Files (x86)/IBM/SDP/runtimes/base_v61/profiles/sant/logs/server1/SystemErr.log",
+		"/C/Temp/sant/_FLUXOS_REQUISICAO/SANTO000_1_request.xml",
+		"/C/suportedbdc_logs/servicosfuncionais/sant_servicos/sant_servicos.log",
+		"/C/suportedbdc_apl/7comm/dn1/cics/proxy/config/ProxyCicsConfiguration.properties",
+		"/C/suportedbdc_logs/intranet/sant/sant.log",
+		"/C/Users/saraiva/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/DRAXD42Y/Notas da versão.txt",
+		"/C/EAGE/Client.v2.51.01/iniciar_teste_depurando.bat",
+		"/C/EAGE/Client.v2.51.01/localwkst/BradescoDevelopment.xml",
+		"/C/EAGE/Client.v2.51.01/localwkst/BradescoOpProjects.xml",
+		"/C/Athic/Capthic/Capthic.Bat",
+		"/C/EAGE/Client.v2.51.01/DESE/TerminalFinanceiro/projects/br/com/eage/tf/DocumentosProcessar/flow.xml",
+		"/C/EAGE/Client.v2.51.01/localwkst/br/com/eage/tf/DoctosOcorrsConsulta/flow.xml",
+		"/C/EAGE/Client.v2.51.01/localwkst/Patch - Fator de Vencimento - 27-01-2014.zip",
+		"/C/Users/saraiva/Desktop/hs_err_pid3360.log",
+		"/C/Temp/chamada_bat_caphitc",
+		"/C/EAGE/Client.v2.51.01/localwkst/BradescoDrivers.xml",
+		"/C/EAGE/Client.v2.51.01/DESE/TerminalFinanceiro/config/BradescoAuthenticatorPrinterDriverConfiguration.xml",
+		"/C/EAGE/Client.v2.51.01/localwkst/BradescoFwDriverConfiguration.xml",
+		"/C/EAGE/Client.v2.51.01/direto.bat",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Administracao/adm_consulta_destinatarios.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Administracao/adm_manut_dominio.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Administracao/adm_manut_dominio_01.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/teste.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Dominios/banese/mensagens/erro.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/recadastro_ok.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Dominios/banese/teste.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/esqueci_senha.asp",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/EdiConnect.udl",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Administracao/adm_consulta_usuarios_signup.asp",
+		"/C/workspaceINBO/DataBase/INBOX_003_InclusaoEmPerfilTransacao.sql",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Administracao/adm_novo_usuario.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Administracao/adm_novo_usuario_ok.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Administracao/adm_novo_usuario_2.asp",
+		"/Y/Temp/xxx.txt",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Administracao/adm_novo_usuarios_perfil.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/esqueci_senha_ok.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/CtrlAcesso_Senha.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/alteracao_senha_2.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/alteracao_senha_2_ok.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Edivan.ini",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Transferencia_Arquivos/transfarq_recepcao_cliente_det.asp",
+		"/C/workspaceINBO/DataBase/EDISTO_018.sql",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Transferencia_Arquivos/transfarq_transmissoes_cliente_det.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/sendmail.asp",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Utils.SetUpMail_28012014.log",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Utils.CSendMail_28012014.log",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Usuario.CIncluiUsuario_28012014.log",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/rapi.ini",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/sendmail.ini",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Arquivo.CApoio_27012014.log",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Arquivo.CDiretorio_27012014.log",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Perfil.CMenu_27012014.log",
+		"/Y/Temp/x.sql",
+		"//fileserver/PRJ/DN I/Bradesco/Terminal Financeiro/Docs/Especificacao/INCIDENTES/AG 0001/E112/0001_E112_150114/DebitoVeiculos.log",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Include/paginacao2.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Dominios/banese/conteudo_index.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Dominios/edi7/conteudo_index.asp",
+		"/C/workspaceINBO/DataBase/002_NovoItemDeMenu.sql",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Dominios/banese/menu_dinamico.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Transferencia_Arquivos/transfarq_aprovacao_alcada.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Ctrl1Acesso.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Dominios/edi7/mensagens/erro.asp",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Usuario.CUsuarioSignUp_22012014.log",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/teste_select.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Administracao/adm_disponibilizacao_arquivos.asp",
+		"/Y/Temp/20140109_SQLQuery2.sql",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Administracao/adm_config_email_usuarios.asp",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Usuario.CUsuarioSignUp_21012014.log",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Administracao/adm_teste.html",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Transferencia_Arquivos/transfarq_listagem_registros.asp",
+		"/C/Saraiva/Documentos/Pagamentos/2014/01_Jan/AGUA_201401_CODBARRAS.txt",
+		"/C/Saraiva/Documentos/Pagamentos/2014/01_Jan/D_CITI_VISA_7803_201401_CODBARRAS.txt",
+		"/C/Saraiva/Documentos/Pagamentos/2014/01_Jan/GUIA_SINDICAL_201401_CODBARRAS.txt",
+		"/C/workspaceINBO/DataBase/EDISTO_006.sql",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Arquivo.CDiretorio_20012014.log",
+		"/C/workspaceINBO/DataBase/EDISTO_001.sql",
+		"/C/workspaceINBO/DataBase/EDISTO_003.sql",
+		"/C/workspaceINBO/DataBase/INBOX_001_NOVOS_CAMPOS_USUARIO.sql",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Login.CValidaRegistro_20012014.log",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Login.CGeraNovaSenha_20012014.log",
+		"/C/Saraiva/Documentos/Pagamentos/2014/01_Jan/GUIA_SINDICAL_201401.txt",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/primeiro_acesso_ok.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/primeiro_acesso.asp",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Utils.CSendMail_17012014.log",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNetLogin.CNovaSenha_15012014.log",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Login.CGeraNovaSenha_16012014.log",
+		"/C/workspaceBNSE/Site/ssl/Dominios/banese/conteudo_index.asp",
+		"/Y/Aplicativos/7COMm/edi7web/fs/bin/email_altsenha.txt",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/alteracao_senha.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/alteracao_senha_confirmacao.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/recadastro.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Dominios/edi7/login_teclado.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Dominios/banese/login_teclado.asp",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Utils.CSendMail_15012014.log",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Utils.SetUpMail_15012014.log",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Administracao/adm_manut_cadastro_usuarios_lista_2.asp",
+		"/Y/Inetpub/wwwroot/edi7web/site/ssl/Administracao/adm_manut_cadastro_usuarios_lista_alt_ok.asp",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Usuario.CAlterarUsuario_14012014.log",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Usuario.CIncluiUsuario_14012014.log",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Utils.SetUpMail_14012014.log",
+		"/Y/Aplicativos/7COMm/edi7web/ws/dll/Log/EdiNet1Utils.CSendMail_14012014.log"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"Y:\\Inetpub\\wwwroot\\edi7web\\site\\ssl",
+			"C:\\workspaceINBO\\DataBase",
+			"Y:\\Inetpub\\wwwroot\\edi7web\\site\\ssl",
+			"Y:\\Inetpub\\wwwroot\\edi7web\\site\\ssl\\Administracao",
+			"",
+			"C:\\Temp\\EMSG\\Logs,*.log.31",
+			"C:\\Temp\\EMSG\\Logs,*.log.*",
+			"C:\\Temp\\EMSG\\Logs,<open files>",
+			"C:\\Temp\\EMSG\\Logs",
+			"C:\\Temp\\EMSG",
+			"C:\\Temp\\EMSG\\Logs",
+			"C:\\workspaceBNSE\\sendmail\\Componentes\\Fontes-MS",
+			"Y:\\Inetpub\\wwwroot\\edi7web\\site\\ssl",
+			"Y:\\Inetpub\\wwwroot\\edi7web\\site\\ssl\\Transferencia_Arquivos",
+			"C:\\workspaceEDI7\\Componentes\\Fontes-MS",
+			"C:\\EAGE\\Client.v2.42.05,*.xml",
+			"C:\\EAGE\\Client.v2.42.05",
+			"C:\\EAGE\\Client.v2.42.05\\localwkst",
+			"C:\\workspaceEDI7\\Site\\ssl\\Transferencia_Arquivos",
+			"C:\\workspaceEDI7\\Componentes\\Fontes-MS\\EdiNet1Arquivo",
+			"C:\\workspaceEDI7\\fs",
+			"C:\\workspaceEDI7\\Componentes\\Fontes-MS",
+			"C:\\workspaceEDI7\\Componentes\\Fontes-MS\\EdiNet1Usuario",
+			"C:\\workspaceEDI7\\Componentes\\Fontes-MS\\EdiNet1Dom",
+			"C:\\workspaceEDI7\\Componentes\\Fontes-MS\\EdiNet1DispArquivo",
+			"C:\\workspaceEDI7\\Componentes\\Fontes-MS",
+			"E:\\Aplicativos\\7COMm",
+			"E:\\Aplicativos\\7COMm\\edi7web\\ws\\dll",
+			"C:\\workspaceEDI7\\Componentes\\Fontes-MS",
+			"C:\\Banese\\MsSql-tags\\MNT_GMA_19930",
+			"C:\\workspaceEDI7\\Site\\ssl",
+			"E:\\Inetpub\\wwwroot\\edi7web\\site\\ssl",
+			"E:\\Inetpub\\wwwroot\\edi7web\\site\\ssl\\Administracao\\ConsultaClientes, *.asp",
+			"E:\\Inetpub\\wwwroot\\edi7web\\site\\ssl",
+			"C:\\Banese\\MsSql\\trunk\\ws\\Componentes\\Fontes-MS",
+			"\\\\192.168.138.128\\c$\\Inetpub\\wwwroot\\edi7web\\site\\ssl",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"'",
+			"agencia == 42",
+			"agencia == 41",
+			"agencia == 26",
+			"agencia == 2",
+			"operationProject",
+			"C:\\EAGE\\Client",
+			"C:\\EAGE\\Client.v9.00.00",
+			"recadastro foi",
+			"sURL",
+			"response",
+			"ValidaCampos",
+			"SelSubmit",
+			"Acesso",
+			"CreateObject(\"EdiNet1Login.CNovaSenha\")",
+			"sBufferFiltro",
+			"Situacao",
+			"D",
+			"Situacao",
+			"sBufferFiltro",
+			"MostraDiv",
+			"aFormato",
+			"SelInCaixaPostal",
+			"SelCaixaPostalUser",
+			",",
+			" ",
+			"  ",
+			"\\t",
+			"\" offset=\"",
+			" ",
+			"  ",
+			"\\t",
+			"\" pic=\"",
+			"\" offset=\"",
+			"NumLink",
+			"NumPag",
+			"NumPagina",
+			"NumLink",
+			"iNumLink",
+			"NumPag",
+			"sMensagemLista",
+			"NumPagina",
+			"Redireciona",
+			"subSetTimeOutCli",
+			"validaCampos",
+			"ValidaCampos",
+			"filtro",
+			"BuscarCodCliente",
+			"filtro",
+			"rsRetornoNivel",
+			"select ",
+			"<select",
+			"showFilter",
+			"sDescCresc",
+			"frmFiltro",
+			"funOrdem",
+			"iDominio",
+			"LIMITE",
+			"NumPagina",
+			"iPaginas",
+			"Index",
+			"sTipoClass",
+			"6",
+			"While",
+			"LIMITE",
+			"iPaginas",
+			"pagina",
+			"aDiretorio",
+			"ico_cima.gif",
+			"sTipoData",
+			"Buffer",
+			"sDescCresc",
+			"Request.Form(\"Buffer\")",
+			"sDescCresc",
+			"frmFiltro",
+			"funordem",
+			"funOrdem",
+			"ordem",
+			"sDescCresc",
+			"sBufferFiltro",
+			"frmFiltro",
+			"frmRegistros",
+			"form",
+			"sDescCresc",
+			"objDiretorio",
+			"aDiretorio",
+			"funOrdem",
+			"Arquivo",
+			"objProtocolo",
+			"aDiretorio",
+			"ORDER BY",
+			"server",
+			"SenhaPrimoAcesso",
+			"frmPrimoAcesso",
+			"Validacao",
+			"frmRecadastro",
+			"Esqueci minha senha",
+			"sUrl",
+			"sURL",
+			"sUrl",
+			"dsSendMail",
+			"objSendMail",
+			"sEmail",
+			"sUsuario",
+			"TextAreaMax",
+			"txta_dica_senha",
+			"dsSendMail",
+			"objSendMail",
+			"txt_email",
+			"adm_config_email_usuarios",
+			"adm_config_email_usuarios_lista_2",
+			"adm_config_email_usuarios_lista_ok",
+			"AlteraEmail",
+			"adm_config_email_usuarios_lista_2",
+			"adm_config_email_usuarios_lista_ok",
+			"AlteraEmail",
+			"\" pic=\"",
+			" \\n",
+			"  ",
+			"	",
+			"\" offset=",
+			"vc23re",
+			")\"",
+			")\" ",
+			"\" pic=\"",
+			"  ",
+			"	",
+			"\" pic=\""
+		],
+		"highlight": true,
+		"in_selection": true,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\"",
+			"C:\\EAGE\\Client.v2.51.01",
+			"C:\\EAGE\\Client",
+			",\\n",
+			"\\t",
+			" ",
+			"\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t",
+			"\\t",
+			" ",
+			"  ",
+			"\\t",
+			"\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\" offset=\"",
+			"frmEsqueciSenha",
+			"\\t",
+			"\\n",
+			" ",
+			"\\t\\t\\t\\t\\t\\t\\t\\t\\t",
+			"ar09",
+			")",
+			"\\t",
+			"",
+			" ",
+			"\\t",
+			"\"\\t\\t\\t\\t\\t\\t\\t\\t\\t\\toffset",
+			"frmRecadastro",
+			"frmPrimoAcesso",
+			" ",
+			"\\n",
+			"C:\\workspaceV248",
+			"C:\\EAGE\\Client.v2.48.00",
+			"C:\\EAGE\\Client",
+			"C:\\EAGE\\Client.v2.48.00",
+			"",
+			"\\t",
+			"",
+			"Inetpub",
+			"\\t",
+			"C:\\EAGE\\Client.v2.45.09\\",
+			"C:\\EAGE\\Client.v2.45.09",
+			"v2.45.09",
+			"Client.v2.42.05",
+			"C:\\EAGE\\Client.v2.42.05",
+			"C:\\EAGE\\Client",
+			"C:\\EAGE\\Client\\",
+			"C:\\EAGE\\Client.v9.00.00\\",
+			"0.0020%",
+			"0.0195%",
+			"0.9765%",
+			"112",
+			"TransmissaoArquivos",
+			"CorFundo=255~255~255&CorBarra=102~102~102&CorTexto=0~0~0&CorFundoBarra=255~255~255",
+			", \\n",
+			"C:\\TEMP\\DN_I_ManutencaoMelhoria_WS\\BACKUP\\WEB",
+			"D:\\Aplicativos\\edi7web\\ws\\Site\\ssl\\",
+			"DN_I_ManutencaoMelhoria_WS",
+			"banese",
+			"BANESE",
+			"@codDominio",
+			"D:\\Aplicativos\\edi7web",
+			"DN_I_ManutencaoMelhoria_WS",
+			"C:\\TEMP\\DN_I_ManutencaoMelhoria_WS\\BACKUP\\WEB",
+			"C:\\TEMP\\DN_I_ManutencaoMelhoria_WS\\BACKUP\\WEB\\",
+			"D:\\Aplicativos\\edi7web",
+			"D:\\Aplicativos\\edi7web\\ws",
+			"\\",
+			"~",
+			"\""
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 172.0
+	},
+	"output.git":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 207.0,
+	"status_bar_visible": true
+}
