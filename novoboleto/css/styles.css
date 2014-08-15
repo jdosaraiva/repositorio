@@ -1,0 +1,33 @@
+.conteudo {
+	
+}
+.formulario {
+	
+}
+label {
+	font-family: "Lucida Console", Monaco, monospace;
+}
+.w10 {
+	width: 10px;
+}
+.w15 {
+	width: 15px;
+}
+.w40 {
+	width: 40px;
+}
+.w45 {
+	width: 45px;
+}
+.w55 {
+	width: 55px;
+}
+.w80 {
+	width: 80px;
+}
+.w110 {
+	width: 110px;
+}
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
