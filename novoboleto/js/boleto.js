@@ -1,5 +1,5 @@
 function Boleto() {
-	var _DATAINICIOBOLETO = new Date(1997, 10, 7);
+	var _DATAINICIOBOLETO = new Date(1997, 9, 7);
 	var _linhaDigitavel = "";
     var _banco = "";
     var _moeda;
@@ -10,7 +10,27 @@ function Boleto() {
 
 	this.setLinhaDigitavel = setLinhaDigitavel;
 	this.getLinhaDigitavel = getLinhaDigitavel;
+	this.getDataBoleto = getDataBoleto;
 	this.calculaDigito = calculaDigito;
+
+	function getDataBoleto() {
+		var numeroDeDias = 0;
+		var dataBoleto = new Date();
+
+		if (_strVencimento == null || _strVencimento.trim() === "") {
+			return null;
+		}
+
+		console.log("Inicio:[" + _DATAINICIOBOLETO + "]");
+
+		numeroDeDias = parseInt(_strVencimento);
+		console.log("Numero de Dias:[" + numeroDeDias + "]");
+
+		dataBoleto.setDate(_DATAINICIOBOLETO.getDate() + numeroDeDias);
+
+		return dataBoleto;
+
+	}
 
 	function setLinhaDigitavel(linhaDigitavel) {
 		_linhaDigitavel = linhaDigitavel;
@@ -79,5 +99,6 @@ var boleto = new Boleto();
 //console.log("Calculo do digito do Boleto:[" + boleto.calculaDigito() + "]");
 
 //23792.37429 59701.009942 01002.562609 2 61040000006000
-//boleto.setLinhaDigitavel("23792374295970100994201002562609261040000006000");
-//console.log("Calculo do digito do Boleto:[" + boleto.calculaDigito() + "]");
+boleto.setLinhaDigitavel("23792374295970100994201002562609261040000006000");
+console.log("Calculo do digito do Boleto:[" + boleto.calculaDigito() + "]");
+console.log("Data do Boleto:[" + boleto.getDataBoleto() + "]");
