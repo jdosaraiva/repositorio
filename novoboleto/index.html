@@ -10,18 +10,18 @@
    <div class="conteudo">
    	<div class="formulario">
    	 <label>Linha digitável:</label>
-   	 <input type="number" id="campo1" maxLength="5"  class="w45">
-   	 <input type="number" id="campo2" maxLength="5"  class="w45">
+   	 <input type="number" id="campo1" maxLength="5"  class="w45" next="campo2">
+   	 <input type="number" id="campo2" maxLength="5"  class="w45" next="campo3">
    	 <span style="padding: 3px"></span>
-   	 <input type="number" id="campo3" maxLength="5"  class="w45">
-   	 <input type="number" id="campo4" maxLength="6"  class="w55">
+   	 <input type="number" id="campo3" maxLength="5"  class="w45" next="campo4">
+   	 <input type="number" id="campo4" maxLength="6"  class="w55" next="campo5">
    	 <span style="padding: 3px"></span>
-   	 <input type="number" id="campo5" maxLength="5"  class="w45">
-   	 <input type="number" id="campo6" maxLength="6"  class="w55">
+   	 <input type="number" id="campo5" maxLength="5"  class="w45" next="campo6">
+   	 <input type="number" id="campo6" maxLength="6"  class="w55" next="dv1">
    	 <span style="padding: 3px"></span>
-   	 <input type="number" id="dv1"    maxLength="1"  class="w15">
+   	 <input type="number" id="dv1"    maxLength="1"  class="w15" next="campo7">
    	 <span style="padding: 3px"></span>
-   	 <input type="number" id="campo7" maxLength="14" class="w110">
+   	 <input type="number" id="campo7" maxLength="14" class="w110" next="vencimento">
     </div>
     <div class="formulario">
      <label>Vencimento:</label>
@@ -39,18 +39,21 @@
      <label>Valor Cobrado:</label>
    	 <input type="text" id="valorCobrado" style="width: 150px">
     </div>
+    <div class="formulario">
+     <button type="button" id="btnRecalcular">Recalcular Boleto</button>
+    </div>
    </div>
   </section>
   <script src="js/jquery-1.11.1.js"></script>
   <script src="js/jquery.maskMoney.min.js"></script>  
-  <script src="js/campos.js"></script>
   <script src="js/boleto.js"></script>
+  <script src="js/tratatela.js"></script>
   <script>
     $( document ).ready(function() {
-	  	$('#campo1').focus();
-		$("#valor").maskMoney({thousands:'.', decimal:',', allowZero:true});
-		$("#multa").maskMoney({thousands:'.', decimal:',', allowZero:true});
-		$("#valorCobrado").maskMoney({thousands:'.', decimal:',', allowZero:true});
+  		$("#valor").maskMoney({thousands:'.', decimal:',', allowZero:true});
+  		$("#multa").maskMoney({thousands:'.', decimal:',', allowZero:true});
+  		$("#valorCobrado").maskMoney({thousands:'.', decimal:',', allowZero:true});
+      $('#campo1').focus();
     });  
   </script>
  </body>

@@ -1,5 +1,6 @@
 function Boleto() {
 	var _DATAINICIOBOLETO = new Date(1997, 9, 7);
+	var _SEGUNDOSPORDIA = 864e5; // 86.400.000s
 	var _linhaDigitavel = "";
     var _banco = "";
     var _moeda;
@@ -11,25 +12,46 @@ function Boleto() {
 	this.setLinhaDigitavel = setLinhaDigitavel;
 	this.getLinhaDigitavel = getLinhaDigitavel;
 	this.getDataBoleto = getDataBoleto;
+	this.getDataBoletoFmt = getDataBoletoFmt;
 	this.calculaDigito = calculaDigito;
+	this.getDiasVencto = getDiasVencto;
+
+	function getDiasVencto(dataDeVencimento) {
+		var ini = _DATAINICIOBOLETO.getTime();
+		var fim = dataDeVencimento.getTime();
+		var dif = fim - ini;
+		var diasVencto = dif / _SEGUNDOSPORDIA;
+		return diasVencto;
+	}
 
 	function getDataBoleto() {
 		var numeroDeDias = 0;
 		var dataBoleto = new Date();
+		var numDiasInMilis = 0;
 
 		if (_strVencimento == null || _strVencimento.trim() === "") {
 			return null;
 		}
 
-		console.log("Inicio:[" + _DATAINICIOBOLETO + "]");
+		// console.log("Inicio:[" + _DATAINICIOBOLETO + "]");
 
 		numeroDeDias = parseInt(_strVencimento);
-		console.log("Numero de Dias:[" + numeroDeDias + "]");
+		// console.log("Numero de Dias:[" + numeroDeDias + "]");
+		numDiasInMilis = numeroDeDias * _SEGUNDOSPORDIA;
 
-		dataBoleto.setDate(_DATAINICIOBOLETO.getDate() + numeroDeDias);
+		dataBoleto.setTime(_DATAINICIOBOLETO.getTime() + numDiasInMilis);
 
 		return dataBoleto;
 
+	}
+
+	function getDataBoletoFmt() {		
+		var dataBoleto = this.getDataBoleto();
+		var day = "00".concat(String(dataBoleto.getDate())).substr(-2, 2);
+		var month = "00".concat(String(dataBoleto.getMonth() + 1)).substr(-2, 2);
+		var fullYear = String(dataBoleto.getFullYear());
+
+		return fullYear.concat("-").concat(month).concat("-").concat(day);
 	}
 
 	function setLinhaDigitavel(linhaDigitavel) {
@@ -37,8 +59,8 @@ function Boleto() {
 
         _banco = _linhaDigitavel.substr(0, 3);
         _moeda = _linhaDigitavel.substr(3, 1);
-        _strVencimento = _linhaDigitavel.substr(33, 4);
-        _strValor = _linhaDigitavel.substr(37, 10);
+        _strVencimento = _linhaDigitavel.substr(32, 4);
+        _strValor = _linhaDigitavel.substr(36, 10);
         _campoLivre = _linhaDigitavel.substr(4, 5) +
                       _linhaDigitavel.substr(10, 10) +
                       _linhaDigitavel.substr(21, 10);
@@ -79,7 +101,7 @@ function Boleto() {
         resto = soma % 11;
         
         dac = 11 - resto;
-        if (dac == 0 || dac == 10)
+        if (dac == 0 || dac == 10 || dac == 11)
         {
             dac = 1;
         }
@@ -88,7 +110,7 @@ function Boleto() {
 	}
 }
 
-var boleto = new Boleto();
+//var boleto = new Boleto();
 
 //23793.39100 20000.024651 18000.067704 1 60690000056462
 //boleto.setLinhaDigitavel("23793391002000002465118000067704160690000056462");
@@ -99,6 +121,10 @@ var boleto = new Boleto();
 //console.log("Calculo do digito do Boleto:[" + boleto.calculaDigito() + "]");
 
 //23792.37429 59701.009942 01002.562609 2 61040000006000
-boleto.setLinhaDigitavel("23792374295970100994201002562609261040000006000");
-console.log("Calculo do digito do Boleto:[" + boleto.calculaDigito() + "]");
-console.log("Data do Boleto:[" + boleto.getDataBoleto() + "]");
+//boleto.setLinhaDigitavel("23792374295970100994201002562609261040000006000");
+//console.log("Calculo do digito do Boleto:[" + boleto.calculaDigito() + "]");
+
+//aux = boleto.getDataBoleto();
+//console.log("Data do Boleto:[" + boleto.getDataBoletoFmt() + "]");
+
+// 23792.37429 59701.009942 01002.562609 2 61040000006000
