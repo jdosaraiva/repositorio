@@ -16,6 +16,7 @@ function Boleto() {
 	this.calculaDigito = calculaDigito;
 	this.getDiasVencto = getDiasVencto;
 
+
 	function getDiasVencto(dataDeVencimento) {
 		var ini = _DATAINICIOBOLETO.getTime();
 		var fim = dataDeVencimento.getTime();
@@ -23,6 +24,7 @@ function Boleto() {
 		var diasVencto = dif / _SEGUNDOSPORDIA;
 		return diasVencto;
 	}
+
 
 	function getDataBoleto() {
 		var numeroDeDias = 0;
@@ -33,17 +35,14 @@ function Boleto() {
 			return null;
 		}
 
-		// console.log("Inicio:[" + _DATAINICIOBOLETO + "]");
-
 		numeroDeDias = parseInt(_strVencimento);
-		// console.log("Numero de Dias:[" + numeroDeDias + "]");
 		numDiasInMilis = numeroDeDias * _SEGUNDOSPORDIA;
 
 		dataBoleto.setTime(_DATAINICIOBOLETO.getTime() + numDiasInMilis);
 
 		return dataBoleto;
-
 	}
+
 
 	function getDataBoletoFmt() {		
 		var dataBoleto = this.getDataBoleto();
@@ -53,6 +52,7 @@ function Boleto() {
 
 		return fullYear.concat("-").concat(month).concat("-").concat(day);
 	}
+
 
 	function setLinhaDigitavel(linhaDigitavel) {
 		_linhaDigitavel = linhaDigitavel;
@@ -66,9 +66,11 @@ function Boleto() {
                       _linhaDigitavel.substr(21, 10);
 	}
 
+
 	function getLinhaDigitavel() {
 		return _linhaDigitavel;
 	}
+
 
 	function calculaDigito() {
         var num = 0;
@@ -81,19 +83,15 @@ function Boleto() {
 		if (_linhaDigitavel == null || _linhaDigitavel.trim() === "") {
 			return null;
 		}
-		console.log("Linha Digitavel:[" + _linhaDigitavel + "]");        	
 
         sb = _banco.concat(_moeda).concat(_strVencimento).concat(_strValor).concat(_campoLivre);
-		console.log("Minha String:[" + sb + "]");        	
 
         for (i = sb.length - 1; i > -1; i--) {
-			// console.log(sb.substr(i, 1));        	
             num = parseInt(sb.substr(i, 1));
             produto = num * multiplicador;
             soma += produto;
             multiplicador++;
-            if (multiplicador == 10)
-            {
+            if (multiplicador == 10) {
                 multiplicador = 2;
             }
         }
@@ -108,6 +106,7 @@ function Boleto() {
         return dac;
 
 	}
+
 }
 
 //var boleto = new Boleto();
@@ -126,5 +125,3 @@ function Boleto() {
 
 //aux = boleto.getDataBoleto();
 //console.log("Data do Boleto:[" + boleto.getDataBoletoFmt() + "]");
-
-// 23792.37429 59701.009942 01002.562609 2 61040000006000

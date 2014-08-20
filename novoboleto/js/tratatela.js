@@ -10,6 +10,7 @@ $(":input[type='number']").on('keyup', function (e) {
 	}
 });
 
+
 $("#campo7").focusout(function() {
 	var boleto = new Boleto();
 	var strValor = String($('#campo7').val());
@@ -52,6 +53,7 @@ $('#multa').focusout(function () {
 $('#multa').focusout(function () {
 	calculaValorCobrado();
 });
+
 
 $('#btnRecalcular').click(function() {
 
