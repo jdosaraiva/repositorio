@@ -72,7 +72,7 @@ $('#btnRecalcular').click(function() {
 	}
 
 	year = Number(vencimento.substr(0, 4));
-	month = Number(vencimento.substr(5, 2));
+	month = Number(vencimento.substr(5, 2)); 
 	day = Number(vencimento.substr(8, 2));
 	newVencto = new Date(year, month - 1, day);
 	diasBoleto = "0000".concat(boleto.getDiasVencto(newVencto)).substr(-4, 4);
