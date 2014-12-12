@@ -18,10 +18,11 @@ function Boleto() {
 
 
 	function getDiasVencto(dataDeVencimento) {
-		var ini = _DATAINICIOBOLETO.getTime();
+		var ini = _DATAINICIOBOLETO.getTime() - _SEGUNDOSPORDIA;
 		var fim = dataDeVencimento.getTime();
 		var dif = fim - ini;
 		var diasVencto = dif / _SEGUNDOSPORDIA;
+		diasVencto = parseInt(diasVencto);
 		return diasVencto;
 	}
 
@@ -49,7 +50,7 @@ function Boleto() {
 		var day = "00".concat(String(dataBoleto.getDate())).substr(-2, 2);
 		var month = "00".concat(String(dataBoleto.getMonth() + 1)).substr(-2, 2);
 		var fullYear = String(dataBoleto.getFullYear());
-
+		
 		return fullYear.concat("-").concat(month).concat("-").concat(day);
 	}
 

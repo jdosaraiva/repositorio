@@ -3,47 +3,57 @@
  <head>
   <meta charset="utf-8">
   <title>Recálculo de Boletos</title>
-  <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
  </head>
  <body>
   <section>
    <div class="conteudo">
-   	<div class="formulario">
-   	 <label>Linha digitável:</label>
-   	 <input type="number" id="campo1" maxLength="5"  class="w45" next="campo2">
-   	 <input type="number" id="campo2" maxLength="5"  class="w45" next="campo3">
-   	 <span style="padding: 3px"></span>
-   	 <input type="number" id="campo3" maxLength="5"  class="w45" next="campo4">
-   	 <input type="number" id="campo4" maxLength="6"  class="w55" next="campo5">
-   	 <span style="padding: 3px"></span>
-   	 <input type="number" id="campo5" maxLength="5"  class="w45" next="campo6">
-   	 <input type="number" id="campo6" maxLength="6"  class="w55" next="dv1">
-   	 <span style="padding: 3px"></span>
-   	 <input type="number" id="dv1"    maxLength="1"  class="w15" next="campo7">
-   	 <span style="padding: 3px"></span>
-   	 <input type="number" id="campo7" maxLength="14" class="w110" next="vencimento">
-    </div>
-    <div class="formulario">
-     <label>Vencimento:</label>
-   	 <input type="date" id="vencimento" maxLength="10" style="width: 150px">
-    </div>
-    <div class="formulario">
-     <label>Valor:</label>
-   	 <input type="text" id="valor" style="width: 150px">
-    </div>
-    <div class="formulario">
-     <label>Mora/Multa:</label>
-   	 <input type="text" id="multa" style="width: 150px">
-    </div>
-    <div class="formulario">
-     <label>Valor Cobrado:</label>
-   	 <input type="text" id="valorCobrado" style="width: 150px">
-    </div>
-    <div class="formulario">
-     <button type="button" id="btnRecalcular">Recalcular Boleto</button>
-    </div>
+		<h1><a href=''>Código de Barras</a></h1>
+		<div class="dados">
+			<div class="formulario">
+			 <h3>Dados do Boleto</h3>
+			 <div class="label">Linha digitável:</div>
+			 <input type="number" id="campo1" maxLength="5"  class="w45" next="campo2">
+			 <input type="number" id="campo2" maxLength="5"  class="w45" next="campo3">
+			 <span style="padding: 3px"></span>
+			 <input type="number" id="campo3" maxLength="5"  class="w45" next="campo4">
+			 <input type="number" id="campo4" maxLength="6"  class="w55" next="campo5">
+			 <span style="padding: 3px"></span>
+			 <input type="number" id="campo5" maxLength="5"  class="w45" next="campo6">
+			 <input type="number" id="campo6" maxLength="6"  class="w55" next="dv1">
+			 <span style="padding: 3px"></span>
+			 <input type="number" id="dv1"    maxLength="1"  class="w15" next="campo7">
+			 <span style="padding: 3px"></span>
+			 <input type="number" id="campo7" maxLength="14" class="w110" next="vencimento">
+			</div>
+			<div class="formulario">
+			 <div class="label">Vencimento:</div>
+			 <input type="date" id="vencimento" maxLength="10" style="width: 150px">
+			</div>
+			<div class="formulario">
+			 <div class="label">Valor:</div>
+			 <input type="text" id="valor" style="width: 150px">
+			</div>
+			<div class="formulario">
+			 <div class="label">Mora/Multa:</div>
+			 <input type="text" id="multa" style="width: 150px">
+			</div>
+			<div class="formulario">
+			 <div class="label">Valor Cobrado:</div>
+			 <input type="text" id="valorCobrado" style="width: 150px">
+			</div>
+			<div class="formulario clear">
+			  <div class="label">
+			   <button type="button" id="btnRecalcular">Recalcular Boleto</button>
+			  </div>
+			</div>
+		</div>
    </div>
   </section>
+  <div class="footer clear">
+   	<p>Copyright © 2014 Saraiva Soluções. All Rights Reserved.</p>
+  </div>
   <script src="js/jquery-1.11.1.js"></script>
   <script src="js/jquery.maskMoney.min.js"></script>  
   <script src="js/boleto.js"></script>
@@ -53,7 +63,7 @@
   		$("#valor").maskMoney({thousands:'.', decimal:',', allowZero:true});
   		$("#multa").maskMoney({thousands:'.', decimal:',', allowZero:true});
   		$("#valorCobrado").maskMoney({thousands:'.', decimal:',', allowZero:true});
-      $('#campo1').focus();
+		$('#campo1').focus();
     });  
   </script>
  </body>
